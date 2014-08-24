@@ -1,2 +1,8 @@
 // Concrete Class: is never instantiated.
-function Blueprint(){};
+function Blueprint(){
+  this.name = "N/A";
+};
+
+Blueprint.prototype.buildPool = function() {
+     
+}
