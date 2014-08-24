@@ -1,0 +1,1 @@
+The ES5 documentation provides the best description. A prototype is an "object that provides shared properties for other objects.""
