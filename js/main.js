@@ -19,7 +19,7 @@ Blueprint.prototype.createPool = function(pool) {
 }
 
 var kai = new Blueprint({
-  houseType: "Bunglaow",
+  houseType: "Bungalow",
   price: 100
 });
 
