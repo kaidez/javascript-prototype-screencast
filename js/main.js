@@ -1,7 +1,11 @@
 // Concrete Class: is never instantiated.
-function Blueprint(cfg) {
-  this.houseType = cfg.houseType;
-  this.price = cfg.price;
+function Blueprint(config) {
+  this.houseType = config.houseType;
+  this.price = config.price;
+  this.color = config.color;
+  if(!this.color) {
+    this.color = "white";
+  }
 };
 
 Blueprint.prototype.createPool = function(pool) {
@@ -16,6 +20,9 @@ Blueprint.prototype.createPool = function(pool) {
 
 var kai = new Blueprint({
   houseType: "Bunglaow",
-  price: 100,
+  price: 100
 });
+
 kai.createPool("9 ft");
+
+console.log(kai);
