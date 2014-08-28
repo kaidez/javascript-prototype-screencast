@@ -3,9 +3,8 @@ function Blueprint(config) {
   this.houseType = config.houseType;
   this.price = config.price;
   this.color = config.color;
-  if(!this.color) {
-    this.color = "white";
-  }
+  if(!this.color) this.color = "white";
+  if(!this.price) this.price = "100,000+";
 };
 
 Blueprint.prototype.createPool = function(pool) {
@@ -19,8 +18,7 @@ Blueprint.prototype.createPool = function(pool) {
 }
 
 var kai = new Blueprint({
-  houseType: "Bungalow",
-  price: 100
+  houseType: "Bungalow"
 });
 
 kai.createPool("9 ft");
