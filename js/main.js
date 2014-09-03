@@ -1,26 +1,36 @@
-// Concrete Class: is never instantiated.
-function Blueprint(config) {
-  this.houseType = config.houseType;
-  this.price = config.price;
-  this.color = config.color;
-  if(!this.color) this.color = "white";
-  if(!this.price) this.price = "100,000+";
-};
-
-Blueprint.prototype.createPool = function(pool) {
-  var thePool = document.querySelector("#pool");
-  this.pool = pool;
-  if(this.pool === undefined) {
-    thePool.innerHTML = "no";
-  }  else {
-    thePool.innerHTML = this.pool;
+// Abstract Class: is never instantiated.
+function Blueprint(lotNumber, houseType, totalRooms, basement) {
+  this.lotNumber = lotNumber;
+  this.houseType = houseType;
+  this.totalRooms = ["bedrooms", "bathrooms"];
+  this.basement = basement;
+  
+  // If basement is not passed as a parameter, set it to false
+  if(!basement) {
+    this.basement = false;
   }
+  this.livingRoom = true;
+  this.kitchen = true;
+  this.diningRoom = false;
+  this.pool;
 }
 
-var kai = new Blueprint({
-  houseType: "Bungalow"
+// Method that adds house options
+Blueprint.prototype.setOptions = function(config) {
+  var thePool = document.getElementById("pools");
+
+  if (!config) {
+    this.pool = null;
+    thePool.innerHTML = "no";
+  } else {
+    this.pool = config.pool;
+    thePool.innerHTML = this.pool;
+  }
+  
+}
+
+var bungalowOne = new Blueprint(23, "bungalow");
+
+bungalowOne.setOptions({
+  pool: "yes"
 });
-
-kai.createPool("9 ft");
-
-console.log(kai);
