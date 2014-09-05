@@ -11,13 +11,18 @@ function Blueprint(lotNumber, houseType, totalRooms, basement) {
   }
   this.livingRoom = true;
   this.kitchen = true;
-  this.diningRoom = false;
-  this.pool;
+  this.diningRoom = true;
 }
-
+4723
 // Method that adds house options
 Blueprint.prototype.setOptions = function(config) {
-  var thePool = document.getElementById("pools");
+  var thePool = document.getElementById("pools"),
+    theHouseColor = document.getElementById("houseColor"),
+    optionsArray = [];
+  
+  // this.houseColor = config.houseColor;
+
+
 
   if (!config) {
     this.pool = null;
@@ -27,10 +32,18 @@ Blueprint.prototype.setOptions = function(config) {
     thePool.innerHTML = this.pool;
   }
   
+  // if (this.houseColor === "undefined") {
+  //   theHouseColor.innerHTML = "white";
+  // } else {
+  //   theHouseColor.innerHTML = this.houseColor;
+  // }   
 }
 
 var bungalowOne = new Blueprint(23, "bungalow");
 
 bungalowOne.setOptions({
-  pool: "yes"
+  pool: "yes",
+  color: "white"
 });
+
+console.log(bungalowOne);
