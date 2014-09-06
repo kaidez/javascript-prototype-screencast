@@ -36,7 +36,11 @@ Blueprint.prototype.showHomeOptions = function() {
   var allHomes = document.getElementById("allHomes");
 
   for (homeOption in this) {
+
     if(typeof this[homeOption] !== "function") {
+      var el = document.createElement("article");
+      $(el).attr("id", homeOption);
+      allHomes.appendChild(el);
       console.log(homeOption + ": " + this[homeOption]);
     }
   }
