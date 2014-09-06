@@ -37,10 +37,15 @@ Blueprint.prototype.showHomeOptions = function() {
 
   for (homeOption in this) {
 
-    if(typeof this[homeOption] !== "function") {
-      var el = document.createElement("article");
-      $(el).attr("id", homeOption);
-      allHomes.appendChild(el);
+    if ( typeof this[homeOption] !== "function" ) {
+      
+      if ( homeOption === "lotID" ) {
+        document.getElementById("lot").innerHTML = "Lot ID: " + this[homeOption];
+      } else {
+        var el = document.createElement("article");
+        $(el).attr( "id", homeOption );
+        allHomes.appendChild( el );
+      }
       console.log(homeOption + ": " + this[homeOption]);
     }
   }
