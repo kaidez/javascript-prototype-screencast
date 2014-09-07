@@ -25,6 +25,8 @@ Blueprint.prototype.setHomeOptions = function( config ) {
   this.pool = config.pool === undefined ? "no" : config.pool;
   this.price = config.price || "100,000";
   this.pool = config.pool || "no";
+
+  return this;
 }
 
 // Display home options on index.html
@@ -52,6 +54,8 @@ Blueprint.prototype.showHomeOptions = function() {
     article.appendChild(ul);
     allHomes.appendChild(article); 
   }
+
+  return this;
 }
 
 function Colonial ( lotID, windowTypes ) {
@@ -68,6 +72,4 @@ var niko = new Blueprint( 150 );
 
 kai.setHomeOptions({
   floorType: "Marble"
-});
-
-kai.showHomeOptions();
+).showHomeOptions();
