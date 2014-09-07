@@ -11,11 +11,9 @@ function Blueprint( lotID ) {
    */
   this.basement = this.livingRoom = this.kitchen = this.diningRoom =
       true;
-  this.houseType = "Bungalow";
   this.totalBedrooms = 1;
   this.totalBathrooms = 1.5;
   this.totalFloors = 1;
-
 }
 
 // Adds home options
@@ -24,30 +22,35 @@ Blueprint.prototype.setHomeOptions = function( config ) {
   this.counterTops = config.counterTops === undefined ? "formica" : config.counterTops;
   this.squareFeet = config.squareFeet === undefined ? 1800 : config.squareFeet;
   this.floorType = config.floorType === undefined ? "tile" : config.floorType;
-  this.pool = config.pool === undefined ? false : config.pool;
-  // this.houseType = config.houseType || this.houseType;
-
+  this.pool = config.pool === undefined ? "no" : config.pool;
+  this.price = config.price || "100,000";
+  this.pool = config.pool || "no";
 }
 
 // Display home options on index.html
 Blueprint.prototype.showHomeOptions = function() {
 
   // Reference to the "#allHomes" element that's in "index.html"
-  var allHomes = document.getElementById("allHomes");
+  var allHomes = document.getElementById("allHomes"),
+       article = document.createElement("article"),
+       ul = document.createElement("ul");
+      
+  article.appendChild(ul);
+  $(article).addClass("col-md-4");
 
   for (homeOption in this) {
-
-    if ( typeof this[homeOption] !== "function" ) {
-      
+    if ( typeof this[homeOption] !== "function" && typeof this[homeOption] !== "boolean" ) {
       if ( homeOption === "lotID" ) {
-        document.getElementById("lot").innerHTML = "Lot ID: " + this[homeOption];
+        // document.getElementById("lotID").innerHTML = "Lot ID: " + this[homeOption];
       } else {
-        var el = document.createElement("article");
-        $(el).attr( "id", homeOption );
-        allHomes.appendChild( el );
+         li = document.createElement("li");
+        $(li).addClass( homeOption );
+        ul.appendChild( li );
+        $("." + homeOption ).html( homeOption + ": " + this[homeOption] );
       }
-      console.log(homeOption + ": " + this[homeOption]);
     }
+    article.appendChild(ul);
+    allHomes.appendChild(article); 
   }
 }
 
@@ -55,26 +58,16 @@ function Colonial ( lotID, windowTypes ) {
   this.base = Blueprint;
   this.base( lotID, windowTypes );
   this.windowTypes = windowTypes || "Double pane";
-  this.houseType = "Colonial"; 
+  this.houseType = "Colonial";
 }
 
 Colonial.prototype = new Blueprint();
 
-
-
-var niko = new Blueprint(4);
-
-niko.setHomeOptions();
-
 var kai = new Colonial( 50 );
+var niko = new Blueprint( 150 );
 
 kai.setHomeOptions({
-  floorType: "Hardwood",
-  squareFeet: 2100
+  floorType: "Marble"
 });
+
 kai.showHomeOptions();
-
-
-
-
-// console.log(kai);
