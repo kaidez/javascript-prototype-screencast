@@ -1,7 +1,7 @@
 // Abstract Class: is never instantiated.
 function Blueprint( lotID ) {
 
-  // Define a unique ID for the home...the only required parameter
+  // Define a unique ID. 
   this.lotID = lotID;
 
   /*
@@ -19,43 +19,47 @@ function Blueprint( lotID ) {
 // Adds home options
 Blueprint.prototype.setHomeOptions = function( config ) {
   config = config || {};
+  this.price = config.price || "100,000";
   this.counterTops = config.counterTops === undefined ? "formica" : config.counterTops;
   this.squareFeet = config.squareFeet === undefined ? 1800 : config.squareFeet;
   this.floorType = config.floorType === undefined ? "tile" : config.floorType;
   this.pool = config.pool === undefined ? "no" : config.pool;
-  this.price = config.price || "100,000";
-  this.pool = config.pool || "no";
-  this.totalBedrooms = config.totalBedrooms === undefined ? 1 : config.totalBedrooms;
 
-  return this;
+  // Let some of the defaults in the Blueprint "class" be overridden
+  this.totalBedrooms = config.totalBedrooms || this.totalBedrooms;
+  this.totalBathrooms = config.totalBathrooms || this.totalBathrooms;
+  this.totalFloors = config.totalFloors || this.totalFloors;
+
+  return this; // Make this method chainable, yo!!
 
 }
 
 // Display home options on index.html
-Blueprint.prototype.showHomeOptions = function() {
-  // Reference to the "#allHomes" element that's in "index.html"
+Blueprint.prototype.displayHomeOptions = function() {
+
   var allHomes = document.getElementById("allHomes"),
       frag = document.createDocumentFragment(),
       article = document.createElement("article"),
       ul = document.createElement("ul");
       
-  article.appendChild(ul);
   $(article).addClass("col-md-4");
+
   for (homeOption in this) {
 
     if ( typeof this[homeOption] !== "function" && typeof this[homeOption] !== "boolean" ) {
       if ( homeOption === "lotID" ) {
-        var kai = this[homeOption]
-        $(article).attr("id", kai);
-        // document.getElementById(homeOption).innerHTML = "Lot ID: " + this[homeOption];
+        var homeHeader = document.createElement("h2"),
+            lotNum = "home-" + this[homeOption],
+            homeHeaderID = lotNum + "-ID";
+        $(article).attr("id", homeHeaderID);
+        homeHeader.innerText = "House#: " + this[homeOption];
+        article.appendChild(homeHeader);
       } else {
-        var listID = homeOption;
-        listID.toString();
-        console.log(listID + " is");
+        var listID = String(homeOption) + "-list-" + lotNum;
         li = document.createElement("li");
-        $(li).attr("id", homeOption);
-        ul.appendChild( li );
-        $("#" + homeOption ).html( homeOption + ": " + this[homeOption] );
+        $(li).attr("id", listID);
+        ul.appendChild(li);
+        $(li).html( homeOption + ": " + this[homeOption] );
       }
     }
     article.appendChild(ul);
@@ -63,7 +67,7 @@ Blueprint.prototype.showHomeOptions = function() {
     allHomes.appendChild(frag); 
   }
 
-  return this;
+  return this; // Make this method chainable, yo!!
 
 }
 
@@ -72,21 +76,38 @@ function Colonial ( lotID, windowTypes ) {
   this.base( lotID, windowTypes );
   this.windowTypes = windowTypes || "Double pane";
   this.houseType = "Colonial";
-  // console.log(this);
 }
 
 Colonial.prototype = new Blueprint();
-
-var kai = new Colonial( 50 );
-var niko = new Blueprint( 150 );
+console.log(Colonial.constructor);
 
 
+var kai = new Blueprint(542);
 kai.setHomeOptions({
-  price: "250000",
-  totalBedrooms: 2
-}).showHomeOptions();
+  totalBedrooms: 5
+});
+kai.displayHomeOptions();
 
-
+var niko = new Colonial(20);
 niko.setHomeOptions({
-  price: "200000"
-}).showHomeOptions();
+  totalFloors: 2,
+  pool: "yes"
+});
+niko.displayHomeOptions();
+
+var dad = new Colonial(987);
+dad.setHomeOptions({
+  totalFloors: 2,
+  pool: "yes"
+});
+dad.displayHomeOptions();
+
+var mom = new Colonial(2345);
+mom.setHomeOptions({
+  totalFloors: 2,
+  pool: "yes"
+});
+mom.displayHomeOptions();
+
+
+console.log(niko);
