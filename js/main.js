@@ -42,7 +42,10 @@ Blueprint.prototype.displayHomeOptions = function() {
       article = document.createElement("article"),
       ul = document.createElement("ul");
       
-  // Add a Bootstrap column class to each <article> for RWD purposes   
+  /*
+   * Add a Bootstrap column class to each <article> for RWD purposes.
+   * This will build a responsive 3-column layout.
+   */   
   article.setAttribute("class", "col-md-4");
 
   for ( homeOption in this ) {
