@@ -16,7 +16,7 @@ function Blueprint( lotID ) {
   this.totalFloors = 1;
 }
 
-// Adds home options
+// Add single home options
 Blueprint.prototype.setHomeOptions = function( config ) {
   config = config || {};
   this.price = config.price || "100,000+";
@@ -45,7 +45,7 @@ Blueprint.prototype.displayHomeOptions = function() {
   // Add a Bootstrap column class to each <article> for RWD purposes   
   article.setAttribute("class", "col-md-4");
 
-  for (homeOption in this) {
+  for ( homeOption in this ) {
 
     if ( typeof this[homeOption] !== "function" && typeof this[homeOption] !== "boolean" ) {
       if ( homeOption === "lotID" ) {
@@ -83,7 +83,22 @@ function Colonial ( lotID, windowTypes ) {
 
 Colonial.prototype = new Blueprint();
 
-Colonial.prototype.constructor = Colonial; 
+Colonial.prototype.constructor = Colonial;
+
+
+function Tudor ( lotID, backyard ) {
+  this.base = Blueprint;
+  this.base( lotID, backyard);
+  this.backyard = "no" || backyard;
+  this.houseType = "Tudor";
+}
+
+Tudor.prototype = new Blueprint();
+
+Tudor.prototype.constructor = Tudor; 
+
+
+
 
 
 
@@ -104,14 +119,20 @@ var dad = new Colonial(987);
 
 dad.setHomeOptions({
   totalFloors: 2,
-  pool: "yes"
+  pool: "yes",
+  windowTypes: "ceiling"
 });
 dad.displayHomeOptions();
 
-var mom = new Colonial(2345);
+var mom = new Tudor(2345);
+
+mom.backyard = "yes";
 mom.setHomeOptions({
   totalFloors: 2,
   pool: "yes",
-  totalBedrooms: 3
+  totalBedrooms: 3,
+
 });
 mom.displayHomeOptions();
+
+console.log(mom);
