@@ -4,28 +4,34 @@ function Blueprint( lotID ) {
   // Define a unique ID
   this.lotID = lotID;
 
-  /*
-   * Default parameters that can be over-ridden, but "basement",
-   * livingRoom", "kitchen" and "diningRoom" do not get over-ridden
-   * because all homes have those.
-   */
-  this.basement = this.livingRoom = this.kitchen = this.diningRoom =
-      true;
-  this.totalBedrooms = 1;
-  this.totalBathrooms = 1.5;
-  this.totalFloors = 1;
-
 }
 
-// Add single home options
+
+/*
+ * Place properties directly onto the Blueprint prototype instead of in
+ * the function because it's more efficient.  "basement", livingRoom",
+ * "kitchen" and "diningRoom" do not get over-ridden because all homes
+ * have those. The others will (probably get over-ridden).
+ */
+Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.prototype.kitchen = Blueprint.prototype.diningRoom =
+      true;
+
+Blueprint.prototype.squareFeet = 1000;
+Blueprint.prototype.totalBedrooms = 1;
+Blueprint.prototype.totalBathrooms = 1.5;
+Blueprint.prototype.totalFloors = 1;
+
+
+// Set single home options
 Blueprint.prototype.setHomeOptions = function( config ) {
+
   config = config || {};
   this.counterTops = config.counterTops === undefined ? "formica" : config.counterTops;
-  this.squareFeet = config.squareFeet === undefined ? 1800 : config.squareFeet;
   this.floorType = config.floorType === undefined ? "tile" : config.floorType;
   this.pool = config.pool === undefined ? "no" : config.pool;
 
   // Let some of the defaults in the Blueprint "class" be overridden
+  this.squareFeet = config.squareFeet || this.squareFeet;
   this.totalBedrooms = config.totalBedrooms || this.totalBedrooms;
   this.totalBathrooms = config.totalBathrooms || this.totalBathrooms;
   this.totalFloors = config.totalFloors || this.totalFloors;
@@ -33,6 +39,7 @@ Blueprint.prototype.setHomeOptions = function( config ) {
   return this; // Make this method chainable, yo!!
 
 }
+
 
 // Display home options on index.html
 Blueprint.prototype.displayHomeOptions = function() {
@@ -44,7 +51,9 @@ Blueprint.prototype.displayHomeOptions = function() {
       
   /*
    * Add a Bootstrap column class to each <article> for RWD purposes.
-   * This will build a responsive 3-column layout.
+   * This will build a responsive 3-column layout.Also, give the
+   * <article> a minimum height of 300 pixels so the colums lay out
+   * neatly
    */   
   $(article).attr({
     "class": "col-md-4",
@@ -74,6 +83,20 @@ Blueprint.prototype.displayHomeOptions = function() {
   
 }
 
+
+// Bungalow: a class that inherits from the Blueprint "class"
+function Bungalow ( lotID ) {
+  this.base = Blueprint;
+  this.base( lotID );
+  this.houseType = "Bungalow";
+  this.price = "$125,000+";
+}
+
+Bungalow.prototype = new Blueprint();
+Bungalow.prototype.constructor = Bungalow;
+
+
+// Colonial: a class that inherits from the Blueprint "class"
 function Colonial ( lotID, windowTypes ) {
   this.base = Blueprint;
   this.base( lotID, windowTypes );
@@ -87,6 +110,7 @@ Colonial.prototype = new Blueprint();
 Colonial.prototype.constructor = Colonial;
 
 
+// Tudor: a class that inherits from the Blueprint "class"
 function Tudor ( lotID, backyard ) {
   this.base = Blueprint;
   this.base( lotID, backyard );
@@ -100,14 +124,31 @@ Tudor.prototype = new Blueprint();
 Tudor.prototype.constructor = Tudor; 
 
 
+// Mansion: a class that inherits from the Colonial "class"
+function Mansion ( lotID, windowTypes ) {
+  this.base = Colonial;
+  this.base( lotID, windowTypes );
+  this.windowTypes = windowTypes || "Floor-to-ceiling";
+  this.jacuzzi = "yes";
+  this.houseType = "Mansion";
+  this.price = "$1,000,000+";
+  this.totalFloors = 5;
+  this.pool = "yes";
+}
+
+Mansion.prototype = new Colonial();
+Mansion.prototype.constructor = Mansion;
 
 
 
 
-var kai = new Blueprint(542);
-kai.setHomeOptions({
-  totalBedrooms: 5
-});
+
+console.time("call");
+var kai = new Bungalow(542);
+console.timeEnd("call");
+
+
+kai.setHomeOptions();
 kai.displayHomeOptions();
 
 var niko = new Colonial(20);
@@ -130,4 +171,6 @@ mom.setHomeOptions({
 });
 mom.displayHomeOptions();
 
-console.log(mom);
+
+var max = new Mansion(867);
+max.setHomeOptions().displayHomeOptions();
