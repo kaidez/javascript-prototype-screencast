@@ -14,12 +14,12 @@ function Blueprint( lotID ) {
   this.totalBedrooms = 1;
   this.totalBathrooms = 1.5;
   this.totalFloors = 1;
+
 }
 
 // Add single home options
 Blueprint.prototype.setHomeOptions = function( config ) {
   config = config || {};
-  this.price = config.price || "100,000+";
   this.counterTops = config.counterTops === undefined ? "formica" : config.counterTops;
   this.squareFeet = config.squareFeet === undefined ? 1800 : config.squareFeet;
   this.floorType = config.floorType === undefined ? "tile" : config.floorType;
@@ -46,35 +46,32 @@ Blueprint.prototype.displayHomeOptions = function() {
    * Add a Bootstrap column class to each <article> for RWD purposes.
    * This will build a responsive 3-column layout.
    */   
-  article.setAttribute("class", "col-md-4");
+  $(article).attr({
+    "class": "col-md-4",
+    style: "min-height: 300px;"
+  });
 
   for ( homeOption in this ) {
 
     if ( typeof this[homeOption] !== "function" && typeof this[homeOption] !== "boolean" ) {
       if ( homeOption === "lotID" ) {
-        var homeHeader = document.createElement("h2"),
-            lotNum = "home-" + this[homeOption],
-            homeHeaderID = lotNum + "-ID";
-
+        var homeHeader = document.createElement("h2");
         homeHeader.innerHTML = "House#: " + this[homeOption];
         article.appendChild(homeHeader);
-        article.setAttribute("id", homeHeaderID);
       } else {
-        var listID = String(homeOption) + "-list-" + lotNum;
         li = document.createElement("li");
-        $(li).attr("id", listID);
         ul.appendChild(li);
         li.innerHTML = homeOption + ": " + this[homeOption];
       }
     }
-
+    
     article.appendChild(ul); // Put <ul> in <article>
     frag.appendChild(article); // Put <article> in document fragment
     allHomes.appendChild(frag); // Put document fragment in "#allHomes"
   }
 
   return this; // Make this method chainable, yo!!
-
+  
 }
 
 function Colonial ( lotID, windowTypes ) {
@@ -82,22 +79,24 @@ function Colonial ( lotID, windowTypes ) {
   this.base( lotID, windowTypes );
   this.windowTypes = windowTypes || "Double pane";
   this.houseType = "Colonial";
+  this.price = "$250,000+";
+  this.totalFloors = 2;
 }
 
 Colonial.prototype = new Blueprint();
-
 Colonial.prototype.constructor = Colonial;
 
 
 function Tudor ( lotID, backyard ) {
   this.base = Blueprint;
-  this.base( lotID, backyard);
-  this.backyard = "no" || backyard;
+  this.base( lotID, backyard );
+  this.backyard = backyard || "no";
   this.houseType = "Tudor";
+  this.price = "$150,000+";
+  this.totalFloors = 3;
 }
 
 Tudor.prototype = new Blueprint();
-
 Tudor.prototype.constructor = Tudor; 
 
 
@@ -113,23 +112,16 @@ kai.displayHomeOptions();
 
 var niko = new Colonial(20);
 niko.setHomeOptions({
-  totalFloors: 2,
   pool: "yes"
 });
 niko.displayHomeOptions();
 
-var dad = new Colonial(987);
+var dad = new Tudor(987, "yes");
 
-dad.setHomeOptions({
-  totalFloors: 2,
-  pool: "yes",
-  windowTypes: "ceiling"
-});
 dad.displayHomeOptions();
 
 var mom = new Tudor(2345);
 
-mom.backyard = "yes";
 mom.setHomeOptions({
   totalFloors: 2,
   pool: "yes",
