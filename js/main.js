@@ -86,8 +86,7 @@ Blueprint.prototype.displayHomeOptions = function() {
 
 // Bungalow: a class that inherits from the Blueprint "class"
 function Bungalow ( lotID ) {
-  this.base = Blueprint;
-  this.base( lotID );
+  Blueprint.call(this, lotID );
   this.houseType = "Bungalow";
   this.price = "$125,000+";
 }
@@ -96,10 +95,11 @@ Bungalow.prototype = new Blueprint();
 Bungalow.prototype.constructor = Bungalow;
 
 
+
+
 // Colonial: a class that inherits from the Blueprint "class"
 function Colonial ( lotID, windowTypes ) {
-  this.base = Blueprint;
-  this.base( lotID, windowTypes );
+  Blueprint.call(this, lotID, windowTypes );
   this.windowTypes = windowTypes || "Double pane";
   this.houseType = "Colonial";
   this.price = "$250,000+";
@@ -112,8 +112,7 @@ Colonial.prototype.constructor = Colonial;
 
 // Tudor: a class that inherits from the Blueprint "class"
 function Tudor ( lotID, backyard ) {
-  this.base = Blueprint;
-  this.base( lotID, backyard );
+  Blueprint.call( lotID, backyard );
   this.backyard = backyard || "no";
   this.houseType = "Tudor";
   this.price = "$150,000+";
@@ -126,8 +125,7 @@ Tudor.prototype.constructor = Tudor;
 
 // Mansion: a class that inherits from the Colonial "class"
 function Mansion ( lotID, windowTypes ) {
-  this.base = Colonial;
-  this.base( lotID, windowTypes );
+  Colonial.call( lotID, windowTypes );
   this.windowTypes = windowTypes || "Floor-to-ceiling";
   this.jacuzzi = "yes";
   this.houseType = "Mansion";
@@ -141,12 +139,7 @@ Mansion.prototype.constructor = Mansion;
 
 
 
-
-
-console.time("call");
-var kai = new Bungalow(542);
-console.timeEnd("call");
-
+var kai = new Bungalow(987);
 
 kai.setHomeOptions();
 kai.displayHomeOptions();
