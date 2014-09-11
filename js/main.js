@@ -52,7 +52,7 @@ Blueprint.prototype.displayHomeOptions = function() {
   /*
    * Add a Bootstrap column class to each <article> for RWD purposes.
    * This will build a responsive 3-column layout.Also, give the
-   * <article> a minimum height of 300 pixels so the colums lay out
+   * <article> a minimum height of 300 pixels so the columns lay out
    * neatly
    */   
   $(article).attr({
@@ -167,3 +167,4 @@ mom.displayHomeOptions();
 
 var max = new Mansion(867);
 max.setHomeOptions().displayHomeOptions();
+
