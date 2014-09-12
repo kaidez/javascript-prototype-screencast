@@ -18,6 +18,8 @@ But let's get to the first part...
 
 So...what? Are? Prototypes in JavaScript?
 
-The definition in the official EcmaScript documentation is actually pretty good: A prototype is an "object that provides shared properties for other objects."
+A protoype is a property of an object and as it turns outs, a prototype is actually an object. Prototypes contain all the object's properties.
 
-To expand on that, most of the
+So for example: in this screencast, I'll be creating a function that represents the blueprint of a house (and as a reminder: a function is also an object). That blueprint function will contain properties that describe things like how many bedrooms and bathrooms the house has, and a few methods, like, there will be a method that displays all the house information on a web page.
+
+These properties and methods will live inside our function's prototype property. And the great thing about this is, it allows us to simulate classical inheritance in JavaScript.
