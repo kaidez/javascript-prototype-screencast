@@ -6,23 +6,27 @@
 
 // }
 var Blueprint = {
-  basement: true,
-  livingRoom: true,
-  kitchen: true,
-  diningRoom: true,
-  squareFeet: 1000,
-  totalBedrooms: 1,
-  totalBathrooms: 1.5,
-  totalFloors: 1,
+
+
+
+  init: function ( totalFloors ) {
+  	this.totalFloors = totalFloors;
+  	this.colors = {};
+
+  	return this;
+  },
+
+  totalFloors: "",
   colors: {}
+
 };
 
-var bungalow = Object.create(Blueprint);
+var bungalow = Object.create(Blueprint).init(546354);
 bungalow.totalFloors = 10;
 bungalow.colors.home = "red"
 
 
-var colonial = Object.create(Blueprint);
+var colonial = Object.create(Blueprint).init(345);
 colonial.totalFloors = 4;
 colonial.colors.home = "blue"
 
