@@ -22,4 +22,4 @@ A protoype is a property of an object and as it turns outs, a prototype is actua
 
 So for example: in this screencast, I'll be creating a function that represents the blueprint of a house (and as a reminder: a function is also an object). That blueprint function will contain properties that describe things like how many bedrooms and bathrooms the house has, and a few methods, like, there will be a method that displays all the house information on a web page.
 
-These properties and methods will live inside our function's prototype property. And the great thing about this is, it allows us to simulate classical inheritance in JavaScript.
+These properties and methods will live inside the function's prototype property. And the great thing about this is, it allows us to simulate classical inheritance in JavaScript.
