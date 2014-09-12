@@ -10,8 +10,14 @@ Also, with web components (which are really really REALLY new at the time I'm re
 
 LOTS of the documentation around this that I've seen is written in a way that assumes that you understand how prototypal inheritance works...not all of it, but lots of it. So I wanted to do this screencast to fill in the blanks for things like that.
 
-Now, this screencast is broken down into 3 parts: the first part is a brief walk through of what prototypes are, the second part is going through the code, and the third part is a really quick walk-through of some good learning resources about prototypes. And let's get to the first part...
+Now, this screencast is broken down into 3 parts: the first part is a brief walk through of what prototypes are, the second part is going through the code, and the third part is a really quick walk-through of some good learning resources about prototypes. 
+
+And I should point out that I'm assuming you understand what variables, arrays and functions are in JavaScript as I won't be defining those.
+
+But let's get to the first part...
 
 So...what? Are? Prototypes in JavaScript?
 
-The definition in the EcmaScript documentation is actually pretty good: A prototype is an "object that provides shared properties for other objects."
+The definition in the official EcmaScript documentation is actually pretty good: A prototype is an "object that provides shared properties for other objects."
+
+To expand on that, most of the
