@@ -28,4 +28,10 @@ I want to take a moment and point out that JavaScript was purposely built withou
 
 But JavaScript can still do inheritance stuff...it just does it with prototypes. So in class-based languages, you create a class first, then create an instance of that class. And the instance will have all the properties and methods of that class.
 
-But in JavaScript, you create what's called a constructor function first, then create an instance object of that function using the new keyword.
+But in JavaScript, you create what's called a constructor function first, then create an instance of that function using JavaScript's new keyword. And the instance function will have all the properties and methods of that constructor function.
+
+In JavaScript, pretty much everything is an object, including the constructor and instance functions we just talked about. So in other words, objects are inheriting from other objects...and that's the textbook definition of a prototypal language.
+
+This sceencast will be focusing on the old way to do prototypal inheritance as it's defined in the the ECMAScript 3 spec.  EcmaScript 5 uses the Object.create() method to do prototypes and ECMAScript 6 does it with an actual class keyword. There's a big push to be using the ES5 and ES6 methods in production code and I agree with that.
+
+But if you're learning prototypes for the first time, then I think it's best to learn them the old ways first before moving onto the new waysw
