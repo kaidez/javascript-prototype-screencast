@@ -62,4 +62,8 @@ The most IMPORTANT piece of code on this page is the section tag that starts on 
 
 This section tag here is the where it will get loaded into.
 
-The rest of the code is pretty basic.
+The rest of the code is pretty basic....I'm using Twitter Bootstrap to just so I can make my page responsive very easily, and I've got this headerMargin class in this style tag here...it's just to add some padding to the header here on line 15. 
+
+The header has Bootstrap's jumbotron class and that press up to the top of the page...this headerMargin class here prevents that.
+
+And at the bottom of the page is a reference to jquery...we're going to use that a little bit.  And below that is main.js and this is the spot where we'll add the our code, and let's peek at that.
