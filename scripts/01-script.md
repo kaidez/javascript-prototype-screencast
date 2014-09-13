@@ -40,4 +40,4 @@ I should also point out that even though JavaScript doesn't have classes, people
 
 So, what will I be doing in this screencast...
 
-I'll be using JavaScript to display information about various types of homes.  I'll create a "Blueprint" constructor function (or a Blueprint "class") 
+I'll be using JavaScript to display information about various types of homes.  I'll create a "Blueprint" constructor function (or a Blueprint "class") and it will have various properties and methods attached to it.
