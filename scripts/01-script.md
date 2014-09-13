@@ -51,3 +51,5 @@ The things that I can override are already-existing properties like the bedrooms
 My second method will display all these home options on a web page. It will build some web page elements in browser memory like ul and li tags, load the home option information into these tags, and then place them on the page.
 
 All of this will be done off-DOM using JavaScript methods like createElement and createDocumentFragment. Shameless-self promotion: to learn more about create page elements off-DOM, see my previous screencast on the subject via link you see here.
+
+Now the end 
