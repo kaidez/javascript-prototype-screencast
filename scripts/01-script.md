@@ -36,8 +36,11 @@ This screencast will be focusing on the old way to do prototypal inheritance as 
 
 But if you're learning prototypes for the first time, then I think it's best to learn them the old ways first before moving onto the new ways. And just a quick note: ES6 may be using a "class" keyword, but it's still using JS prototypes behind the scenes...it's just abstracting it.
 
-I should also point out that even though JavaScript doesn't have classes, people talk about the language as if it has them anyway, and I'll be doing that a lot in this screencast. That constructor function I just mentioned? I'll be referring to it as a class.
+I should also point out that even though JavaScript doesn't have classes, people talk about the language as if it has them anyway, and I'll be doing that a lot in this screencast. That constructor function I just mentioned, for example? I'll be referring to it as a class.
 
 So, what will I be doing in this screencast...
 
-I'll be using JavaScript to display information about various types of homes.  I'll create a "Blueprint" constructor function (or a Blueprint "class") and it will have various properties and methods attached to it.
+
+I'll be using JavaScript to display information about various types of homes.  I'll create a "Blueprint" constructor function (or a Blueprint "class") that represents and it will have various properties and methods attached to it.
+
+This Blueprint class
