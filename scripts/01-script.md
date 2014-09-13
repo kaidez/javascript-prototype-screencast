@@ -22,4 +22,8 @@ A protoype is a property of an object and as it turns outs, a prototype is actua
 
 So for example: in this screencast, I'll be creating a function that represents the blueprint of a house (and as a reminder: a function is also an object). That blueprint function will contain properties that describe things like how many bedrooms and bathrooms the house has, and a few methods, like, there will be a method that displays all the house information on a web page.
 
-These properties and methods will live inside the function's prototype property. And the great thing about this is, it allows us to simulate classical inheritance in JavaScript.
+These properties and methods live inside the function's prototype property and as a result of this, we can simulate classical inheritance in JavaScript.  Which is good because...JavaScript doesn't have classes like Java or C does.
+
+I want to take a moment and point out that JavaScript was purposely built without classes.  Brendan Eich, the creator of JavaScript, has said that he wanted the language to be easy to understand so developers of all levels could pick it up easy. So things like classes and interface implementations were purposely left out.
+
+But JavaScript can still do inheritance stuff...it just does it with prototypes. So in class-based languages, you create a class
