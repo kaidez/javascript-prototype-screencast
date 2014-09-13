@@ -36,11 +36,16 @@ This screencast will be focusing on the old way to do prototypal inheritance as 
 
 But if you're learning prototypes for the first time, then I think it's best to learn them the old ways first before moving onto the new ways. And just a quick note: ES6 may be using a "class" keyword, but it's still using JS prototypes behind the scenes...it's just abstracting it.
 
-I should also point out that even though JavaScript doesn't have classes, people talk about the language as if it has them anyway, and I'll be doing that a lot in this screencast. That constructor function I just mentioned, for example? I'll be referring to it as a class.
+I should also point out that even though JavaScript doesn't have classes, people talk about the language as if it has them anyway, and I'll be doing that a lot in this screencast. That constructor function I just mentioned, for example? I'll be referring to it as a class along with some other constructor functions.
 
-So, what will I be doing in this screencast...
+So, what else will I be doing in this screencast...
 
+I'll be using JavaScript to display information about various types of homes.  I'll begin by creating a "Blueprint" constructor function (or a Blueprint "class") that will represent the basic design of a house.
 
-I'll be using JavaScript to display information about various types of homes.  I'll create a "Blueprint" constructor function (or a Blueprint "class") that represents and it will have various properties and methods attached to it.
+So a house has floors and bedrooms bathrooms and so on and so on. All those things will be defined as properties of the Blueprint class.
 
-This Blueprint class
+This class will also have 2 methods: the first one will configure various home options. The will be able to define whether or not a home has a pool, what type of floors does it have and few other things, and I'll also be able to override some options. 
+
+The things that I can override are already-existing properties like the bedrooms and bathrooms I just mentioned.  I'll be able to do all this with the first method I create.
+
+My second method will display all these home options on a web page.   and one that displays these options on a web page. 
