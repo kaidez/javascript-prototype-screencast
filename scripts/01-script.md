@@ -26,4 +26,6 @@ These properties and methods live inside the function's prototype property and a
 
 I want to take a moment and point out that JavaScript was purposely built without classes.  Brendan Eich, the creator of JavaScript, has said that he wanted the language to be easy to understand so developers of all levels could pick it up easy. So things like classes and interface implementations were purposely left out.
 
-But JavaScript can still do inheritance stuff...it just does it with prototypes. So in class-based languages, you create a class
+But JavaScript can still do inheritance stuff...it just does it with prototypes. So in class-based languages, you create a class first, then create an instance of that class. And the instance will have all the properties and methods of that class.
+
+But in JavaScript, you create what's called a constructor function first, then create an instance object of that function using the new keyword.
