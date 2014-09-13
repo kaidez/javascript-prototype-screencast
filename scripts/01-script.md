@@ -42,10 +42,12 @@ So, what else will I be doing in this screencast...
 
 I'll be using JavaScript to display information about various types of homes.  I'll begin by creating a "Blueprint" constructor function (or a Blueprint "class") that will represent the basic design of a house.
 
-So a house has floors and bedrooms bathrooms and so on and so on. All those things will be defined as properties of the Blueprint class.
+So a house has bedrooms and bathrooms and floors and so on and so on. All those things will be defined as properties of the Blueprint class.
 
 This class will also have 2 methods: the first one will configure various home options. The will be able to define whether or not a home has a pool, what type of floors does it have and few other things, and I'll also be able to override some options. 
 
 The things that I can override are already-existing properties like the bedrooms and bathrooms I just mentioned.  I'll be able to do all this with the first method I create.
 
-My second method will display all these home options on a web page.   and one that displays these options on a web page. 
+My second method will display all these home options on a web page. It will build some web page elements in browser memory like ul and li tags, load the home option information into these tags, and then place them on the page.
+
+All of this will be done off-DOM using JavaScript methods like createElement and createDocumentFragment. Shameless-self promotion: to learn more about create page elements off-DOM, see my previous screencast on the subject via link you see here.
