@@ -1,11 +1,15 @@
 function Blueprint(lotID) {
 
-  // Define a unique ID
+  // Define a unique ID...the only parameter
   this.lotID = lotID;
+  
+  // Common parts of a house...this won't ever change
+  this.basement = true;
+  this.livingRoom = true;
+  this.kitchen = true;
+  this.diningRoom = true;
 
-  this.basement = this.livingRoom = this.kitchen = this.diningRoom =
-      true;
-
+  // Common parts of a house...this won't ever change
   this.squareFeet = 1000;
   this.totalBedrooms = 1;
   this.totalBathrooms = 1.5;
