@@ -1,0 +1,3 @@
+function Blueprint( lotID ) {
+  // code will go here...
+}
