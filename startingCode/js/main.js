@@ -1,7 +1,7 @@
-function Blueprint(lotID) {
+function Blueprint(homeID) {
 
   // Define a unique ID...the only parameter
-  this.lotID = lotID;
+  this.homeID = homeID;
   
   // Common parts of a house...this won't ever change
   this.basement = true;
