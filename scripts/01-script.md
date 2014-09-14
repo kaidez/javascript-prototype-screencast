@@ -70,4 +70,6 @@ And at the bottom of the page is a reference to jquery...we're going to use that
 
 So as I said, the Blueprint class that represents the basic design of a house. And this class will be in the form of constructor function.
 
-So I'll create a constructor function called Blueprint...and this will take just one parameter called lotID.
+So I'll create a constructor function called Blueprint...and this will take just one parameter called lotID. So I'll set that parameter up.
+
+And it also means that I have to attach the parameter to the context of this function, so I'll type...this-dot-lot-id = lotID.
