@@ -74,4 +74,12 @@ So I'll create a constructor function called Blueprint...and this will take just
 
 And it also means that I have to attach the parameter to the context of this function, so I'll type...this-dot-home-id = homeID.
 
-Again in JavaScript, the "this" keyword refers to the context...in other words, it's referring to current function it's dealing with and I'll explain it further. But that's easier to do if I add some more properties first.
+Again in JavaScript, the "this" keyword refers to the context...in other words, it's referring to current function it's dealing with and I'll explain it further. But that's easier to do if I add some more properties first and define them against "this".
+
+So I'll start by adding some common home properties...things that all homes have.  And these aren't going to change...so every house has a living room so I'll define that using "this"....this-dot-living room = living room.
+
+And I'll do the same thing for kitchen...
+
+And I'll do the same thing for dining room...
+
+And I'll do the same thing for basement.
