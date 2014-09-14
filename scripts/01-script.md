@@ -66,7 +66,7 @@ The rest of the code is pretty basic....I'm using Twitter Bootstrap to just so I
 
 The header has Bootstrap's jumbotron class and that press up to the top of the page...this headerMargin class here prevents that.
 
-And at the bottom of the page is a reference to jquery...we're going to use that a little bit.  And below that is a reference qmain.js and this is the spot where we'll build the our code, so let's go there and start building.
+And at the bottom of the page is a reference to jQuery...we're going to use that a little bit.  And below that is a reference qmain.js and this is the spot where we'll build the our code, so let's go there and start building.
 
 So as I said, the Blueprint class that represents the basic design of a house. And this class will be in the form of constructor function.
 
@@ -83,3 +83,11 @@ And I'll do the same thing for kitchen...
 And I'll do the same thing for dining room...
 
 And I'll do the same thing for basement.
+
+And we'll just do a quick review of how the "this" keyword works.
+
+So I'll open index.html in Chrome and then open the browser console and I'll just type "this".
+
+And many, many things get returned here.  These are all the objects and properties that the browser has access to...every, single solitary one.
+
+They're all attached to the browser's global window object.
