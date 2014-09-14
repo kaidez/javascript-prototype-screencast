@@ -67,3 +67,7 @@ The rest of the code is pretty basic....I'm using Twitter Bootstrap to just so I
 The header has Bootstrap's jumbotron class and that press up to the top of the page...this headerMargin class here prevents that.
 
 And at the bottom of the page is a reference to jquery...we're going to use that a little bit.  And below that is main.js and this is the spot where we'll build the our code, so let's go there and start building.
+
+So as I said, the Blueprint class that represents the basic design of a house. And this class will be in the form of constructor function.
+
+So I'll create a constructor function called Blueprint...and this will take just one parameter called lotID.
