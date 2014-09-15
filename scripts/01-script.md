@@ -1,6 +1,6 @@
 Hello and thanks for checking out my introduction to prototypes screencast, with prototypes being what you use to simulate class inheritance in JavaScript.
 
-I've had a few people that are relatively new to JavaScript ask me what prototypes are. So I wanted to put together this screencast to help those people out.
+I've had one or two people that are relatively new to JavaScript ask me what prototypes are. So I wanted to put together this screencast to help those people out.
 
 I also wanted to share what I learned. All the code you're gonna see in this screencast is the result of my just buckling down for a few days and really hacking prototype code. I've used prototypes before in production code and I understand them. But I wanted to take some time and just focus on them 100 percent so I could really really REALLY understand them.
 
@@ -8,19 +8,19 @@ Plus, with web components (which are really really REALLY new at the time I'm re
 
 LOTS of the documentation around this that I've seen is written in a way that assumes that you understand how prototypal inheritance works...not all of it, but lots of it. So I wanted to do this screencast to fill in the blanks for things like that.
 
-Now, this screencast is broken down into 3 parts: the first part is a brief walk through of what prototypes are, the second part is going through the code, and the third part is a really quick walk-through of some good learning resources about prototypes. 
+Now, this screencast is broken into 3 parts: the first part is a brief walk through of what prototypes are, the second part is going through the code, and the third part is a really quick walk-through of some good learning resources about prototypes. 
 
 And I should point out that I'm assuming you understand what variables, arrays and functions are in JavaScript as I won't be defining those.
 
 But let's get to the first part...
 
-So...what? Are? Prototypes in JavaScript?
+What? Are? Prototypes in JavaScript?
 
-The ES5 documentation provides the best description: a prototype is an "object that provides shared properties for other objects." So, arrays and functions are objects in JavaScript, these objects have properties and methods, these properties and methods exist on the prototype, and that prototype can be shared with other objects.
+The ES5 documentation provides the best description: a prototype is an "object that provides shared properties for other objects." So, arrays & functions are objects in JavaScript, these objects have their own set of properties, these properties exist on the object's prototype, and that prototype can be inherited with other objects.
 
-So in other words, objects are inheriting from other objects...and that's the textbook definition of a prototypal language.
+And objects inheriting from other objects? That's the textbook definition of a prototypal language.
 
-So for example: in this screencast, I'll be creating a function that represents the blueprint of a house (and as a reminder: a function is also an object). That blueprint function will contain properties that describe things like how many bedrooms and bathrooms the house has, and a few methods, like, there will be a method that displays all the house information on a web page.
+So for example: in this screencast, I'll be creating a function that represents the blueprint of a house. That blueprint function will contain properties that describe things like how many bedrooms and bathrooms the house has.  And the function will also have a few methods, like, there will be a method that displays all the house information on a web page.
 
 These properties and methods live inside the function's prototype property and as a result of this, we can share these properties with other functions.
 
@@ -30,11 +30,11 @@ Brendan Eich, the creator of JavaScript, has said that he wanted the language to
 
 In class-based languages, you create a class first, then create an instance of that class. And the instance will have all the properties and methods of that class. Also, classes can inherit properties and methods from other classes.
 
-But in JavaScript, you create what's called a constructor function first, then create an instance of that function using JavaScript's new keyword. And the instance function will have all the properties and methods of that constructor function. And also, constructor functions can inherit from other constructor functions.
+But in JavaScript, you create what's called a constructor function first, then create an instance of that function using JavaScript's new keyword. And the instance function will have all the properties and methods of that constructor function.
 
-This function-to-function inheritance happens by one function pointing directly to the other function's prototype, like we see in the code sample. This, will make more sense as we move through the tutorial.
+Also, constructor functions can inherit from other constructor functions...this happens when one function points directly to the other function's prototype, like we see in the code sample. This, will make more sense as we move through the tutorial.
 
-This screencast will be focusing on the old way to do prototypal inheritance as it's defined in the ECMAScript 3 spec.  ECMAScript 5 uses the Object.Create() method to do prototypes and ECMAScript 6 does it with an actual class keyword. There's a big push to be using the ES5 and ES6 methods in production code and I agree with that.
+It's important to note This screencast will be focusing on the old way to do prototypal inheritance as it's defined by older versions of JavaScript.  The newer versions do it differently...ECMAScript 5 uses the Object.Create() method to do prototypes and ECMAScript 6 does it with an actual class keyword. There's a big push to be using the ES5 and ES6 methods in production code and I agree with that.
 
 But if you're learning prototypes for the first time, then I think it's best to learn them the old ways first before moving onto the new ways. And just a quick note: ES6 may be using a "class" keyword, but it's still using JS prototypes behind the scenes...it's just abstracting it.
 
@@ -56,7 +56,7 @@ All of this will be done off-DOM using JavaScript methods like createElement and
 
 Now the end-result of all this will be what you see on the screen here. We have data about some houses...how many bedrooms it has, how much the homes cost...does it have a pool.
 
-All this data is being dynamically generated by JavaScript...It hasn't been hand-coded onto the page or fed in from a database somewhere. It's been generated using the properties and methods we just discussed and prototypes are playing a big role in all this.
+All this data is being dynamically generated by JavaScript...it hasn't been hand-coded onto the page or loaded in from a database somewhere. It's been generated using the methods we just discussed, and prototypes are playing a big role in all this.
 
 So let's take a look at the code...starting with the HTML...
 
@@ -66,9 +66,9 @@ This section tag here is the where it will get loaded into.
 
 The rest of the code is pretty basic....I'm using Twitter Bootstrap to just so I can make my page responsive very easily, and I've got this headerMargin class in this style tag here...it's just to add some padding to the header here on line 15. 
 
-The header has Bootstrap's jumbotron class and that press up to the top of the page...this headerMargin class here prevents that.
+The header has Bootstrap's jumbotron class and that presses up to the top of the page...this headerMargin class here prevents that.
 
-And at the bottom of the page is a reference to jQuery...we're going to use that a little bit.  And below that is a reference qmain.js and this is the spot where we'll build the our code, so let's go there and start building.
+And at the bottom of the page is a reference to jQuery...we're going to use that a little bit.  And below that is a reference to main.js and this is the spot where I'll build the my prototype code, so let's go there and start building.
 
 So as I said, the Blueprint class that represents the basic design of a house. And this class will be in the form of constructor function.
 
