@@ -14,8 +14,4 @@ function Blueprint(homeID) {
   this.totalBedrooms = 1;
   this.totalBathrooms = 1.5;
   this.totalFloors = 1;
-
-  console.log(this);
 }
-
-var test = new Blueprint(435);
