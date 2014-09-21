@@ -4,10 +4,7 @@ function Blueprint(homeID) {
   this.homeID = homeID;
   
   // Common parts of a home...these won't ever change
-  this.basement = true;
-  this.livingRoom = true;
-  this.kitchen = true;
-  this.diningRoom = true;
+  this.basement = this.livingRoom = this.kitchen = this.diningRoom = true;
 
   // Configurable parts of a home...these will change
   this.squareFeet = 1000;
@@ -15,3 +12,5 @@ function Blueprint(homeID) {
   this.totalBathrooms = 1.5;
   this.totalFloors = 1;
 }
+
+var test = new Blueprint(43252345);
