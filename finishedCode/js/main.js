@@ -2,7 +2,7 @@ function Blueprint(homeID) {
 
   // Define a unique ID...the only parameter
   this.homeID = homeID;
-  
+
   // Common parts of a home...these won't ever change
   this.basement = true;
   this.livingRoom = true;
