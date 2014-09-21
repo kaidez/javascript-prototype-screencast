@@ -48,13 +48,13 @@ Blueprint.prototype.displayHomeOptions = function() {
       frag = document.createDocumentFragment(),
       article = document.createElement("article"),
       ul = document.createElement("ul");
-      
+
   /*
    * Add a Bootstrap column class to each <article> for RWD purposes.
    * This will build a responsive 3-column layout.Also, give the
    * <article> a minimum height of 300 pixels so the columns lay out
    * neatly
-   */   
+   */
   $(article).attr({
     "class": "col-md-4",
     style: "min-height: 300px;"
@@ -73,14 +73,14 @@ Blueprint.prototype.displayHomeOptions = function() {
         li.innerHTML = homeOption + ": " + this[homeOption];
       }
     }
-    
+
     article.appendChild(ul); // Put <ul> in <article>
     frag.appendChild(article); // Put <article> in document fragment
     allHomes.appendChild(frag); // Put document fragment in "#allHomes"
   }
 
   return this; // Make this method chainable, yo!!
-  
+
 }
 
 
@@ -120,7 +120,7 @@ function Tudor ( lotID, backyard ) {
 }
 
 Tudor.prototype = new Blueprint();
-Tudor.prototype.constructor = Tudor; 
+Tudor.prototype.constructor = Tudor;
 
 
 // Mansion: a class that inherits from the Colonial "class"
@@ -167,4 +167,3 @@ mom.displayHomeOptions();
 
 var max = new Mansion(867);
 max.setHomeOptions().displayHomeOptions();
-
