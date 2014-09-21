@@ -3,23 +3,19 @@ function Blueprint( lotID ) {
 
   // Define a unique ID
   this.lotID = lotID;
-
 }
 
-
 /*
- * Place properties directly onto the Blueprint prototype instead of in
- * the function because it's more efficient.  "basement", livingRoom",
- * "kitchen" and "diningRoom" do not get over-ridden because all homes
- * have those. The others will (probably get over-ridden).
+ * Place properties that can change directly onto the Blueprint
+ * prototype instead of in th function because it's more efficient.
  */
-Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.prototype.kitchen = Blueprint.prototype.diningRoom =
-      true;
 
 Blueprint.prototype.squareFeet = 1000;
 Blueprint.prototype.totalBedrooms = 1;
 Blueprint.prototype.totalBathrooms = 1.5;
 Blueprint.prototype.totalFloors = 1;
+Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.prototype.kitchen = Blueprint.prototype.diningRoom =
+      true;
 
 
 // Set single home options
