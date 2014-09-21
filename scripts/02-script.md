@@ -11,3 +11,7 @@ And this is valid JavaScript...it means the same thing as I had here before.  An
 We've added all these properties directly inside the Blueprint function and we can do the same thing for the methods, but code generally runs faster if you add them directly to the prototype instead. And we can do that by copying everything here...except for lotID
 
 ...and changing all the "this" keywords to...Blueprint-dot-prototype.
+
+And now onto the functions...so the first function will set individual house options. So I'll create a function called setOptions and place it directly onto the prototype...and that code will look like this.
+
+Now, I could pass a paramter here like we did up here...with lotID. And I could set things up to have as many parameters as I want, but that tends to get messy.  
