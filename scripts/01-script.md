@@ -1,32 +1,24 @@
 Hello and thanks for checking out my introduction to prototypes screencast, with prototypes being what you use to simulate class inheritance in JavaScript.
 
-I've had one or two people that are relatively new to JavaScript ask me what prototypes are. So I wanted to put together this screencast to help those people out.
+All the code you're gonna see in this screencast is the result of my just buckling down for a few days and really hacking prototype code. I've used prototypes before in production code and I understand them. But I wanted to take some time and just focus on them 100 percent so I could really really REALLY understand them.
 
-I also wanted to share what I learned. All the code you're gonna see in this screencast is the result of my just buckling down for a few days and really hacking prototype code. I've used prototypes before in production code and I understand them. But I wanted to take some time and just focus on them 100 percent so I could really really REALLY understand them.
+I've also had one or two JavaScript newbies ask me what prototypes are. So I wanted to put together this screencast to help those people out. PLUS...in web components (which are really really REALLY new at the time I'm recording this), prototypes play a big role.
 
-Plus, with web components (which are really really REALLY new at the time I'm recording this), prototypes play a big role. If you use web components to create a custom element, you can use prototypes to inherit properties of already existing elements like button and span tags.
+If you use web components to create a custom element, you can use prototypes to inherit properties of already existing elements like button and span tags. Lots of web components documentation is written with the assumption that the reader automatically understands that, so this screencast hopes to fill in any blanks that come up there.
 
-LOTS of the documentation around this that I've seen is written in a way that assumes that you understand how prototypal inheritance works...not all of it, but lots of it. So I wanted to do this screencast to fill in the blanks for things like that.
-
-Now, this screencast is broken into 3 parts: the first part is a brief walk through of what prototypes are, the second part is going through the code, and the third part is a really quick walk-through of some good learning resources about prototypes. 
+Now, this screencast is broken into 3 parts: the first part is a brief walk through of what prototypes are, the second part is going through the code, and the third part is a really quick walk-through of some good learning resources about prototypes.
 
 And I should point out that I'm assuming you understand what variables, arrays and functions are in JavaScript as I won't be defining those.
 
 But let's get to the first part...
 
-What? Are? Prototypes in JavaScript?
+What? Are? JavaScript Prototypes?
 
-The ES5 documentation provides the best description: a prototype is an "object that provides shared properties for other objects." So, arrays & functions are objects in JavaScript, these objects have their own set of properties, these properties exist on the object's prototype, and that prototype can be inherited with other objects.
+Prototypes are properties of objects, and the prototypes THEMSELVES are also objects. The properties are methods and other properties that are preset by the browser, but you can also add custom methods and properties.
 
-And objects inheriting from other objects? That's the textbook definition of a prototypal language.
+JavaScript objects, particulatly functions, can inherit the properties of another object through prototypes. And objects inheriting from other objects? That's the textbook definition of a prototypal language.
 
-So for example: in this screencast, I'll be creating a function that represents the blueprint of a house. That blueprint function will contain properties that describe things like how many bedrooms and bathrooms the house has.  And the function will also have a few methods, like, there will be a method that displays all the house information on a web page.
-
-These properties and methods live inside the function's prototype property and as a result of this, we can share these properties with other functions.
-
-This means that we can simulate classical inheritance in JavaScript, which is why you want to use prototypes.  And this is good because...JavaScript purposely doesn't have classes like Java or C does.
-
-Brendan Eich, the creator of JavaScript, has said that he wanted the language to be easy to understand so developers of all levels could pick it up easy. So things like classes and all the things that come with it like interface signatures were purposely left out.
+As a result of this, you can simulate classical inheritance in JavaScript and doing that is the MAIN reason why you want to use prototypes.  And this is good because...JavaScript purposely doesn't have classes like Java or C.
 
 In class-based languages, you create a class first, then create an instance of that class. And the instance will have all the properties and methods of that class. Also, classes can inherit properties and methods from other classes.
 
@@ -46,7 +38,7 @@ I'll be using JavaScript to display information about various types of homes.  I
 
 So a house has bedrooms and bathrooms and floors and so on and so on. All those things will be defined as properties of the Blueprint class.
 
-This class will also have 2 methods: the first one will configure various home options. The will be able to define whether or not a home has a pool, what type of floors does it have and few other things, and I'll also be able to override some options. 
+This class will also have 2 methods: the first one will configure various home options. The will be able to define whether or not a home has a pool, what type of floors does it have and few other things, and I'll also be able to override some options.
 
 The things that I can override are already-existing properties like the bedrooms and bathrooms I just mentioned.  I'll be able to do all this with the first method I create.
 
@@ -64,7 +56,7 @@ The most IMPORTANT piece of code on this page is the section tag that starts on 
 
 This section tag here is the where it will get loaded into.
 
-The rest of the code is pretty basic....I'm using Twitter Bootstrap to just so I can make my page responsive very easily, and I've got this headerMargin class in this style tag here...it's just to add some padding to the header here on line 15. 
+The rest of the code is pretty basic....I'm using Twitter Bootstrap to just so I can make my page responsive very easily, and I've got this headerMargin class in this style tag here...it's just to add some padding to the header here on line 15.
 
 The header has Bootstrap's jumbotron class and that presses up to the top of the page...this headerMargin class here prevents that.
 
