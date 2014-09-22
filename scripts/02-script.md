@@ -2,19 +2,21 @@
 Remove console.log  before you start recording.
 ========================================================================
 
-So I'm going to start building the two methods I discussed...one to configure the home options and another to display them on a page. Before I do, take note that note that I removed both the console.log statement that was inside the Blueprint function but kept the var test instance for now.
+So I'm going to start building the two methods I discussed...one to configure the options for a single home, and another to display them on a page. Before I do, take note that note that I removed both the console.log statement that was inside the Blueprint function but kept the "var test" instance for now.
 
 Also, real quick, I'm going to write shorthand code for the common home properties I wrote in the last movie....like this...string all the properties with equal signs and end things using "true" here.
 
 And this is valid JavaScript...it means the same thing as I had here before.  And we're going to optimize our code here a bit more before we do the function stuff.
 
-We've added all these properties directly inside the Blueprint function and we can do the same thing for the methods, but code generally runs faster if you add them directly to the prototype instead. And we can do that by copying everything here...except for lotID.
+We've added all these properties directly inside the Blueprint function and we COULD do the same thing for the methods, but code like this generally runs faster if you, instead, add the properties and methods directly to the prototype. And we can do that by copying everything here...except for lotID.
 
 ...and changing all the "this" keywords to...Blueprint-dot-prototype.
 
-And now onto the functions...so the first function will set individual house options. So I'll create a function called setOptions and place it directly onto the prototype...and that code will look like this.
+And, onto the functions...so the first function will set individual house options. So I'll create a function called setOptions and place it directly onto the prototype...and that code will look like this.
 
-And I'm gonna pass a parameter called "pool", which will define whether or not the house has a pool. Now, passing params like this...it's fine if I have only 1 or 2 parameters, but if I want more than that (and I do), whoever uses this code will have to enter the params in a specifc order and there's no guarantee that will happen, and if they don't follow the order, errors will happen, so this is messy...
+And for starters, I'm gonna pass a parameter called "pool", which will define whether or not the house has a pool. And just to confirm what this looks like, I'll go to the bottom, and directly below var test, I'll write "test-dot-homeOptions".
+
+Now, passing params like this...it's fine if I have only 1 or 2 parameters, but if I want more than that (and I do), whoever uses this code will have to enter the params in a specific order and there's no guarantee that will happen, and if they don't follow the order, errors will happen, so this is messy...
 
 So to avoid all this, I'm going to have the set things up so the parameters need to be configured in a JavaScript object. So to do that, I'm going to change the parameter to config...and then in the function, I'm going to say config-equals-config-or-an-empty-object.
 
