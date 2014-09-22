@@ -28,6 +28,6 @@ So to recap this line...the config parameter that we're passing here? That's rep
 
 It will be equal to any properties attached to the config parameter (that's represented here)...OR...this is what this double pipe means...it will be returned as an empty object.
 
-But in this case, the empty object thing is really just a best-practice. The truth is, the object will never be empty because we're going to define a lot of default parameters....we'll start that now.
+But in this case, we're just setting up the empty object thing is really just a best-practice. The truth is, the object will never be empty because we're going to define a lot of default parameters....we'll start that now.
 
-So, 
+So,
