@@ -14,4 +14,6 @@ We've added all these properties directly inside the Blueprint function and we c
 
 And now onto the functions...so the first function will set individual house options. So I'll create a function called setOptions and place it directly onto the prototype...and that code will look like this.
 
-And I'm gonna pass a parameter called "pool", which will define whether or not the house has a pool. Now, passing params like this...it's fine if I have only 1 or 2 parameters, but if I want more than that (and I do), this is gonna get messy.
+And I'm gonna pass a parameter called "pool", which will define whether or not the house has a pool. Now, passing params like this...it's fine if I have only 1 or 2 parameters, but if I want more than that (and I do), whoever uses this code will have to enter the params in a specifc order and there's no guarantee that will happen, and if they don't follow the order, errors will happen, so this is messy...
+
+So to avoid all this, I'm going to have the paremetetrs be passed as a config object.
