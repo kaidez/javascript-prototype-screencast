@@ -22,4 +22,12 @@ So I've created what's commonly referred to as an "options object" and, as its n
 
 Now, I've been using the word "options" a lot and that's key. All the different home options I create WILL BE optional...they can be left blank and if they're COMPLETELY blank, that's fine.
 
-We've got the logical OR operator here...this double pipe. ed this will be neater than making people list a bunch of parameters.  to this object in this setOptions function, and they'll be treated as parameters when a function instance is created.
+We've got the logical OR operator here...this double pipe. And if the no parameters are passed, then an empty object will be returned.
+
+So to recap this line...the config parameter that we're passing here? That's represented here.
+
+It will be equal to any properties attached to the config parameter (that's represented here)...OR...this is what this double pipe means...it will be returned as an empty object.
+
+But in this case, the empty object thing is really just a best-practice. The truth is, the object will never be empty because we're going to define a lot of default parameters....we'll start that now.
+
+So, 
