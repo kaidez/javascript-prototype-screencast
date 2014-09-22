@@ -32,4 +32,8 @@ But in this case, we're just setting up the empty object thing is really just a 
 
 So, there's that pool property we just talked about, and we have to attach it to config so it can be passed as a parameter, and we need to make it optional and if it's not filled in, we need to give it a default value so the code for this will be in the form of what's known as a ternary operation and that looks like this...
 
-this.pool-equals-config.pool-triple-equal-sign-undefined-question-mark-no-in-quotes-colon-config.pool. What is this 
+this.pool-equals-config.pool-triple-equal-sign-undefined-question-mark-no-in-quotes-colon-config.pool. What's this code doing?
+
+We're setting this.pool equal to config.pool and from here, config.pool is checking for some things. The triple-equal-sign is a firmer way of checking the value of something...it checks the value as well as the data type...if it's a number or a text string.
+
+And if pool isn't passed as a parameter, it will automatically be given a value of undefined. Then the ternary operation starts.
