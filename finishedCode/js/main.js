@@ -14,7 +14,6 @@ Blueprint.prototype.squareFeet = 1000;
 Blueprint.prototype.totalBedrooms = 1;
 Blueprint.prototype.totalBathrooms = 1.5;
 Blueprint.prototype.totalFloors = 1;
-
 Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.prototype.kitchen = Blueprint.prototype.diningRoom =
       true;
 
