@@ -1,0 +1,6 @@
+npm-debug.log
+*.DS_Store
+*Thumbs.db
+*.localized
+bower_components/
+node_modules/
