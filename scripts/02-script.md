@@ -36,4 +36,6 @@ this.pool-equals-config.pool-triple-equal-sign-undefined-question-mark-no-in-quo
 
 We're setting this.pool equal to config.pool and from here, config.pool is checking for some things. The triple-equal-sign is a firmer way of checking the value of something...it checks the value as well as the data type...if it's a number or a text string.
 
-And if pool isn't passed as a parameter, it will automatically be given a value of undefined. Then the ternary operation starts.
+And if pool isn't passed as a parameter, it will automatically be given a value of undefined. Then the ternary operation starts...that's this question mark.
+
+A ternary operation is a shorter way of running an if/else statement,
