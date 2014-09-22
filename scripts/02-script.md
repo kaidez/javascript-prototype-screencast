@@ -32,4 +32,4 @@ But in this case, we're just setting up the empty object thing is really just a 
 
 So, there's that pool property we just talked about, and we have to attach it to config so it can be passed as a parameter, and we need to make it optional and if it's not filled in, we need to give it a default value so the code for this will be in the form of what's known as a ternary operation and that looks like this...
 
-this.pool-equals-config.pool-triple-equal-sign-undefined-question-mark-no-in-quotes-colon-config.pool.
+this.pool-equals-config.pool-triple-equal-sign-undefined-question-mark-no-in-quotes-colon-config.pool. What is this 
