@@ -17,7 +17,6 @@ Blueprint.prototype.totalFloors = 1;
 Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.prototype.kitchen = Blueprint.prototype.diningRoom =
       true;
 
-
 // Set single home options
 Blueprint.prototype.setHomeOptions = function( pool ) {
   this.pool = pool;
