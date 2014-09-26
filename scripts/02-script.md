@@ -22,17 +22,15 @@ And go back to the browser and refresh my page...and then open up the console. A
 
 Now, passing params like this...it's fine if I have only 1 or 2 parameters, but if I want more than that (and I do), whoever uses this code will have to enter the params in a specific order and there's no guarantee that will happen, and if they don't follow that order, errors will happen, so this is messy...
 
-So to avoid all this, I'm going to have the set things up so the parameters need to be configured in a JavaScript object. And I'll do that by changing the parameter to config...and then in the function, I'm going to say config-equals-config-or-an-empty-object.
+So to avoid all this, I'm going to have the set things up so the parameters need to be configured in a JavaScript object. And I'll do that by changing the pool parameter to config...and then in the function, I'm going to say config-equals-config-or-an-empty-object.
 
-So I've created what's commonly referred to as an "options object" and, as its name implies, it's an "object" that I can add "options" to. What I'll do is create a bunch of different home options in this function, attach them to the config parameter here, and this will allow others to list those options as key/value pairs inside the object when this function is created...much neater.
+So I've created what's commonly referred to as an "options object" and, as its name implies, it's an "object" that I can add "options" to. What I'll do is create a bunch of different home options in this function, attach them to the config parameter here, and this will allow others to list those options as key/value pairs inside the object when they instantite the function...much neater.
 
-Now, I've been using the word "options" a lot and that's key. All the different home options I create WILL BE optional...they can be left blank and if they're COMPLETELY blank, that's fine.
+Now, I've been using the word "options" a lot and that's key. All these home options I've been talking about? They're optional...they can be left blank and if they're, my code will be able to deal with neatly, thanks to logical OR operator here...this double pipe.
 
-We've got the logical OR operator here...this double pipe. And if the no parameters are passed, then an empty object will be returned.
+IT'S saying that, if the no parameters are passed at all, then an empty object will be returned.
 
-So to recap this line...the config parameter that we're passing here? That's represented here.
-
-It will be equal to any properties attached to the config parameter (that's represented here)...OR...this is what this double pipe means...it will be returned as an empty object.
+So to recap this line...the config parameter here? That's represented inside the function here and I'll make sure to attach all my properties to it. If NO properties are attached to it, config will be returned as an empty object.
 
 But in this case, we're just setting up the empty object thing is really just a best-practice. The truth is, the object will never be empty because all our parameters will have default values that we're now going to start setting up...
 
