@@ -38,6 +38,8 @@ So, there's that pool property we just talked about, and we have to attach it to
 
 this.pool-equals-opts.pool-triple-equal-sign-undefined-question-mark-no-in-quotes-colon-opts.pool. What's this code doing?
 
-A ternary operation is a shorter way of running an if/else statement. So what's happening is, I'm setting this.pool equal to opts.pool and from here, opts.pool is checking for some things. The triple-equal-sign is a firmer way of checking the value of something.
+A ternary operation is a shorter way of running an if/else statement. So what's happening is, this.pool is checking to see what opts.pool is equal to.
 
-And if pool isn't passed as a parameter, it will automatically be given a value of undefined. Then the ternary operation starts...that's this question mark.
+Now, if I DON'T give pool a value, JavaScript will automatically give it a value of undefined....that's how JavaScript works. And as far as this code goes, the question mark here is checking to see if that's true, and if it is, it will automatically give it a value of "false".
+
+So, the question mark is the "if" statement part of the code, but the full colon here is the "else" part.
