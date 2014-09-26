@@ -24,7 +24,7 @@ Blueprint.prototype.setHomeOptions = function( pool ) {
 }
 
 var test = new Blueprint(4564);
-test.setHomeOptions("yes");
+test.setHomeOptions(true);
 
 //
 // // Display home options on index.html
