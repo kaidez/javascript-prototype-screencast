@@ -14,7 +14,9 @@ And I'll do that by copying everything here...except for lotID...and changing al
 
 And, onto the functions...so the first function will set individual options for each home. So I'll create a function called setOptions and place it directly onto the prototype...and that code will look like this.
 
-And for starters, I'm gonna pass a parameter called "pool", which will define whether or not the house has a pool. And just to confirm what code gets returned, I'll go to the bottom, and directly below var test, I'll write "test-dot-homeOptions".
+And for starters, I'm gonna pass a parameter called "pool", which will define whether or not the house has a pool. And that means I have to type this.pool-equals-pool inside the function.
+
+And just to confirm what code gets returned, I'll add a console.log statement that returns the value of pool...console.log...this.pool. And then go to the bottom, and directly below var test, I'll write "test-dot-homeOptions".
 
 Now, passing params like this...it's fine if I have only 1 or 2 parameters, but if I want more than that (and I do), whoever uses this code will have to enter the params in a specific order and there's no guarantee that will happen, and if they don't follow the order, errors will happen, so this is messy...
 
