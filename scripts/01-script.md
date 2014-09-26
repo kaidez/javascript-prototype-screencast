@@ -1,30 +1,33 @@
 Hello and thanks for checking out my introduction to prototypes screencast, with prototypes being what you use to simulate class inheritance in JavaScript.
 
-All the code you're gonna see in this screencast is the result of my just buckling down for a few days and really hacking prototype code. I've used prototypes before in production code and I understand them. But I wanted to take some time and just focus on them 100 percent so I could really really REALLY understand them.
+All the code you're gonna see in this screencast is the result of my just buckling down for a few days and hacking prototypes. I've used prototypes before in production code and I understand the, but I wanted to take some time and focus on them 100 percent so I could really really REALLY understand them.
 
 I've also had one or two JavaScript newbies ask me what prototypes are. So I wanted to put together this screencast to help those people out. PLUS...in web components (which are really really REALLY new at the time I'm recording this), prototypes play a big role.
 
 If you use web components to create a custom element, you can use prototypes to inherit properties of already existing elements like button and span tags. Lots of web components documentation is written with the assumption that the reader automatically understands that, so this screencast hopes to fill in any blanks that come up there.
 
-Now, this screencast is broken into 3 parts: the first part is a brief walk through of what prototypes are, the second part is going through the code, and the third part is a really quick walk-through of some good learning resources about prototypes.
+Now, this screencast is broken into 3 parts: the first part is a brief walk through of what prototypes are, the second part is going through the code, and the third part covers some overall JavaScript optimazation tips and a really quick walk-through of some good prototype learning resources.
 
 And I should point out that I'm assuming you understand what variables, arrays and functions are in JavaScript as I won't be defining those.
 
-But let's get to the first part...
+But let's get to that first part...
 
 What? Are? JavaScript Prototypes?
 
 Prototypes are properties of objects, and the prototypes THEMSELVES are also objects. The properties are methods and other properties that are preset by the browser, but you can also add custom methods and properties.
 
-JavaScript objects, particulatly functions, can inherit the properties of another object through prototypes. And objects inheriting from other objects? That's the textbook definition of a prototypal language.
+JavaScript objects, particularly functions, can inherit the properties of another object through prototypes. And objects inheriting from other objects? That's the textbook definition of a prototypal language.
 
-As a result of this, you can simulate classical inheritance in JavaScript and doing that is the MAIN reason why you want to use prototypes.  And this is good because...JavaScript purposely doesn't have classes like Java or C.
+
+There are 2 main reasons for using prototypes. The first is efficiency: when you create JavaScript constructor functions, the code runs a bit faster when methods and properties are added directly to the function's prototype...we'll discuss this during this screencast.
+
+And the second reason is prototypes let you simulate classical inheritance in JavaScript. And that's good because...JavaScript purposely doesn't have classes like Java or C.
 
 In class-based languages, you create a class first, then create an instance of that class. And the instance will have all the properties and methods of that class. Also, classes can inherit properties and methods from other classes.
 
 But in JavaScript, you create what's called a constructor function first, then create an instance of that function using JavaScript's new keyword. And the instance function will have all the properties and methods of that constructor function.
 
-Also, constructor functions can inherit from other constructor functions...this happens when one function points directly to the other function's prototype, like we see in the code sample. This, will make more sense as we move through the tutorial.
+Also, constructor functions can inherit from other constructor functions. This happens when one function points directly to the other function's prototype, and this, will make more sense as we move through the tutorial.
 
 It's important to note This screencast will be focusing on the old way to do prototypal inheritance as it's defined by older versions of JavaScript.  The newer versions do it differently...ECMAScript 5 uses the Object.Create() method to do prototypes and ECMAScript 6 does it with an actual class keyword. There's a big push to be using the ES5 and ES6 methods in production code and I agree with that.
 
