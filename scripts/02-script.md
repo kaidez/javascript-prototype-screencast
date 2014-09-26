@@ -20,9 +20,9 @@ And just to confirm what code gets returned, I'll add a console.log statement th
 
 And go back to the browser and refresh my page...and then open up the console. And we see that "pool" is set true as far as what the browser sees, and that's what I want.
 
-Now, passing params like this...it's fine if I have only 1 or 2 parameters, but if I want more than that (and I do), whoever uses this code will have to enter the params in a specific order and there's no guarantee that will happen, and if they don't follow the order, errors will happen, so this is messy...
+Now, passing params like this...it's fine if I have only 1 or 2 parameters, but if I want more than that (and I do), whoever uses this code will have to enter the params in a specific order and there's no guarantee that will happen, and if they don't follow that order, errors will happen, so this is messy...
 
-So to avoid all this, I'm going to have the set things up so the parameters need to be configured in a JavaScript object. So to do that, I'm going to change the parameter to config...and then in the function, I'm going to say config-equals-config-or-an-empty-object.
+So to avoid all this, I'm going to have the set things up so the parameters need to be configured in a JavaScript object. And I'll do that by changing the parameter to config...and then in the function, I'm going to say config-equals-config-or-an-empty-object.
 
 So I've created what's commonly referred to as an "options object" and, as its name implies, it's an "object" that I can add "options" to. What I'll do is create a bunch of different home options in this function, attach them to the config parameter here, and this will allow others to list those options as key/value pairs inside the object when this function is created...much neater.
 
