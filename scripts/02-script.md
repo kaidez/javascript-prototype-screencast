@@ -6,15 +6,15 @@ So I'm going to start building the two methods I discussed...one to configure th
 
 Also, real quick, I'm going to write shorthand code for the common home properties I wrote in the last movie....like this...string all the properties with equal signs and end things using "true" here.
 
-And this is valid JavaScript...it means the same thing that I had here before.  And we're going to optimize our code here a bit more before we do the function stuff.
+And this is valid JavaScript...it means the same thing that I had here before.  And I'll optimize things a bit more before we do the function stuff.
 
-We've added all these properties directly inside the Blueprint function and we COULD do the same thing for the methods, but code like this generally runs faster if you, instead, add the properties and methods directly to the prototype. And we can do that by copying everything here...except for lotID.
+So, I added all these properties directly inside the Blueprint function and I COULD do the same thing for the methods, but code like this generally runs faster if the properties and methods are placed on the prototype directly.
 
-...and changing all the "this" keywords to...Blueprint-dot-prototype.
+And I'll do that by copying everything here...except for lotID...and changing all the "this" keywords to...Blueprint-dot-prototype.
 
-And, onto the functions...so the first function will set individual house options. So I'll create a function called setOptions and place it directly onto the prototype...and that code will look like this.
+And, onto the functions...so the first function will set individual options for each home. So I'll create a function called setOptions and place it directly onto the prototype...and that code will look like this.
 
-And for starters, I'm gonna pass a parameter called "pool", which will define whether or not the house has a pool. And just to confirm what this looks like, I'll go to the bottom, and directly below var test, I'll write "test-dot-homeOptions".
+And for starters, I'm gonna pass a parameter called "pool", which will define whether or not the house has a pool. And just to confirm what code gets returned, I'll go to the bottom, and directly below var test, I'll write "test-dot-homeOptions".
 
 Now, passing params like this...it's fine if I have only 1 or 2 parameters, but if I want more than that (and I do), whoever uses this code will have to enter the params in a specific order and there's no guarantee that will happen, and if they don't follow the order, errors will happen, so this is messy...
 
