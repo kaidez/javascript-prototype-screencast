@@ -61,13 +61,13 @@ This section tag here is the where it will get loaded into. The rest of the code
 
 The header has Bootstrap's jumbotron class and that presses up to the top of the page...this headerMargin class here prevents that. And at the bottom of the page is a reference to jQuery...we're going to use that a little bit.
 
-And below that is a reference to main.js and this is the spot where I'll build the my prototype code, so let's go there and start building. So as I said, the Blueprint class that represents the basic design of a house. And this class will be in the form of constructor function.
+And below that is a reference to main.js and this is the spot where I'll build the my prototype code, so let's go there and start building. So as I said, the Blueprint class that represents the basic design of a house. And this class will be in the form of constructor function called Blueprint.
 
-So I'll create a constructor function called Blueprint...and this will take just one parameter.  I want each home to have a unique id called homeID, so I'll set that parameter up here.
+And this will take just one parameter.  I want each home to have a unique id called homeID, so I'll set that parameter up here.
 
 And it also means that I have to attach the parameter to the context of this function, so I'll type...this-dot-home-id = homeID.
 
-Again in JavaScript, the "this" keyword refers to the context...in other words, it's referring to current function it's dealing with and I'll explain it further. But that's easier to do if I add some more properties first and define them against "this".
+Again in JavaScript, the "this" keyword refers to the context...in other words, it's referring to current function it's dealing with. But that's easier to do if I add some more properties first and define them against "this".
 
 So I'll start by adding some common home properties...things that all homes have.  And these aren't going to change...so every house has a living room so I'll define that using "this"....this-dot-living room = living room.
 
@@ -79,7 +79,7 @@ And I'll do the same thing for basement.
 
 And we'll just do a quick review of how the "this" keyword works.
 
-So I'll open index.html in Chrome and then open the browser console and I'll just type "this".
+So I'll open index.html in Chrome and then open the browser console and to start with,  I'll just type "this".
 
 And many, many things get returned here.  These are all the objects that the browser has access to...every, single solitary one.
 
@@ -93,10 +93,10 @@ So this is showing us all the objects but for my code, I only care about the Blu
 
 And if I then go to the original constructor function and temporarily add...console.log...and add a parameter of this.
 
-So they way things are set up now, this console.log statement is returning this, and because it's inside the Blueprint function, "this" should only be pointing to the things that this Blueprint function has access to.
+So they way things are set up now, this console.log statement is returning "this" for the Blueprint function only and not all the things we just saw attached to the window object.
 
-And that should display that in browser since I created a new instance of Blueprint here...so let's save everything and recheck the browser.
+And that should display that in browser since I created a new instance of Blueprint here...so let's save everything and re-check the browser.
 
-And as we see, just the properties of Blueprint are displayed...this is what the "this" keyword is getting access to. We see the ID...the basement info...the dining room info and so on.
+And as we see, JUST the properties of Blueprint are displayed...this is what the "this" keyword is referring to in this case. We see the ID...the basement info...the dining room info and so on.
 
 So we're off to a good start...we've defined the basics of our Blueprint class. We need to define some methods on the prototype...will do that next.
