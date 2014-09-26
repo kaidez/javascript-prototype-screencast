@@ -18,13 +18,16 @@ Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.protot
       true;
 
 // Set single home options
-Blueprint.prototype.setHomeOptions = function( pool ) {
-  this.pool = pool;
+Blueprint.prototype.setHomeOptions = function( opts ) {
+  opts = opts || {};
+  this.pool = opts.pool === undefined ? false : opts.pool;
   console.log(this.pool);
 }
 
 var test = new Blueprint(4564);
-test.setHomeOptions(true);
+test.setHomeOptions({
+  pool: true
+});
 
 //
 // // Display home options on index.html
