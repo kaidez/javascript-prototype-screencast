@@ -6,7 +6,7 @@ So I'm going to start building the two methods I discussed...one to configure th
 
 Also, real quick, I'm going to write shorthand code for the common home properties I wrote in the last movie....like this...string all the properties with equal signs and end things using "true" here.
 
-And this is valid JavaScript...it means the same thing as I had here before.  And we're going to optimize our code here a bit more before we do the function stuff.
+And this is valid JavaScript...it means the same thing that I had here before.  And we're going to optimize our code here a bit more before we do the function stuff.
 
 We've added all these properties directly inside the Blueprint function and we COULD do the same thing for the methods, but code like this generally runs faster if you, instead, add the properties and methods directly to the prototype. And we can do that by copying everything here...except for lotID.
 
