@@ -16,7 +16,9 @@ And, onto the functions...so the first function will set individual options for 
 
 And for starters, I'm gonna pass a parameter called "pool", which will define whether or not the house has a pool. And that means I have to type this.pool-equals-pool inside the function.
 
-And just to confirm what code gets returned, I'll add a console.log statement that returns the value of pool...console.log...this.pool. And then go to the bottom, and directly below var test, I'll write "test-dot-homeOptions".
+And just to confirm what code gets returned, I'll add a console.log statement that returns the value of pool...console.log...this.pool. And then go to the bottom, and directly below var test, I'll write "test-dot-homeOptions". And I'm going to say that the house DOES of a pool in this case so I'm going to pass in a parameter of true here...
+
+And go back to the browser and refresh my page...and then open up the console. And we see that "pool" is set true as far as what the browser sees, and that's what I want.
 
 Now, passing params like this...it's fine if I have only 1 or 2 parameters, but if I want more than that (and I do), whoever uses this code will have to enter the params in a specific order and there's no guarantee that will happen, and if they don't follow the order, errors will happen, so this is messy...
 
