@@ -60,12 +60,12 @@ And now Blueprint is displaying in the console...and if I expand the arrow here.
 
 We see the pool setting here and the type for kitchen counter and the floortype...they're all set to the default values we gave them: again, all the options are optional. And we also see the lotID, which we passed as a parameter in the last video.
 
-Annnnd just so we know what's going on, I'll set options for the kitchen counters...I'm going to get real fancy and set them to "granite".  And we'll save it and go back to the brower and refresh...
+Annnnd just so we know what's going on, I'll set options for the kitchen counters...I'm going to get real fancy and set them to "granite".  And we'll save it and go back to the browser and refresh...
 
 Yep! kitchen counters are set to granite.  Now let's look at this proto thing here for a moment...THIS represent things that are currently attached to the Blueprint function.
 
-And if we expand it...we see everything's that attached to its prototype object. And it's all the stuff that we attached to the prototype at the start of this video. Like square feet and basement.
+And if we want to see these things, we expand it...and it's all the stuff that we attached to the prototype at the start of this video. Like square feet and basement.
 
-And we did attach the setOptions method directly to the prototype, so it makes sense that it's showing up here.  Now there's also this constructor method here and we'll discuss it when we start talking about inhertance, but we'll get to that when we get to that.
+And we did attach the setOptions method to the prototype, so it makes sense that it's showing up here.  Now there's also this constructor method here and we'll discuss it when we start talking about inheritance, but we'll get to that when we get to that.
 
-For these other properties though,
+For these other properties though, I want to make the configurable like I did for the others. The syntax is different, but it's still easy to do.

@@ -61,7 +61,7 @@ This section tag here is the where it will get loaded into. The rest of the code
 
 The header has Bootstrap's jumbotron class and that presses up to the top of the page...this headerMargin class here prevents that. And at the bottom of the page is a reference to jQuery...we're going to use that a little bit.
 
-And below that is a reference to main.js and this is the spot where I'll build the my prototype code, so let's go there and start building. So as I said, the Blueprint class that represents the basic design of a house. And this class will be in the form of constructor function called Blueprint.
+And below that is a reference to main.js and this is the spot where I'll build the my prototype code, so let's go there and start building. So as I said, the Blueprint class that represents the basic design of a house. And this class will be in the form of constructor function called Blueprint, that's what we see here..
 
 And this will take just one parameter.  I want each home to have a unique id called homeID, so I'll set that parameter up here.
 
