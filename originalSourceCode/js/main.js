@@ -19,18 +19,18 @@ Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.protot
 
 
 // Set single home options
-Blueprint.prototype.setHomeOptions = function( config ) {
+Blueprint.prototype.setHomeOptions = function( opts ) {
 
-  config = config || {};
-  this.counterTops = config.counterTops === undefined ? "formica" : config.counterTops;
-  this.floorType = config.floorType === undefined ? "tile" : config.floorType;
-  this.pool = config.pool === undefined ? "no" : config.pool;
+  opts = opts || {};
+  this.counterTops = opts.counterTops === undefined ? "formica" : opts.counterTops;
+  this.floorType = opts.floorType === undefined ? "tile" : opts.floorType;
+  this.pool = opts.pool === undefined ? "no" : opts.pool;
 
   // Let some of the defaults in the Blueprint "class" be overridden
-  this.squareFeet = config.squareFeet || this.squareFeet;
-  this.totalBedrooms = config.totalBedrooms || this.totalBedrooms;
-  this.totalBathrooms = config.totalBathrooms || this.totalBathrooms;
-  this.totalFloors = config.totalFloors || this.totalFloors;
+  this.squareFeet = opts.squareFeet || this.squareFeet;
+  this.totalBedrooms = opts.totalBedrooms || this.totalBedrooms;
+  this.totalBathrooms = opts.totalBathrooms || this.totalBathrooms;
+  this.totalFloors = opts.totalFloors || this.totalFloors;
 
   return this; // Make this method chainable, yo!!
 
