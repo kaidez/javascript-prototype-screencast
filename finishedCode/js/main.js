@@ -24,6 +24,11 @@ Blueprint.prototype.setHomeOptions = function( opts ) {
   this.floorType = opts.floorType === undefined ? "tile" : opts.floorType;
   this.kitchenCounters = opts.kitchenCounters === undefined ? "formica" : opts.kitchenCounters;
 
+  this.squareFeet = opts.squareFeet || this.squareFeet;
+  this.totalBedrooms = opts.totalBedrooms || this.totalBedrooms;
+  this.totalBathrooms = opts.totalBathrooms || this.totalBathrooms;
+  this.totalFloors = opts.totalFloors || this.totalFloors;
+
   console.log(this);
 }
 
