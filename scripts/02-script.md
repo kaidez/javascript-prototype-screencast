@@ -79,3 +79,13 @@ So that code would be...opts.squareFeet, and this will override squareFeet's val
 So to recap our code: the value this.squareFeet will be checked when the setHomeOptions method runs. If it's value was passed as a parameter, that value will be attached to opts.squareFeet, and it will override the default value.
 
 But it's optional to do that, so if it's NOT done, the OR operator kicks in, and it will just apply the default value, which is defined by this.squareFeet here.
+
+And we still have the console.log statement, which returns all the properties to the browser console, so let's save and go back to the browser and refresh...
+
+And we that the properties are still here, but they're NOW viewable as options of the setHomeOptions method instead...right here.  Not just as properties of the Blueprint class as we just saw...and as we see, those are still there.
+
+Now the default properties are showing up and we DID say that these could be overridden, and to do that, we go back to we go back to the JS code...and I'll set squareFeet to 2500, and totalBathrooms to 3.
+
+And save, and go back to Chrome and refresh...and expand the arrow here. And we that the our new values have successfully overridden the defaults inside the setHomeOptions method, but not inside the Blueprint class...that's still intact and that's exactly what we want.
+
+So this method is done but all the data's been sent to the browser console. I'll build the method that loads the data onto the page in the next video. 
