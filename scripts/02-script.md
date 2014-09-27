@@ -62,4 +62,6 @@ We see the pool setting here and the type for kitchen counter and the floortype.
 
 Annnnd just so we know what's going on, I'll set options for the kitchen counters...I'm going to get real fancy and set them to "granite".  And we'll save it and go back to the brower and refresh...
 
-Yep! kitchen counters are set to granite.  Now let's look at this proto thing here for a moment...
+Yep! kitchen counters are set to granite.  Now let's look at this proto thing here for a moment...THIS represent things that are currently attached to the Blueprint function.
+
+And if we expand it...we see everything's that attached to its prototype object.
