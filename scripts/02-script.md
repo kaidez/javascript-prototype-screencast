@@ -42,4 +42,10 @@ A ternary operation is a shorter way of running an if/else statement. So what's 
 
 Now, if I DON'T give pool a value, JavaScript will automatically give it a value of undefined....that's how JavaScript works. And as far as this code goes, the question mark here is checking to see if that's true, and if it is, it will automatically give it a value of "false".
 
-So, the question mark is the "if" statement part of the code, but the full colon here is the "else" part.
+So, the question mark is the "if" statement part of the code, but the full colon here is the "else" part. So that means if opts.pool does NOT equal undefined, it will be set to whatever the valur of this.opts, which will be the parameter that gets passed.
+
+So let's test this...I still have test.setOptions here, which fires off that console.log statement that's returning pool's value to the browser console.
+
+So if I go back to the browser and refresh...it returns false, which should be expected. Because if we don't set it as a parameter, JavaScript sets its value to undefined, and our code is told to change the value to false in that situation.
+
+That's what happens if we DON'T give pool a value...what happens when we do give it value?  To do that, we have to set it up as a key value pair inside an object...so I'll create an object like this and create my key value pair...pool-colon-true...then save it and go back to the browser and refresh it...and we see that pool now as a value of true.
