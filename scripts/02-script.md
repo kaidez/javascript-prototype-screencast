@@ -42,7 +42,7 @@ A ternary operation is a shorter way of running an if/else statement. So what's 
 
 Now, if I DON'T give pool a value, JavaScript will automatically give it a value of undefined....that's how JavaScript works. And as far as this code goes, the question mark here is checking to see if that's true, and if it is, it will automatically give it a value of "false".
 
-So, the question mark is the "if" statement part of the code, but the full colon here is the "else" part. So that means if opts.pool does NOT equal undefined, it will be set to whatever the valur of this.opts, which will be the parameter that gets passed.
+So, the question mark is the "if" statement part of the code, but the full colon here is the "else" part. So that means if opts.pool does NOT equal undefined, it will be set to whatever the value of this.opts, which will be the parameter that gets passed.
 
 So let's test this...I still have test.setHomeOptions here, which fires off that console.log statement that's returning pool's value to the browser console.
 
@@ -72,6 +72,10 @@ For these original properties though, like square feet and basement, I want to m
 
 And this is easy to do. Now I didn't give the properties in the setHomeOptions method a value, but I did give a value for all the properties in Blueprint function.
 
-So I have use slightly different syntax here to allow these properties to be overridden. So for the squareFeet property, I'll type this-dot-squarefeet...and I'll start off by setting it equal to what it would be if it was passed as a paramater...like we did when we used a key/value pair to set pool to true.
+So I have use slightly different syntax here to allow these properties to be overridden. So for the squareFeet property, I'll type this-dot-squarefeet...and I'll start off by setting it equal to what it would be if it was passed as a parameter...like we did when we used a key/value pair to set pool to true.
 
-So that code would be...opts.squareFeet, and this will override squareFeet's value...IF it's passed as a parameter. But of it's not, then I want the default value to be passed, so I'll add the OR operator here
+So that code would be...opts.squareFeet, and this will override squareFeet's value...IF it's passed as a parameter. But of it's not, then I want the default value to be passed, so I'll use the OR operator again by adding it here, and then add this.squareFeet.
+
+So to recap our code: the value this.squareFeet will be checked when the setHomeOptions method runs. If it's value was passed as a parameter, that value will be attached to opts.squareFeet, and it will override the default value.
+
+But it's optional to do that, so if it's NOT done, the OR operator kicks in, and it will just apply the default value, which is defined by this.squareFeet here.
