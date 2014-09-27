@@ -33,9 +33,12 @@ Blueprint.prototype.setHomeOptions = function( opts ) {
 }
 
 var test = new Blueprint(4564);
+
 test.setHomeOptions({
   pool: true,
-  kitchenCounters: "granite"
+  kitchenCounters: "granite",
+  squareFeet: 2500,
+  totalBathrooms: 3
 });
 
 //
