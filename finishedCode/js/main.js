@@ -41,6 +41,20 @@ test.setHomeOptions({
   totalBathrooms: 3
 });
 
+
+Blueprint.prototype.displayHomeOptions = function() {
+
+  var allHomes = document.getElementById("allHomes"),
+      article = document.createElement("article"),
+      ul = document.createElement("ul"),
+      frag = document.createDocumentFragment();
+
+  $(article).attr({
+    "class": "col-md-4",
+    style: "min-height: 300px;"
+  });
+
+}
 //
 // // Display home options on index.html
 // Blueprint.prototype.displayHomeOptions = function() {
