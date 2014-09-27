@@ -43,7 +43,6 @@ Blueprint.prototype.displayHomeOptions = function() {
     "class": "col-md-4",
     style: "min-height: 300px;"
   });
-
 }
 
 var test = new Blueprint(4564);
