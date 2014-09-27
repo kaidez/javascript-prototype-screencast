@@ -29,7 +29,8 @@ Blueprint.prototype.setHomeOptions = function( opts ) {
 
 var test = new Blueprint(4564);
 test.setHomeOptions({
-  pool: true
+  pool: true,
+  kitchenCounters: "granite"
 });
 
 //

@@ -58,4 +58,8 @@ And this time, I'll get rid of pool in the console.log statement...I want to see
 
 And now Blueprint is displaying in the console...and if I expand the arrow here...we see all the properties so far.
 
-We see the pool setting here and the type fo kitchen counter and the floortype. And we also see the lotID, which we passed as a parameter in the last video.
+We see the pool setting here and the type for kitchen counter and the floortype...they're all set to the default values we gave them: again, all the options are optional. And we also see the lotID, which we passed as a parameter in the last video.
+
+Annnnd just so we know what's going on, I'll set options for the kitchen counters...I'm going to get real fancy and set them to "granite".  And we'll save it and go back to the brower and refresh...
+
+Yep! kitchen counters are set to granite.  Now let's look at this proto thing here for a moment...
