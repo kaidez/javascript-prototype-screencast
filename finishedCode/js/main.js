@@ -21,7 +21,10 @@ Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.protot
 Blueprint.prototype.setHomeOptions = function( opts ) {
   opts = opts || {};
   this.pool = opts.pool === undefined ? false : opts.pool;
-  console.log(this.pool);
+  this.floorType = opts.floorType === undefined ? "tile" : opts.floorType;
+  this.kitchenCounters = opts.kitchenCounters === undefined ? "formica" : opts.kitchenCounters;
+
+  console.log(this);
 }
 
 var test = new Blueprint(4564);
