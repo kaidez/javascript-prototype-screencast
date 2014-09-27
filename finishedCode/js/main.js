@@ -37,7 +37,7 @@ Blueprint.prototype.displayHomeOptions = function() {
   var allHomes = document.getElementById("allHomes"),
       article = document.createElement("article"),
       ul = document.createElement("ul"),
-      frag = document.createDocumentFragment();
+      fragment = document.createDocumentFragment();
 
   $(article).attr({
     "class": "col-md-4",
@@ -59,7 +59,7 @@ test.setHomeOptions({
 // Blueprint.prototype.displayHomeOptions = function() {
 //
 //   var allHomes = document.getElementById("allHomes"),
-//       frag = document.createDocumentFragment(),
+//       fragment = document.createDocumentFragment(),
 //       article = document.createElement("article"),
 //       ul = document.createElement("ul");
 //
@@ -89,8 +89,8 @@ test.setHomeOptions({
 //     }
 //
 //     article.appendChild(ul); // Put <ul> in <article>
-//     frag.appendChild(article); // Put <article> in document fragment
-//     allHomes.appendChild(frag); // Put document fragment in "#allHomes"
+//     fragment.appendChild(article); // Put <article> in document fragment
+//     allHomes.appendChild(fragment); // Put document fragment in "#allHomes"
 //   }
 //
 //   return this; // Make this method chainable, yo!!
