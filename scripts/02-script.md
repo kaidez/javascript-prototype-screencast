@@ -70,6 +70,6 @@ And we did attach the setHomeOptions method to the prototype, so it makes sense 
 
 For these original properties though, like square feet and basement, I want to make them configurable like I did for pool and floortype and kitchen counters. I want let people use the properties on their code, but give them the option to override their default values.
 
-And this is easy to do different, but it's still easy to do. Now I didn't give the properties in the setHomeOptions method a value, but I did give a value for all the properties in Blueprint function.
+And this is easy to do. Now I didn't give the properties in the setHomeOptions method a value, but I did give a value for all the properties in Blueprint function.
 
-So I have use slightly different syntax here.
+So I have use slightly different syntax here to allow these properties to be overridden.
