@@ -4,4 +4,4 @@ I've created 4 variables using the single-var-pattern here...on line 37 is my fi
 
 The elements I create with createElement don't exist on a web page yet...they just exist in browser memory. I have to write code to put them on the page and I COULD put them on the page one-by-one, but it's more efficient to batch them altogether in something called a document fragment, then load the fragment onto the page.
 
-And to do that, I have to create a document fragment first, so 
+And to do that, I have to create a document fragment first, so I'm doing that on line 40 by creating a variable called "fragment" and setting it equal to the document.createDocumentFragment method.
