@@ -1,0 +1,1 @@
+It's time to create the method for displaying all this content on the web page, and that method's going to be called displayHomeOptions on line 35 here. And I've already got some code here...if you've been following along by writing the code up to this point, you can pause the movie and take a second to copy it.
