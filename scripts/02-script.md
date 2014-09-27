@@ -49,3 +49,13 @@ So let's test this...I still have test.setOptions here, which fires off that con
 So if I go back to the browser and refresh...it returns false, which should be expected. Because if we don't set it as a parameter, JavaScript sets its value to undefined, and our code is told to change the value to false in that situation.
 
 That's what happens if we DON'T give pool a value...what happens when we do give it value?  To do that, we have to set it up as a key value pair inside an object...so I'll create an object like this and create my key value pair...pool-colon-true...then save it and go back to the browser and refresh it...and we see that pool now as a value of true.
+
+So I'm going to create a few more configurable options here using the same type of code...I'm going to create one for floorType. And I'm going to set the default value to tile...really cheap.
+
+And I'll create one more for kitchenCounter. I'll set that default value to formica...also really cheap.
+
+And this time, I'll get rid of pool in the console.log statement...I want to see ALL of the stuff attached to this. So save it...and go back to Chrome and refresh...
+
+And now Blueprint is displaying in the console...and if I expand the arrow here...we see all the properties so far.
+
+We see the pool setting here and the type fo kitchen counter and the floortype. And we also see the lotID, which we passed as a parameter in the last video.
