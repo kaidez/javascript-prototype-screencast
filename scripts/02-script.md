@@ -72,4 +72,6 @@ For these original properties though, like square feet and basement, I want to m
 
 And this is easy to do. Now I didn't give the properties in the setHomeOptions method a value, but I did give a value for all the properties in Blueprint function.
 
-So I have use slightly different syntax here to allow these properties to be overridden.
+So I have use slightly different syntax here to allow these properties to be overridden. So for the squareFeet property, I'll type this-dot-squarefeet...and I'll start off by setting it equal to what it would be if it was passed as a paramater...like we did when we used a key/value pair to set pool to true.
+
+So that code would be...opts.squareFeet, and this will override squareFeet's value...IF it's passed as a parameter. But of it's not, then I want the default value to be passed, so I'll add the OR operator here
