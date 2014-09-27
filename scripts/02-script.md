@@ -64,4 +64,6 @@ Annnnd just so we know what's going on, I'll set options for the kitchen counter
 
 Yep! kitchen counters are set to granite.  Now let's look at this proto thing here for a moment...THIS represent things that are currently attached to the Blueprint function.
 
-And if we expand it...we see everything's that attached to its prototype object.
+And if we expand it...we see everything's that attached to its prototype object. And it's all the stuff that we attached to the prototype at the start of this video. Like square feet and basement.
+
+And we did attach the setOptions method directly to the prototype, so it makes sense that it's showing up here.
