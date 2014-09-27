@@ -66,4 +66,6 @@ Yep! kitchen counters are set to granite.  Now let's look at this proto thing he
 
 And if we expand it...we see everything's that attached to its prototype object. And it's all the stuff that we attached to the prototype at the start of this video. Like square feet and basement.
 
-And we did attach the setOptions method directly to the prototype, so it makes sense that it's showing up here.
+And we did attach the setOptions method directly to the prototype, so it makes sense that it's showing up here.  Now there's also this constructor method here and we'll discuss it when we start talking about inhertance, but we'll get to that when we get to that.
+
+For these other properties though,
