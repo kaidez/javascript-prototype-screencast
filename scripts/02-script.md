@@ -12,7 +12,7 @@ So, I added all these properties directly inside the Blueprint function and I CO
 
 And I'll do that by copying everything here...except for lotID...and changing all the "this" keywords to...Blueprint-dot-prototype.
 
-And, onto the functions...so the first function will set individual options for each home. So I'll create a function called setOptions and place it directly onto the prototype...and that code will look like this.
+And, onto the functions...so the first function will set individual options for each home. So I'll create a function called setHomeOptions and place it directly onto the prototype...and that code will look like this.
 
 And for starters, I'm gonna pass a parameter called "pool", which will define whether or not the house has a pool. And that means I have to type this.pool-equals-pool inside the function.
 
@@ -44,7 +44,7 @@ Now, if I DON'T give pool a value, JavaScript will automatically give it a value
 
 So, the question mark is the "if" statement part of the code, but the full colon here is the "else" part. So that means if opts.pool does NOT equal undefined, it will be set to whatever the valur of this.opts, which will be the parameter that gets passed.
 
-So let's test this...I still have test.setOptions here, which fires off that console.log statement that's returning pool's value to the browser console.
+So let's test this...I still have test.setHomeOptions here, which fires off that console.log statement that's returning pool's value to the browser console.
 
 So if I go back to the browser and refresh...it returns false, which should be expected. Because if we don't set it as a parameter, JavaScript sets its value to undefined, and our code is told to change the value to false in that situation.
 
@@ -66,6 +66,10 @@ Yep! kitchen counters are set to granite.  Now let's look at this proto thing he
 
 And if we want to see these things, we expand it...and it's all the stuff that we attached to the prototype at the start of this video. Like square feet and basement.
 
-And we did attach the setOptions method to the prototype, so it makes sense that it's showing up here.  Now there's also this constructor method here and we'll discuss it when we start talking about inheritance, but we'll get to that when we get to that.
+And we did attach the setHomeOptions method to the prototype, so it makes sense that it's showing up here.  Now there's also this constructor method here and we'll discuss it when we start talking about inheritance, but we'll get to that when we get to that.
 
-For these other properties though, I want to make the configurable like I did for the others. The syntax is different, but it's still easy to do.
+For these original properties though, like square feet and basement, I want to make them configurable like I did for pool and floortype and kitchen counters. I want let people use the properties on their code, but give them the option to override their default values.
+
+And this is easy to do different, but it's still easy to do. Now I didn't give the properties in the setHomeOptions method a value, but I did give a value for all the properties in Blueprint function.
+
+So I have use slightly different syntax here.
