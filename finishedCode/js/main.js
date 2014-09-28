@@ -45,14 +45,7 @@ Blueprint.prototype.displayHomeOptions = function() {
   });
 }
 
-var test = new Blueprint(4564);
 
-test.setHomeOptions({
-  pool: true,
-  kitchenCounters: "granite",
-  squareFeet: 2500,
-  totalBathrooms: 3
-});
 
 //
 // // Display home options on index.html
@@ -96,8 +89,19 @@ test.setHomeOptions({
 //   return this; // Make this method chainable, yo!!
 //
 // }
-//
-//
+
+
+var test = new Blueprint(4564);
+
+test.setHomeOptions({
+  pool: true,
+  kitchenCounters: "granite",
+  squareFeet: 2500,
+  totalBathrooms: 3
+});
+
+
+
 // // Bungalow: a class that inherits from the Blueprint "class"
 // function Bungalow ( lotID ) {
 //   Blueprint.call( this, lotID );
