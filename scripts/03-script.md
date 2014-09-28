@@ -14,4 +14,6 @@ Here's that on my web page...it contains that section tag I discussed in the fir
 
 The second attribute that the article tags get is a style attribute, meaning that it will apply an inline style to all the articles.  I'm applying a minimum height 300px to each article so that the rows will layout neatly.
 
-I COULD put these styles in a class and apply that class to the article, but I'm doing it this way so 
+If this article tag was going to have a LOT styling, I would probably NOT apply the min-height this way and bundle it with the other styles, but it's fine for the purpose of this demo.
+
+So let's get this code onto the page... 
