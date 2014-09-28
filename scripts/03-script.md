@@ -11,3 +11,5 @@ And below that starting on line 42, that dollar-sign means I'm using jQuery. And
 I'm using jQuery.attr here to first apply a class called "col-md-4, which is a Twitter Bootstrap class. With this class, I'll be able to create a 3-column responsive layout based on some code, and it's important to note that elements with this class need to be inside an alement with a class name of container.
 
 Here's that on my web page...it contains that section tag I discussed in the first video and that's where these dynamically-created article tags are gonna go.  So this will create that 3 column responsive layout with no problems.
+
+The second 
