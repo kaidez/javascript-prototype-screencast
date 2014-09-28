@@ -12,4 +12,6 @@ I'm using jQuery.attr here to first apply a class called "col-md-4, which is a T
 
 Here's that on my web page...it contains that section tag I discussed in the first video and that's where these dynamically-created article tags are gonna go.  So this will create that 3 column responsive layout with no problems.
 
-The second 
+The second attribute that the article tags get is a style attribute, meaning that it will apply an inline style to all the articles.  I'm applying a minimum height 300px to each article so that the rows will layout neatly.
+
+I COULD put these styles in a class and apply that class to the article, but I'm doing it this way so 
