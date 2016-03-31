@@ -7,6 +7,10 @@ test.setHomeOptions({
   totalBathrooms: 3
 });
 
+
+
+
+
 test.displayHomeOptions();
 
 // Bungalow: a class that inherits from the Blueprint "class"
