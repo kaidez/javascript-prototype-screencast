@@ -12,7 +12,6 @@ function Blueprint() {}
  * Blueprint properties: properties that all houses will have
  * ====================================================================
  */
-
 Blueprint.prototype.squareFeet = 1000;
 Blueprint.prototype.totalBedrooms = 1;
 Blueprint.prototype.totalBathrooms = 1.5;
