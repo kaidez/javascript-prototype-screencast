@@ -10,7 +10,7 @@
     "build-js": "browserify js-build/*.js | uglifyjs -mc > build/js/scripts.js",
     "build-sass": "node-sass css-build/style.scss | cleancss -o css-build/style.css",
     "grunt": "grunt",
-    "concat-css": "cat css-build/*.css > build/css/style.css",
+    "concat-css": "cat css-build/*.css > build/style.css",
     "uncss": "npm run grunt",
     "css-build": "npm run build-sass && npm run concat-css && npm run uncss",
     "build": "npm run build-jade && npm run css-build && npm run build-js",
