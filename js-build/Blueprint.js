@@ -31,7 +31,6 @@ Blueprint.prototype.setHomeOptions = function( opts ) {
   this.totalBathrooms = opts.totalBathrooms || this.totalBathrooms;
   this.totalFloors = opts.totalFloors || this.totalFloors;
 
-  console.log(this);
 }
 
 // Blueprint.prototype.displayHomeOptions = function() {
