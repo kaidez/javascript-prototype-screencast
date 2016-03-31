@@ -32,63 +32,63 @@ Blueprint.prototype.setHomeOptions = function( opts ) {
   console.log(this);
 }
 
-Blueprint.prototype.displayHomeOptions = function() {
-
-  var allHomes = document.getElementById("allHomes"),
-      article = document.createElement("article"),
-      ul = document.createElement("ul"),
-      fragment = document.createDocumentFragment();
-
-  $(article).attr({
-    "class": "col-md-4",
-    style: "min-height: 300px;"
-  });
-}
-
-
-
-//
-// // Display home options on index.html
 // Blueprint.prototype.displayHomeOptions = function() {
-//
+
 //   var allHomes = document.getElementById("allHomes"),
-//       fragment = document.createDocumentFragment(),
 //       article = document.createElement("article"),
-//       ul = document.createElement("ul");
-//
-//   /*
-//    * Add a Bootstrap column class to each <article> for RWD purposes.
-//    * This will build a responsive 3-column layout.Also, give the
-//    * <article> a minimum height of 300 pixels so the columns lay out
-//    * neatly
-//    */
+//       ul = document.createElement("ul"),
+//       fragment = document.createDocumentFragment();
+
 //   $(article).attr({
 //     "class": "col-md-4",
 //     style: "min-height: 300px;"
 //   });
-//
-//   for ( homeOption in this ) {
-//
-//     if ( typeof this[homeOption] !== "function" && typeof this[homeOption] !== "boolean" ) {
-//       if ( homeOption === "lotID" ) {
-//         var homeHeader = document.createElement("h2");
-//         homeHeader.innerHTML = "House#: " + this[homeOption];
-//         article.appendChild(homeHeader);
-//       } else {
-//         li = document.createElement("li");
-//         ul.appendChild(li);
-//         li.innerHTML = homeOption + ": " + this[homeOption];
-//       }
-//     }
-//
-//     article.appendChild(ul); // Put <ul> in <article>
-//     fragment.appendChild(article); // Put <article> in document fragment
-//     allHomes.appendChild(fragment); // Put document fragment in "#allHomes"
-//   }
-//
-//   return this; // Make this method chainable, yo!!
-//
 // }
+
+
+
+
+// Display home options on index.html
+Blueprint.prototype.displayHomeOptions = function() {
+
+  var allHomes = document.getElementById("allHomes"),
+      fragment = document.createDocumentFragment(),
+      article = document.createElement("article"),
+      ul = document.createElement("ul");
+
+  /*
+   * Add a Bootstrap column class to each <article> for RWD purposes.
+   * This will build a responsive 3-column layout.Also, give the
+   * <article> a minimum height of 300 pixels so the columns lay out
+   * neatly
+   */
+  $(article).attr({
+    "class": "col-md-4",
+    style: "min-height: 300px;"
+  });
+
+  for ( homeOption in this ) {
+
+    if ( typeof this[homeOption] !== "function" && typeof this[homeOption] !== "boolean" ) {
+      if ( homeOption === "lotID" ) {
+        var homeHeader = document.createElement("h2");
+        homeHeader.innerHTML = "House#: " + this[homeOption];
+        article.appendChild(homeHeader);
+      } else {
+        li = document.createElement("li");
+        ul.appendChild(li);
+        li.innerHTML = homeOption + ": " + this[homeOption];
+      }
+    }
+
+    article.appendChild(ul); // Put <ul> in <article>
+    fragment.appendChild(article); // Put <article> in document fragment
+    allHomes.appendChild(fragment); // Put document fragment in "#allHomes"
+  }
+
+  return this; // Make this method chainable, yo!!
+
+}
 
 
 var test = new Blueprint(4564);
@@ -100,7 +100,7 @@ test.setHomeOptions({
   totalBathrooms: 3
 });
 
-
+test.displayHomeOptions();
 
 // // Bungalow: a class that inherits from the Blueprint "class"
 // function Bungalow ( lotID ) {
