@@ -1,6 +1,6 @@
 # An Introduction to JavaScript Prototypes
 
-These are the accompanying source files for the tutorial over at kaidez.com.
+This is the repo for the accompanying source files for an upcoming JavaScript prototype tutorial of mine. STAY TUNED!!!!!!!
 
 -kdz
 
