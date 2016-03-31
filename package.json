@@ -6,11 +6,9 @@
  "scripts": {
     "server": "./node_modules/httpster/bin/httpster -p 3000 -d ./build/",
     "build-js": "browserify js-build/*.js | uglifyjs -mc > build/js/main.js",
-    "concat-css": "cat css-build/*.css > build/style.css",
-    "css-build": "npm run concat-css",
-    "build": "npm run css-build && npm run build-js",
+    "build-css": "cat css-build/*.css > build/style.css",
     "watch-js": "nodemon -e js -w js-build -x 'npm run build-js'",
-    "watch-css": "nodemon -e scss -w css-build -w css-build/imports -x 'npm run css-build'",
+    "watch-css": "nodemon -e css -w css-build -x 'npm run build-css'",
     "start": "npm run server & npm run watch-js & npm run watch-css",
     "book-minify": "imagemin image-min/book-images/* build/img/book-images/",
     "copy-bootstrap": "ncp node_modules/bootstrap/dist/css/bootstrap.css css-build/bootstrap.css",
