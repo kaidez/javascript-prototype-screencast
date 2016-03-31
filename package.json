@@ -1,0 +1,38 @@
+{
+  "name": "javascript-prototype-screencast",
+  "version": "1.0.0",
+  "description": "code sample for my screencast about JavaScript prototypes",
+  "main": "n/a",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaidez/javascript-prototype-screencast.git"
+  },
+  "keywords": [
+    "prototype",
+    "javascript"
+  ],
+  "author": "kaidez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaidez/javascript-prototype-screencast/issues"
+  },
+  "homepage": "https://github.com/kaidez/javascript-prototype-screencast#readme",
+ "devDependencies": {
+    "browserify": "^13.0.0",
+    "clean-css": "^3.4.8",
+    "httpster": "^1.0.1",
+    "jade": "^1.11.0",
+    "node-sass": "^3.4.2",
+    "nodemon": "1.9.1",
+    "uglifyjs": "^2.4.10",
+    "uncss": "0.13.0",
+    "watchify": "^3.6.1"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.1.4"
+  }
+}
