@@ -5,7 +5,7 @@
   "main": "n/a",
  "scripts": {
     "server": "./node_modules/httpster/bin/httpster -p 3000 -d ./build/",
-    "build-js": "browserify js-build/*.js | uglifyjs -mc > build/js/scripts.js",
+    "build-js": "browserify js-build/*.js | uglifyjs -mc > build/js/main.js",
     "build-sass": "node-sass css-build/style.scss | cleancss -o css-build/style.css",
     "concat-css": "cat css-build/*.css > build/style.css",
     "css-build": "npm run build-sass && npm run concat-css",

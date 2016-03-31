@@ -1,30 +1,33 @@
-var test = new Blueprint( 4564 );
-
-test.setHomeOptions({
-  pool: true,
-  kitchenCounters: "granite",
-  squareFeet: 2500,
-  totalBathrooms: 3
-});
+var blueprint = require("./Blueprint");
 
 
+// var test = new Blueprint( 4564 );
+
+// test.setHomeOptions({
+//   pool: true,
+//   kitchenCounters: "granite",
+//   squareFeet: 2500,
+//   totalBathrooms: 3
+// });
 
 
 
-test.displayHomeOptions();
 
-// Bungalow: a class that inherits from the Blueprint "class"
-function Bungalow ( lotID ) {
-  Blueprint.call( this, lotID );
-  this.houseType = "Bungalow";
-  this.price = "$125,000+";
-}
 
-Bungalow.prototype = new Blueprint();
-Bungalow.prototype.constructor = Bungalow;
+// test.displayHomeOptions();
 
-var kai = new Bungalow(987);
-kai.displayHomeOptions();
+// // Bungalow: a class that inherits from the Blueprint "class"
+// function Bungalow ( lotID ) {
+//   Blueprint.call( this, lotID );
+//   this.houseType = "Bungalow";
+//   this.price = "$125,000+";
+// }
+
+// Bungalow.prototype = new Blueprint();
+// Bungalow.prototype.constructor = Bungalow;
+
+// var kai = new Bungalow(987);
+// kai.displayHomeOptions();
 
 //
 //
