@@ -6,9 +6,8 @@
  "scripts": {
     "server": "./node_modules/httpster/bin/httpster -p 3000 -d ./build/",
     "build-js": "browserify js-build/*.js | uglifyjs -mc > build/js/main.js",
-    "build-sass": "node-sass css-build/style.scss | cleancss -o css-build/style.css",
     "concat-css": "cat css-build/*.css > build/style.css",
-    "css-build": "npm run build-sass && npm run concat-css",
+    "css-build": "npm run concat-css",
     "build": "npm run css-build && npm run build-js",
     "watch-js": "nodemon -e js -w js-build -x 'npm run build-js'",
     "watch-css": "nodemon -e scss -w css-build -w css-build/imports -x 'npm run css-build'",
@@ -36,7 +35,6 @@
     "clean-css": "^3.4.8",
     "httpster": "^1.0.1",
     "ncp": "^2.0.0",
-    "node-sass": "^3.4.2",
     "nodemon": "1.9.1",
     "uglifyjs": "^2.4.10",
     "uncss": "0.13.0",
