@@ -1,4 +1,4 @@
-var blueprint = require("./Blueprint");
+var blueprint = require( "./Blueprint" );
 
 
 // var test = new Blueprint( 4564 );
