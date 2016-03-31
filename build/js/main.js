@@ -1,8 +1,8 @@
 /*
  * Blueprint: the core class that house types will inherit from.
  * ====================================================================
- * Treat this as an "abstract" class that is only to be inherited from
- * and is never ever EVER to be instantited.
+ * Treat this as an "abstract" class, meaning that it will only to be
+ * inherited from and will never ever EVER to be instantited.
  */
 function Blueprint() {}
 
