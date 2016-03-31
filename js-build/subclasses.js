@@ -16,46 +16,46 @@ test.setHomeOptions({
 
 test.displayHomeOptions();
 
-// // Bungalow: a class that inherits from the Blueprint "class"
-// function Bungalow ( lotID ) {
-//   Blueprint.call( this, lotID );
-//   this.houseType = "Bungalow";
-//   this.price = "$125,000+";
-// }
+// Bungalow: a class that inherits from the GetBlueprint "class"
+function Bungalow ( lotID ) {
+  GetBlueprint.call( this, lotID );
+  this.houseType = "Bungalow";
+  this.price = "$125,000+";
+}
 
-// Bungalow.prototype = new Blueprint();
-// Bungalow.prototype.constructor = Bungalow;
+Bungalow.prototype = new GetBlueprint();
+Bungalow.prototype.constructor = Bungalow;
 
-// var kai = new Bungalow(987);
-// kai.displayHomeOptions();
+var kai = new Bungalow(987);
+kai.displayHomeOptions();
 
 //
 //
 //
 //
-// // Colonial: a class that inherits from the Blueprint "class"
+// // Colonial: a class that inherits from the GetBlueprint "class"
 // function Colonial ( lotID, windowTypes ) {
-//   Blueprint.call( this, lotID, windowTypes );
+//   GetBlueprint.call( this, lotID, windowTypes );
 //   this.windowTypes = windowTypes || "Double pane";
 //   this.houseType = "Colonial";
 //   this.price = "$250,000+";
 //   this.totalFloors = 2;
 // }
 //
-// Colonial.prototype = new Blueprint();
+// Colonial.prototype = new GetBlueprint();
 // Colonial.prototype.constructor = Colonial;
 //
 //
-// // Tudor: a class that inherits from the Blueprint "class"
+// // Tudor: a class that inherits from the GetBlueprint "class"
 // function Tudor ( lotID, backyard ) {
-//   Blueprint.call( this, lotID, backyard );
+//   GetBlueprint.call( this, lotID, backyard );
 //   this.backyard = backyard || "no";
 //   this.houseType = "Tudor";
 //   this.price = "$150,000+";
 //   this.totalFloors = 3;
 // }
 //
-// Tudor.prototype = new Blueprint();
+// Tudor.prototype = new GetBlueprint();
 // Tudor.prototype.constructor = Tudor;
 //
 //
