@@ -84,8 +84,8 @@ Blueprint.prototype.displayHomeOptions = function() {
     }
 
     article.appendChild( ul ); // Put <ul> in <article>
-    fragment.appendChild( article ); // Put <article> in document fragment
-    allHomes.appendChild( fragment ); // Put document fragment in "#allHomes"
+    fragment.appendChild( article ); // Put <article> in doc fragment
+    allHomes.appendChild( fragment ); // Put doc createDocumentFragmentent in "#allHomes"
   }
 
   return this; // Make this method chainable, yo!!
@@ -104,15 +104,19 @@ test.setHomeOptions({
 
 test.displayHomeOptions();
 
-// // Bungalow: a class that inherits from the Blueprint "class"
-// function Bungalow ( lotID ) {
-//   Blueprint.call( this, lotID );
-//   this.houseType = "Bungalow";
-//   this.price = "$125,000+";
-// }
-//
-// Bungalow.prototype = new Blueprint();
-// Bungalow.prototype.constructor = Bungalow;
+// Bungalow: a class that inherits from the Blueprint "class"
+function Bungalow ( lotID ) {
+  Blueprint.call( this, lotID );
+  this.houseType = "Bungalow";
+  this.price = "$125,000+";
+}
+
+Bungalow.prototype = new Blueprint();
+Bungalow.prototype.constructor = Bungalow;
+
+var kai = new Bungalow(987);
+kai.displayHomeOptions();
+
 //
 //
 //
