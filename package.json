@@ -30,12 +30,10 @@
   "homepage": "https://github.com/kaidez/javascript-prototype-screencast#readme",
   "devDependencies": {
     "browserify": "^13.0.0",
-    "clean-css": "^3.4.8",
     "httpster": "^1.0.1",
     "ncp": "^2.0.0",
     "nodemon": "1.9.1",
     "uglifyjs": "^2.4.10",
-    "uncss": "0.13.0",
     "watchify": "^3.6.1"
   },
   "dependencies": {
