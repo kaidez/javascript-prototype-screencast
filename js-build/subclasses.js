@@ -1,7 +1,7 @@
-var Blueprint = require( "./Blueprint" );
+var GetBlueprint = require( "./Blueprint" );
 
 
-var test = new Blueprint( 4564 );
+var test = new GetBlueprint( 4564 );
 
 test.setHomeOptions({
   pool: true,
