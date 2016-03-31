@@ -1,13 +1,16 @@
-// Abstract Class: is never instantiated.
-function Blueprint( lotID ) {
+/*
+ * Blueprint: the core class that house types will inherit from.
+ * ====================================================================
+ * Treat this as an "abstract" class that is only to be inherited from
+ * and is never ever EVER to be instantited.
+ */
+function Blueprint() {}
 
-  // Define a unique ID
-  this.lotID = lotID;
-}
+
 
 /*
- * Place properties that can change directly onto the Blueprint
- * prototype instead of in th function because it's more efficient.
+ * Blueprint properties: properties that all houses will have
+ * ====================================================================
  */
 
 Blueprint.prototype.squareFeet = 1000;
