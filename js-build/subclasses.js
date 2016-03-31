@@ -1,20 +1,20 @@
-var blueprint = require( "./Blueprint" );
+var Blueprint = require( "./Blueprint" );
 
 
-// var test = new Blueprint( 4564 );
+var test = new Blueprint( 4564 );
 
-// test.setHomeOptions({
-//   pool: true,
-//   kitchenCounters: "granite",
-//   squareFeet: 2500,
-//   totalBathrooms: 3
-// });
-
-
+test.setHomeOptions({
+  pool: true,
+  kitchenCounters: "granite",
+  squareFeet: 2500,
+  totalBathrooms: 3
+});
 
 
 
-// test.displayHomeOptions();
+
+
+test.displayHomeOptions();
 
 // // Bungalow: a class that inherits from the Blueprint "class"
 // function Bungalow ( lotID ) {
