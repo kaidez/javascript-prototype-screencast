@@ -74,19 +74,19 @@ Blueprint.prototype.displayHomeOptions = function() {
 
     if ( typeof this[homeOption] !== "function" && typeof this[homeOption] !== "boolean" ) {
       if ( homeOption === "lotID" ) {
-        var homeHeader = document.createElement("h2");
+        var homeHeader = document.createElement( "h2" );
         homeHeader.innerHTML = "House#: " + this[homeOption];
         article.appendChild(homeHeader);
       } else {
-        li = document.createElement("li");
+        li = document.createElement( "li" );
         ul.appendChild(li);
         li.innerHTML = homeOption + ": " + this[homeOption];
       }
     }
 
-    article.appendChild(ul); // Put <ul> in <article>
-    fragment.appendChild(article); // Put <article> in document fragment
-    allHomes.appendChild(fragment); // Put document fragment in "#allHomes"
+    article.appendChild( ul ); // Put <ul> in <article>
+    fragment.appendChild( article ); // Put <article> in document fragment
+    allHomes.appendChild( fragment ); // Put document fragment in "#allHomes"
   }
 
   return this; // Make this method chainable, yo!!
@@ -94,7 +94,7 @@ Blueprint.prototype.displayHomeOptions = function() {
 }
 
 
-var test = new Blueprint(4564);
+var test = new Blueprint( 4564 );
 
 test.setHomeOptions({
   pool: true,
