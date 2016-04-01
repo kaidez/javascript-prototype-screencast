@@ -28,7 +28,7 @@ Blueprint.prototype.totalFloors = 1;
 Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.prototype.kitchen = Blueprint.prototype.diningRoom =
       true;
 
-// Blueprint methods: methods that all houses will have
+// Blueprint methods: define options that all houses will have
 Blueprint.prototype.setHomeOptions = function( options ) {
 
   /*
