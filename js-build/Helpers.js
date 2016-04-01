@@ -8,13 +8,22 @@ module.exports = {
      * single house info component and places it on the page.
      */
     setPropertyName: function( propName ) {
-        var getCapitalLetter = /[A-Z]/,
+        var
+
+            // Do a regex search for a capital letter
+            getCapitalLetter = /[A-Z]/,
+
+            // Find the capital letter in propName, should be only one
             letter = propName.match( getCapitalLetter ),
+
+            // Put a space before capital letter in propName
             updatePropertyName = propName.replace(letter,  " " + letter);
+
+            // Capitalize the above updatePropertyName
             propertyName = updatePropertyName.charAt(0).toUpperCase() + updatePropertyName.slice(1);
 
         // Make "propertyName" available throughout the code
         return propertyName;
 
-    }
+    } // end setPropertyName()
 };
