@@ -20,7 +20,7 @@ function Blueprint( lotID ) {
  */
 
 
-// Blueprint properties: properties that all houses will have
+// Blueprint properties: default properties that all houses will have
 Blueprint.prototype.squareFeet = 1000;
 Blueprint.prototype.totalBedrooms = 1;
 Blueprint.prototype.totalBathrooms = 1.5;
@@ -42,16 +42,26 @@ Blueprint.prototype.setHomeOptions = function( options ) {
   // Store a reference to the options object
   options = options || {};
 
+  /*
+   * Handle the default options. If these options aren't isn't set
+   * when creating Blueprint-related instances, set their default
+   * values defined above.
+   */
   this.squareFeet = options.squareFeet || this.squareFeet;
   this.totalBedrooms = options.totalBedrooms || this.totalBedrooms;
   this.totalBathrooms = options.totalBathrooms || this.totalBathrooms;
   this.totalFloors = options.totalFloors || this.totalFloors;
 
+  /*
+   * Handle the extra options that houses can have. If these options
+   * aren't isn't set, return their value as "undefined."
+   */
   this.pool = options.pool === undefined ? false : options.pool;
   this.floorType = options.floorType === undefined ? "tile" : options.floorType;
   this.kitchenCounters = options.kitchenCounters === undefined ? "formica" : options.kitchenCounters;
 
-  return this; // Make this method chain-able
+  // Make this method chain-able by returning it
+  return this;
 
 }
 
