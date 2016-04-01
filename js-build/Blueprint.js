@@ -76,14 +76,7 @@ Blueprint.prototype.displayHomeOptions = function() {
         article.appendChild(homeHeader);
       } else {
 
-
-        var getCapitalLetter = /[A-Z]/;
-        var letter = homeOption.match( getCapitalLetter );
-        var updatePropertyName = homeOption.replace(letter,  " " + letter);
-        var newPropertyName = updatePropertyName.charAt(0).toUpperCase() + updatePropertyName.slice(1);
-        console.log(newPropertyName);
-
-
+        helpers.setPropertyName( homeOption );
 
         li = document.createElement( "li" );
         ul.appendChild(li);
