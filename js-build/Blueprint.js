@@ -76,6 +76,9 @@ Blueprint.prototype.displayHomeOptions = function() {
         article.appendChild(homeHeader);
       } else {
 
+        /*
+         * Use the "setPropertyName" method in "Helpers" to convert to a two-word proper-case string
+         */
         helpers.setPropertyName( homeOption );
 
         li = document.createElement( "li" );
