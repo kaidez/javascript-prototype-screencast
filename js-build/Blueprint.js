@@ -80,7 +80,7 @@ Blueprint.prototype.displayHomeOptions = function() {
 
         li = document.createElement( "li" );
         ul.appendChild(li);
-        li.innerHTML = homeOption + ": " + this[homeOption];
+        li.innerHTML = propertyName + ": " + this[homeOption];
       }
     }
 
