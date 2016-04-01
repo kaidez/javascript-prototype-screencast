@@ -29,17 +29,17 @@ Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.protot
       true;
 
 // Blueprint methods: methods that all houses will have
-Blueprint.prototype.setHomeOptions = function( opts ) {
+Blueprint.prototype.setHomeOptions = function( options ) {
 
-  opts = opts || {};
-  this.pool = opts.pool === undefined ? false : opts.pool;
-  this.floorType = opts.floorType === undefined ? "tile" : opts.floorType;
-  this.kitchenCounters = opts.kitchenCounters === undefined ? "formica" : opts.kitchenCounters;
+  options = options || {};
+  this.pool = options.pool === undefined ? false : options.pool;
+  this.floorType = options.floorType === undefined ? "tile" : options.floorType;
+  this.kitchenCounters = options.kitchenCounters === undefined ? "formica" : options.kitchenCounters;
 
-  this.squareFeet = opts.squareFeet || this.squareFeet;
-  this.totalBedrooms = opts.totalBedrooms || this.totalBedrooms;
-  this.totalBathrooms = opts.totalBathrooms || this.totalBathrooms;
-  this.totalFloors = opts.totalFloors || this.totalFloors;
+  this.squareFeet = options.squareFeet || this.squareFeet;
+  this.totalBedrooms = options.totalBedrooms || this.totalBedrooms;
+  this.totalBathrooms = options.totalBathrooms || this.totalBathrooms;
+  this.totalFloors = options.totalFloors || this.totalFloors;
 
   return this; // Make this method chain-able
 
@@ -75,6 +75,7 @@ Blueprint.prototype.displayHomeOptions = function() {
         var homeHeader = document.createElement( "h2" );
         homeHeader.innerHTML = "House#: " + this[homeOption];
         article.appendChild(homeHeader);
+
       } else {
 
         /*
