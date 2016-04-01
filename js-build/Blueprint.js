@@ -1,3 +1,5 @@
+var helpers = require( "./Helpers" );
+
 /*
  * Blueprint: the core class that house types will inherit from.
  * ====================================================================
@@ -65,24 +67,7 @@ Blueprint.prototype.displayHomeOptions = function() {
 
   for ( homeOption in this ) {
 
-    var capitalizeOptionName = homeOption.charAt(0).toUpperCase() + homeOption.slice(1);
-
     if ( typeof this[homeOption] !== "function" && typeof this[homeOption] !== "boolean" ) {
-
-    var findCapitalLetter = /[A-Z]/;
-    var checkLetter = homeOption.match(findCapitalLetter);
-
-    if(checkLetter != null) {
-    console.log(typeof checkLetter[0]);
-  } else {
-    return;
-  }
-    //var joe = checkLetter.toString()
-    //console.log(joe);
-    //var kai = joe.replace(joe, " " + joe);
-    //console.log(kai);
-
-
 
       if ( homeOption === "lotID" ) {
         var homeHeader = document.createElement( "h2" );
