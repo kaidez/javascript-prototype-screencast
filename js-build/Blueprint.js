@@ -20,6 +20,7 @@ function Blueprint( lotID ) {
  */
 
 
+
 // Blueprint properties: default properties that all houses will have
 Blueprint.prototype.squareFeet = 1000;
 Blueprint.prototype.totalBedrooms = 1;
@@ -28,7 +29,13 @@ Blueprint.prototype.totalFloors = 1;
 Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.prototype.kitchen = Blueprint.prototype.diningRoom =
       true;
 
-// Blueprint methods: define options that all houses will have
+
+
+/*
+ * Blueprint.prototype.setHomeOptions(): define options that all
+ * houses will have. Options will not appear on the page unless the
+ * "displayHomeOptions()" below actually runs.
+ */
 Blueprint.prototype.setHomeOptions = function( options ) {
 
   /*
@@ -67,7 +74,9 @@ Blueprint.prototype.setHomeOptions = function( options ) {
 
 
 
-// Display home options on index.html
+/* Blueprint.prototype.displayHomeOptions(): define options that all
+ */
+
 Blueprint.prototype.displayHomeOptions = function() {
 
   var allHomes = document.getElementById("allHomes"),
@@ -81,7 +90,7 @@ Blueprint.prototype.displayHomeOptions = function() {
    * <article> a minimum height of 300 pixels so the columns lay out
    * neatly
    */
-  $(article).attr({
+  $( article ).attr({
     "class": "col-md-4",
     style: "min-height: 300px;"
   });
@@ -109,16 +118,26 @@ Blueprint.prototype.displayHomeOptions = function() {
       }
     }
 
-    article.appendChild(ul); // Put <ul> in <article>
-    fragment.appendChild(article); // Put <article> in doc fragment
-    allHomes.appendChild(fragment); // Put doc fragment in "#allHomes"
+    // Put <ul> in <article>
+    article.appendChild( ul );
+
+    // Put <article> in doc fragment
+    fragment.appendChild( article );
+
+    // Put doc fragment in "#allHomes" on page
+    allHomes.appendChild( fragment );
   }
 
-  return this; // Make this method chain-able
+  // Make this method chain-able by returning it
+  return this;
 
 }
 
 // Stop setting methods and properties on "Blueprint."
+
+
+
+
 
 // export Blueprint as a consumable module
 module.exports = Blueprint;
