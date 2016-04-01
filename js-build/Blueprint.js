@@ -30,6 +30,7 @@ Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.protot
 
 // Blueprint methods: methods that all houses will have
 Blueprint.prototype.setHomeOptions = function( opts ) {
+
   opts = opts || {};
   this.pool = opts.pool === undefined ? false : opts.pool;
   this.floorType = opts.floorType === undefined ? "tile" : opts.floorType;
@@ -96,7 +97,7 @@ Blueprint.prototype.displayHomeOptions = function() {
 
 }
 
-// Stop setting methods and properties on "Blueprint." We could add
+// Stop setting methods and properties on "Blueprint."
 
 // export Blueprint as a consumable module
 module.exports = Blueprint;
