@@ -31,6 +31,10 @@ Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.protot
 // Blueprint methods: methods that all houses will have
 Blueprint.prototype.setHomeOptions = function( options ) {
 
+  /*
+   * "options" is an object that contains options that each house does
+   * or does not have.
+   */
   options = options || {};
   this.pool = options.pool === undefined ? false : options.pool;
   this.floorType = options.floorType === undefined ? "tile" : options.floorType;
