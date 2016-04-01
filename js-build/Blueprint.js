@@ -70,10 +70,21 @@ Blueprint.prototype.displayHomeOptions = function() {
     if ( typeof this[homeOption] !== "function" && typeof this[homeOption] !== "boolean" ) {
 
       if ( homeOption === "lotID" ) {
+
         var homeHeader = document.createElement( "h2" );
         homeHeader.innerHTML = "House#: " + this[homeOption];
         article.appendChild(homeHeader);
       } else {
+
+
+        var getCapitalLetter = /[A-Z]/;
+        var letter = homeOption.match( getCapitalLetter );
+        var updatePropertyName = homeOption.replace(letter,  " " + letter);
+        var newPropertyName = updatePropertyName.charAt(0).toUpperCase() + updatePropertyName.slice(1);
+        console.log(newPropertyName);
+
+
+
         li = document.createElement( "li" );
         ul.appendChild(li);
         li.innerHTML = homeOption + ": " + this[homeOption];
