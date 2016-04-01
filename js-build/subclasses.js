@@ -1,20 +1,5 @@
+// Import the Blueprint module/class
 var GetBlueprint = require( "./Blueprint" );
-
-
-var test = new GetBlueprint( 4564 );
-
-test.setHomeOptions({
-  pool: true,
-  kitchenCounters: "granite",
-  squareFeet: 2500,
-  totalBathrooms: 3
-});
-
-
-
-
-
-test.displayHomeOptions();
 
 // Bungalow: a class that inherits from the GetBlueprint "class"
 function Bungalow ( lotID ) {
@@ -27,7 +12,12 @@ Bungalow.prototype = new GetBlueprint();
 Bungalow.prototype.constructor = Bungalow;
 
 var kai = new Bungalow(987);
-kai.displayHomeOptions();
+kai.setHomeOptions({
+  pool: true,
+  kitchenCounters: "granite",
+  squareFeet: 2500,
+  totalBathrooms: 3
+}).displayHomeOptions();
 
 //
 //
