@@ -4,14 +4,21 @@
  * Treat this as an "abstract" class, meaning that it will only to be
  * inherited from and will never ever EVER to be instantited.
  */
-function Blueprint() {}
-
+function Blueprint( lotID ) {
+  this.lotID = lotID;
+}
 
 
 /*
- * Blueprint properties: properties that all houses will have
+ * Start setting methods and properties on "Blueprint." We could add
+ * them directly to the "Blueprint" function/object, but things will
+ * be optimized if we don't. properties: properties that all houses
+ * will have
  * ====================================================================
  */
+
+
+// Blueprint properties: properties that all houses will have
 Blueprint.prototype.squareFeet = 1000;
 Blueprint.prototype.totalBedrooms = 1;
 Blueprint.prototype.totalBathrooms = 1.5;
@@ -19,7 +26,7 @@ Blueprint.prototype.totalFloors = 1;
 Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.prototype.kitchen = Blueprint.prototype.diningRoom =
       true;
 
-// Set single home options
+// Blueprint methods: methods that all houses will have
 Blueprint.prototype.setHomeOptions = function( opts ) {
   opts = opts || {};
   this.pool = opts.pool === undefined ? false : opts.pool;
@@ -31,21 +38,9 @@ Blueprint.prototype.setHomeOptions = function( opts ) {
   this.totalBathrooms = opts.totalBathrooms || this.totalBathrooms;
   this.totalFloors = opts.totalFloors || this.totalFloors;
 
+  return this; // Make this method chain-able
+
 }
-
-// Blueprint.prototype.displayHomeOptions = function() {
-
-//   var allHomes = document.getElementById("allHomes"),
-//       article = document.createElement("article"),
-//       ul = document.createElement("ul"),
-//       fragment = document.createDocumentFragment();
-
-//   $(article).attr({
-//     "class": "col-md-4",
-//     style: "min-height: 300px;"
-//   });
-// }
-
 
 
 
@@ -70,7 +65,25 @@ Blueprint.prototype.displayHomeOptions = function() {
 
   for ( homeOption in this ) {
 
+    var capitalizeOptionName = homeOption.charAt(0).toUpperCase() + homeOption.slice(1);
+
     if ( typeof this[homeOption] !== "function" && typeof this[homeOption] !== "boolean" ) {
+
+    var findCapitalLetter = /[A-Z]/;
+    var checkLetter = homeOption.match(findCapitalLetter);
+
+    if(checkLetter != null) {
+    console.log(typeof checkLetter[0]);
+  } else {
+    return;
+  }
+    //var joe = checkLetter.toString()
+    //console.log(joe);
+    //var kai = joe.replace(joe, " " + joe);
+    //console.log(kai);
+
+
+
       if ( homeOption === "lotID" ) {
         var homeHeader = document.createElement( "h2" );
         homeHeader.innerHTML = "House#: " + this[homeOption];
@@ -82,13 +95,16 @@ Blueprint.prototype.displayHomeOptions = function() {
       }
     }
 
-    article.appendChild( ul ); // Put <ul> in <article>
-    fragment.appendChild( article ); // Put <article> in doc fragment
-    allHomes.appendChild( fragment ); // Put doc createDocumentFragmentent in "#allHomes"
+    article.appendChild(ul); // Put <ul> in <article>
+    fragment.appendChild(article); // Put <article> in doc fragment
+    allHomes.appendChild(fragment); // Put doc fragment in "#allHomes"
   }
 
-  return this; // Make this method chainable, yo!!
+  return this; // Make this method chain-able
 
 }
 
+// Stop setting methods and properties on "Blueprint." We could add
+
+// export Blueprint as a consumable module
 module.exports = Blueprint;
