@@ -74,36 +74,63 @@ Blueprint.prototype.setHomeOptions = function( options ) {
 
 
 
-/* Blueprint.prototype.displayHomeOptions(): define options that all
+/*
+ * Blueprint.prototype.displayHomeOptions(): display the lotID and all
+ * the options
  */
-
 Blueprint.prototype.displayHomeOptions = function() {
 
-  var allHomes = document.getElementById("allHomes"),
+  var
+
+      // Store a reference to the "#allHomes" already on the page
+      allHomes = document.getElementById("allHomes"),
+
+      // Create a document fragment
       fragment = document.createDocumentFragment(),
-      article = document.createElement("article"),
-      ul = document.createElement("ul");
+
+      // Dynamically create an <article> and <ul> tag
+      article = document.createElement( "article" ),
+      ul = document.createElement( "ul" );
 
   /*
-   * Add a Bootstrap column class to each <article> for RWD purposes.
-   * This will build a responsive 3-column layout.Also, give the
-   * <article> a minimum height of 300 pixels so the columns lay out
-   * neatly
+   * Add a Bootstrap column "col-" class to each <article> for
+   * responsive web design purposes. This will build a responsive
+   * 3-column layout. Also, give the <article> a minimum height of 300
+   * pixels so the columns lay out neatly and evenly.
    */
   $( article ).attr({
     "class": "col-md-4",
     style: "min-height: 300px;"
   });
 
+
+  /*
+   * At this point in the code, we can access any home properties as
+   * an object with the "this" keyword. Use a "for...in" loop to find
+   * the object properties and progammatically place them on the page.
+   */
   for ( homeOption in this ) {
 
+    /*
+     * The object contains strings, numbers, functions and boolean
+     * types.  We only need to find the string and number types so
+     * ignore the function and boolean types as the loop runs.
+     */
     if ( typeof this[homeOption] !== "function" && typeof this[homeOption] !== "boolean" ) {
 
+      /*
+       * All classes that inherit from "Blueprint" will have a "lotID"
+       * value. Create an <h2> tag, load the lotID info inside it with some other copy, then place it inside <article>.
+       *
+       * TODO: load this with jQuery.prepend() to insure that it's
+       * placed at the top of the article, avoiding any race
+       * conditions.
+       */
       if ( homeOption === "lotID" ) {
 
         var homeHeader = document.createElement( "h2" );
         homeHeader.innerHTML = "House#: " + this[homeOption];
-        article.appendChild(homeHeader);
+        article.appendChild( homeHeader );
 
       } else {
 
