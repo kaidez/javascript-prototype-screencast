@@ -36,14 +36,15 @@ Blueprint.prototype.setHomeOptions = function( options ) {
    * or does not have.
    */
   options = options || {};
-  this.pool = options.pool === undefined ? false : options.pool;
-  this.floorType = options.floorType === undefined ? "tile" : options.floorType;
-  this.kitchenCounters = options.kitchenCounters === undefined ? "formica" : options.kitchenCounters;
 
   this.squareFeet = options.squareFeet || this.squareFeet;
   this.totalBedrooms = options.totalBedrooms || this.totalBedrooms;
   this.totalBathrooms = options.totalBathrooms || this.totalBathrooms;
   this.totalFloors = options.totalFloors || this.totalFloors;
+
+  this.pool = options.pool === undefined ? false : options.pool;
+  this.floorType = options.floorType === undefined ? "tile" : options.floorType;
+  this.kitchenCounters = options.kitchenCounters === undefined ? "formica" : options.kitchenCounters;
 
   return this; // Make this method chain-able
 
