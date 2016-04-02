@@ -1,6 +1,17 @@
 // Import the Blueprint module/class
 var GetBlueprint = require( "./Blueprint" );
 
+/*
+ * SUBCLASSES
+ * ====================================================================
+ * Create subclasses that can either inherit directly from the
+ * Blueprint. "class" or from another class that already inherits from
+ * Blueprint. Some notes:
+ *
+ * -an inheriting class does a .call()
+
+ */
+
 // Bungalow: a class that inherits from the GetBlueprint "class"
 function Bungalow ( lotID ) {
 
