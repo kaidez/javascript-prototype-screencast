@@ -41,14 +41,17 @@ Bungalow.prototype = new Blueprint();
  */
 Bungalow.prototype.constructor = Bungalow;
 
-// Create a new instance of Bungalow and set its options
+// Create a new instance of Bungalow called "home01" & set its options
 var home01 = new Bungalow(987);
 home01.setHomeOptions({
   pool: true,
   kitchenCounters: "granite",
   squareFeet: 2500,
   totalBathrooms: 3
-});.displayHomeOptions();
+});
+
+// Run the "displayHomeOptions()" method against the home01 instance
+home01.displayHomeOptions();
 
 
 
