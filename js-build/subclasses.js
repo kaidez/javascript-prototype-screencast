@@ -42,12 +42,7 @@ Bungalow.prototype.constructor = Bungalow;
 
 // Create a new instance of Bungalow called "home01" & set its options
 var home01 = new Bungalow(987);
-home01.setHomeOptions({
-  pool: true,
-  kitchenCounters: "granite",
-  squareFeet: 2500,
-  totalBathrooms: 3
-});
+home01.setHomeOptions();
 
 // Run the "displayHomeOptions()" method against the home01 instance
 home01.displayHomeOptions();
@@ -59,7 +54,6 @@ function Colonial ( lotID, windowTypes ) {
   Blueprint.call( this, lotID, windowTypes );
   this.windowTypes = windowTypes || "Double pane";
   this.houseType = "Colonial";
-
   this.totalFloors = 2;
 }
 
@@ -70,6 +64,7 @@ var home02 = new Colonial( 423 );
 
 home02.setHomeOptions({
   pool: true,
+  price: "250,000",
   kitchenCounters: "granite",
   squareFeet: 2500,
   totalBathrooms: 3
