@@ -1,5 +1,5 @@
 // Import the Blueprint module/class
-var GetBlueprint = require( "./Blueprint" );
+var Blueprint = require( "./Blueprint" );
 
 /*
  * SUBCLASSES
@@ -12,11 +12,11 @@ var GetBlueprint = require( "./Blueprint" );
 
  */
 
-// Bungalow: a class that inherits from the GetBlueprint "class"
+// Bungalow: a class that inherits from the Blueprint "class"
 function Bungalow ( lotID ) {
 
   // Use .call() to get & use the "lotID" value in the Blueprint class
-  GetBlueprint.call( this, lotID );
+  Blueprint.call( this, lotID );
 
   // Set some core properties
   this.houseType = "Bungalow";
@@ -24,12 +24,12 @@ function Bungalow ( lotID ) {
 
 }
 
-// Have the Bungalow "class" inherit from the GetBlueprint "class"
-Bungalow.prototype = new GetBlueprint();
+// Have the Bungalow "class" inherit from the Blueprint "class"
+Bungalow.prototype = new Blueprint();
 
 /*
  * At this point in the code, Bungalow's constructor property is
- * pointing to GetBlueprint's constructor property. In this case, it's
+ * pointing to Blueprint's constructor property. In this case, it's
  * a best practice to reverse that, so do just that.
  */
 Bungalow.prototype.constructor = Bungalow;
@@ -46,32 +46,32 @@ home01.setHomeOptions({
 
 
 
-// Colonial: a class that inherits from the GetBlueprint "class"
+// Colonial: a class that inherits from the Blueprint "class"
 function Colonial ( lotID, windowTypes ) {
-  GetBlueprint.call( this, lotID, windowTypes );
+  Blueprint.call( this, lotID, windowTypes );
   this.windowTypes = windowTypes || "Double pane";
   this.houseType = "Colonial";
   this.price = "$250,000+";
   this.totalFloors = 2;
 }
 
-Colonial.prototype = new GetBlueprint();
+Colonial.prototype = new Blueprint();
 Colonial.prototype.constructor = Colonial;
 
 var home02 = new Colonial( 423 );
 
 home02.displayHomeOptions();
 
-// Tudor: a class that inherits from the GetBlueprint "class"
+// Tudor: a class that inherits from the Blueprint "class"
 function Tudor ( lotID, backyard ) {
-  GetBlueprint.call( this, lotID, backyard );
+  Blueprint.call( this, lotID, backyard );
   this.backyard = backyard || "no";
   this.houseType = "Tudor";
   this.price = "$150,000+";
   this.totalFloors = 3;
 }
 
-Tudor.prototype = new GetBlueprint();
+Tudor.prototype = new Blueprint();
 Tudor.prototype.constructor = Tudor;
 
 
