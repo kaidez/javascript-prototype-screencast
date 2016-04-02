@@ -9,8 +9,7 @@ var helpers = require( "./Helpers" );
  */
 function Blueprint( lotID ) {
   this.lotID = lotID;
-}
-
+};
 
 /*
  * Start setting methods and properties on "Blueprint." We could add
@@ -83,111 +82,136 @@ Blueprint.prototype.setHomeOptions = function( options ) {
  */
 Blueprint.prototype.displayHomeOptions = function() {
 
-  var
-
-      // Store a reference to the "#allHomes" already on the page
-      allHomes = document.getElementById("allHomes"),
-
-      // Create a document fragment
-      fragment = document.createDocumentFragment(),
-
-      // Dynamically create an <article> and <ul> tag
-      article = document.createElement( "article" ),
-      headerDiv = document.createElement( "div" ),
-      ul = document.createElement( "ul" );
-
   /*
-   * Add a Bootstrap column "col-" class to each <article> for
-   * responsive web design purposes. This will build a responsive
-   * 3-column layout. Also, give the <article> a minimum height of 300
-   * pixels so the columns lay out neatly and evenly.
+   * If a lotID is not passed as a parameter to an instance, pass an
+   * console error saying so. This will stop the code from running.
    */
-  $( article ).attr({
-    "class": "col-md-4",
-    style: "min-height: 300px;"
-  });
+  if( !this.lotID || typeof this.lotID === "undefined" ) {
 
+    throw new Error("lotID is not defined" );
 
-  /*
-   * At this point in the code, we can access any home properties as
-   * an object with the "this" keyword. Use a "for...in" loop to find
-   * the object properties and progammatically place them on the page.
-   */
-  for ( homeOption in this ) {
+  // If a lotID is passed, continue running the code...
+  } else {
+
+    // Create some variables with a single var pattern...
+    var
+
+        // Store a reference to the "#allHomes" already on the page
+        allHomes = document.getElementById("allHomes"),
+
+        // Create a document fragment
+        fragment = document.createDocumentFragment(),
+
+        // Dynamically create an <article> and <ul> tag
+        article = document.createElement( "article" ),
+        headerDiv = document.createElement( "div" ),
+        ul = document.createElement( "ul" );
 
     /*
-     * The object contains strings, numbers, functions and boolean
-     * types.  We only need to find the string and number types so
-     * ignore the function and boolean types as the loop runs.
+     * Add a Bootstrap column "col-" class to each <article> for
+     * responsive web design purposes. This will build a responsive
+     * 3-column layout. Also, give the <article> a minimum height of
+     * 300 pixels so the columns lay out neatly and evenly.
      */
-    if ( typeof this[homeOption] !== "function" && typeof this[homeOption] !== "boolean" ) {
+    $( article ).attr({
+      "class": "col-md-4",
+      style: "min-height: 300px;"
+    });
+
+    /*
+     * At this point in the code, we can access any home properties as
+     * an object with the "this" keyword. Use a "for...in" loop to find
+     * the object properties and progammatically place them on the
+     * page.
+     */
+    for ( homeOption in this ) {
 
       /*
-       * All classes that inherit from "Blueprint" will have a "lotID"
-       * value. Create an <h2> tag, load the lotID info inside it with
-       * some other copy, then place it inside <article>.
-       *
-       * TODO: load this with jQuery.prepend() to insure that it's
-       * placed at the top of the article, avoiding any race
-       * conditions.
+       * The object contains strings, numbers, functions and boolean
+       * types.  We only need to find the string and number types so
+       * ignore the function and boolean types as the loop runs.
        */
-      if ( homeOption === "lotID" ) {
-
-        var homeHeader = document.createElement( "h2" );
-        homeHeader.innerHTML = "House#: " + this[homeOption];
-        $( homeHeader ).prependTo( headerDiv );
-
-      } else {
-
-      if( homeOption === "price" ) {
-
-        var priceDiv = document.createElement( "div" );
-        priceDiv.innerHTML = "Price: $" + this[homeOption];
-        headerDiv.appendChild( priceDiv );
-
-        $( priceDiv ).css({
-            "margin-bottom": "10px",
-            "font-weight": "bold",
-            "font-size": "18px"
-          });
-
-      } else {
+      if ( typeof this[homeOption] !== "function" && typeof this[homeOption] !== "boolean" ) {
 
         /*
-         * Use the "capitalizeOptionName" method in "Helpers" to
-         * convert the option name to a two-word proper-case string.
-         * Returns a variable called "optionName," which is name of the
-         * property.
+         * All classes that inherit from "Blueprint" will have a
+         * "lotID" value. If that's where we are in the loop, create
+         * an <h2> tag, load the lotID info inside it with some other
+         * copy, then place it inside of the "headerDiv" element
+         * created below.
          */
-        helpers.propercaseOptionName( homeOption );
+        if ( homeOption === "lotID" ) {
 
+          var homeHeader = document.createElement( "h2" );
+          homeHeader.innerHTML = "House#: " + this[homeOption];
+          $( homeHeader ).prependTo( headerDiv );
+
+        } else {
         /*
-         * Create an <li> tag, load the option name info inside it with
-         * some other copy.
+         * All classes that inherit from "Blueprint" will have a
+         * "price" value...either by default or set by the class
+         * instance. If that's where we are in the loop, create
+         * a <div> tag, load the price info inside it with some other
+         * copy, then place it inside of teh "headerDiv" element
+         * created below.
          */
-        li = document.createElement( "li" );
-        li.innerHTML = optionName + ": " + this[homeOption];
-        ul.appendChild(li);
+          if( homeOption === "price" ) {
 
+            var priceDiv = document.createElement( "div" );
+            priceDiv.innerHTML = "Price: $" + this[homeOption];
+            headerDiv.appendChild( priceDiv );
+
+            /*
+             * Add some inline styles to the element with the price in
+             * it.
+             */
+            $( priceDiv ).css({
+              "margin-bottom": "10px",
+              "font-weight": "bold",
+              "font-size": "18px"
+            });
+
+        // For all other options, run the following code...
+        } else {
+
+          /*
+           * Use the "capitalizeOptionName" method in "Helpers" to
+           * convert the option name to a two-word proper-case string.
+           * Returns a variable called "optionName," which is name of
+           * the property.
+           */
+          helpers.propercaseOptionName( homeOption );
+
+          /*
+           * Create an <li> tag, load the option name info inside it
+           * with some other copy.
+           */
+          li = document.createElement( "li" );
+          li.innerHTML = optionName + ": " + this[homeOption];
+          ul.appendChild(li);
+
+        }
       }
+
+      // Put headerDiv element in <article>
+      article.appendChild( headerDiv );
+
+      // Put <ul> in <article>
+      article.appendChild( ul );
+
+      // Put <article> in doc fragment
+      fragment.appendChild( article );
+
+      // Put doc fragment in "#allHomes" on page
+      allHomes.appendChild( fragment );
+
     }
-
-    // Put headerDiv element in <article>
-    article.appendChild( headerDiv );
-
-    // Put <ul> in <article>
-    article.appendChild( ul );
-
-    // Put <article> in doc fragment
-    fragment.appendChild( article );
-
-    // Put doc fragment in "#allHomes" on page
-    allHomes.appendChild( fragment );
   }
-}
+
   // Make this method chain-able by returning it
   return this;
 
+  }
 }
 
 // Stop setting methods and properties on "Blueprint."
