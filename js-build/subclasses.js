@@ -92,6 +92,10 @@ Mansion.prototype = new Colonial();
 Mansion.prototype.constructor = Mansion;
 
 
-var home03 = new Mansion( 765 );
+var home03 = new Mansion(657);
 
 home03.displayHomeOptions();
+
+var home04 = new Mansion(54363);
+
+home04.displayHomeOptions();
