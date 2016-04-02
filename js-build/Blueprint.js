@@ -136,12 +136,12 @@ Blueprint.prototype.displayHomeOptions = function() {
       } else {
 
         /*
-         * Use the "setPropertyName" method in "Helpers" to convert
-         * the option name to a two-word proper-case string. Returns a
-         * variable called "propertyName," which is name of the
+         * Use the "capitalizeOptionName" method in "Helpers" to
+         * convert the option name to a two-word proper-case string.
+         * Returns a variable called "optionName," which is name of the
          * property.
          */
-        helpers.setPropertyName( homeOption );
+        helpers.propercaseOptionName( homeOption );
 
         /*
          * Create an <li> tag, load the option name info inside it with
@@ -149,7 +149,7 @@ Blueprint.prototype.displayHomeOptions = function() {
          */
         li = document.createElement( "li" );
         ul.appendChild(li);
-        li.innerHTML = propertyName + ": " + this[homeOption];
+        li.innerHTML = optionName + ": " + this[homeOption];
       }
     }
 

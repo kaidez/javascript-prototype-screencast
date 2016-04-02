@@ -6,31 +6,38 @@
 module.exports = {
 
   /*
-   * setPropertyName(): a method that take individual house property
-   * names and converts them to both two words and converts the
-   * first one to uppercase. It takes one parameter, which will be the
-   * "homeOption" value in the "for...in" loop that builds a
-   * single house info component and places it on the page.
+   * propercaseOptionName(): a method that take individual house
+   * property names and converts them to both two words and converts
+   * the first one to uppercase. It takes one parameter
+   * (currentOptionName), which will be the "homeOption" value in the
+   * "for...in" loop that builds a single house info component and
+   * places it on the page.
    */
-  setPropertyName: function( propName ) {
+  propercaseOptionName: function( currentOptionName ) {
 
     var
 
       // Store a reference to a regex search for a capital letter
       getCapitalLetter = /[A-Z]/,
 
-      // Find the capital letter in propName...there should be only one
-      letter = propName.match( getCapitalLetter ),
+      /*
+       * Find the capital letter in currentOptionName...this currently
+       * only works with one capital letter.
+       */
+      capitalLetter = currentOptionName.match( getCapitalLetter ),
 
-      // Put a space before capital letter in propName
-      updatePropertyName = propName.replace(letter,  " " + letter);
+      // Put a space before capital letter in currentOptionName
+      capitalizeOptionName = currentOptionName.replace( capitalLetter,  " " + capitalLetter );
 
-      // Capitalize the above updatePropertyName
-      propertyName = updatePropertyName.charAt(0).toUpperCase() + updatePropertyName.slice(1);
+      // Capitalize the above capitalizeOptionName
+      optionName = capitalizeOptionName.charAt(0).toUpperCase() + capitalizeOptionName.slice(1);
 
-      // Make "propertyName" available throughout the code
-      return propertyName;
+      /*
+       * Make "optionName" available throughout the code. The code
+       * will work without this, but doing this is abest practice.
+       */
+      return optionName;
 
-    } // end setPropertyName()
+  } // end propercaseOptionName()
 
 };
