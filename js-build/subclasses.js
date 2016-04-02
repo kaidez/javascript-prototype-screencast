@@ -22,8 +22,8 @@ Bungalow.prototype = new GetBlueprint();
  */
 Bungalow.prototype.constructor = Bungalow;
 
-var kai = new Bungalow(987);
-kai.setHomeOptions({
+var home01 = new Bungalow(987);
+home01.setHomeOptions({
   pool: true,
   kitchenCounters: "granite",
   squareFeet: 2500,
