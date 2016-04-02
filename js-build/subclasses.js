@@ -40,12 +40,17 @@ Bungalow.prototype = new Blueprint();
  */
 Bungalow.prototype.constructor = Bungalow;
 
+
+
 // Create a new instance of Bungalow called "home01" & set its options
 var home01 = new Bungalow(987);
 home01.setHomeOptions();
 
 // Run the "displayHomeOptions()" method against the home01 instance
 home01.displayHomeOptions();
+
+
+
 
 
 
@@ -72,18 +77,6 @@ home02.setHomeOptions({
 
 
 
-// Tudor: a class that inherits from the Blueprint "class"
-function Tudor ( lotID, backyard ) {
-  Blueprint.call( this, lotID, backyard );
-  this.backyard = backyard || "no";
-  this.houseType = "Tudor";
-  this.totalFloors = 3;
-}
-
-Tudor.prototype = new Blueprint();
-Tudor.prototype.constructor = Tudor;
-
-
 
 // Mansion: a class that inherits from the Colonial "class"
 function Mansion ( lotID, windowTypes ) {
@@ -99,6 +92,6 @@ Mansion.prototype = new Colonial();
 Mansion.prototype.constructor = Mansion;
 
 
-var home04 = new Colonial( 765 );
+var home03 = new Mansion( 765 );
 
-home04.displayHomeOptions();
+home03.displayHomeOptions();
