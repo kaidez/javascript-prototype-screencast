@@ -3,12 +3,23 @@ var GetBlueprint = require( "./Blueprint" );
 
 // Bungalow: a class that inherits from the GetBlueprint "class"
 function Bungalow ( lotID ) {
+
+  // Use .call() to get & use the "lotID" value in the Blueprint class
   GetBlueprint.call( this, lotID );
+
+  // Set some core properties
   this.houseType = "Bungalow";
   this.price = "$125,000+";
 }
 
+// Have the Bungalow "class" inherit from the GetBlueprint "class"
 Bungalow.prototype = new GetBlueprint();
+
+/*
+ * At this point in the code, Bungalow's constructor property is
+ * pointing to GetBlueprint's constructor property. In this case, it's
+ * a best practice to reverse that, so do just that.
+ */
 Bungalow.prototype.constructor = Bungalow;
 
 var kai = new Bungalow(987);
