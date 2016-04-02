@@ -28,7 +28,6 @@ function Bungalow ( lotID ) {
 
   // Set some core properties
   this.houseType = "Bungalow";
-  this.price = "$125,000+";
 
 }
 
@@ -60,7 +59,7 @@ function Colonial ( lotID, windowTypes ) {
   Blueprint.call( this, lotID, windowTypes );
   this.windowTypes = windowTypes || "Double pane";
   this.houseType = "Colonial";
-  this.price = "$250,000+";
+
   this.totalFloors = 2;
 }
 
@@ -69,7 +68,12 @@ Colonial.prototype.constructor = Colonial;
 
 var home02 = new Colonial( 423 );
 
-home02.displayHomeOptions();
+home02.setHomeOptions({
+  pool: true,
+  kitchenCounters: "granite",
+  squareFeet: 2500,
+  totalBathrooms: 3
+}).displayHomeOptions();
 
 
 
@@ -78,7 +82,6 @@ function Tudor ( lotID, backyard ) {
   Blueprint.call( this, lotID, backyard );
   this.backyard = backyard || "no";
   this.houseType = "Tudor";
-  this.price = "$150,000+";
   this.totalFloors = 3;
 }
 
@@ -93,7 +96,6 @@ function Mansion ( lotID, windowTypes ) {
   this.windowTypes = windowTypes || "Floor-to-ceiling";
   this.jacuzzi = "yes";
   this.houseType = "Mansion";
-  this.price = "$1,000,000+";
   this.totalFloors = 5;
   this.pool = "yes";
 }
