@@ -56,6 +56,7 @@ Blueprint.prototype.setHomeOptions = function( options ) {
    * when creating Blueprint-related instances, set their default
    * values defined above.
    */
+  this.price = options.price || this.price;
   this.squareFeet = options.squareFeet || this.squareFeet;
   this.totalBedrooms = options.totalBedrooms || this.totalBedrooms;
   this.totalBathrooms = options.totalBathrooms || this.totalBathrooms;
@@ -92,6 +93,7 @@ Blueprint.prototype.displayHomeOptions = function() {
 
       // Dynamically create an <article> and <ul> tag
       article = document.createElement( "article" ),
+      headerDiv = document.createElement( "div" ),
       ul = document.createElement( "ul" );
 
   /*
@@ -133,7 +135,21 @@ Blueprint.prototype.displayHomeOptions = function() {
 
         var homeHeader = document.createElement( "h2" );
         homeHeader.innerHTML = "House#: " + this[homeOption];
-        article.appendChild( homeHeader );
+        $( homeHeader ).prependTo( headerDiv );
+
+      } else {
+
+      if( homeOption === "price" ) {
+
+        var priceDiv = document.createElement( "div" );
+        priceDiv.innerHTML = "Price: $" + this[homeOption];
+        headerDiv.appendChild( priceDiv );
+
+        $( priceDiv ).css({
+            "margin-bottom": "10px",
+            "font-weight": "bold",
+            "font-size": "18px"
+          });
 
       } else {
 
@@ -150,10 +166,14 @@ Blueprint.prototype.displayHomeOptions = function() {
          * some other copy.
          */
         li = document.createElement( "li" );
-        ul.appendChild(li);
         li.innerHTML = optionName + ": " + this[homeOption];
+        ul.appendChild(li);
+
       }
     }
+
+    // Put headerDiv element in <article>
+    article.appendChild( headerDiv );
 
     // Put <ul> in <article>
     article.appendChild( ul );
@@ -164,7 +184,7 @@ Blueprint.prototype.displayHomeOptions = function() {
     // Put doc fragment in "#allHomes" on page
     allHomes.appendChild( fragment );
   }
-
+}
   // Make this method chain-able by returning it
   return this;
 
