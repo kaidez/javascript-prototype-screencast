@@ -8,8 +8,14 @@ var Blueprint = require( "./Blueprint" );
  * Blueprint. "class" or from another class that already inherits from
  * Blueprint. Some notes:
  *
- * -an inheriting class does a .call()
-
+ *   -an inheriting class does a .call() against Blueprint so it can
+ *    properly create a lotID
+ *
+ *   -an inheriting class can have its own properties
+ *
+ *   -whenever an inheriting class inherits directly from one class, it
+ *    also takes the inheriting class' construtor property. It needs
+ *    to be reset.
  */
 
 // Bungalow: a class that inherits from the Blueprint "class"
@@ -28,9 +34,8 @@ function Bungalow ( lotID ) {
 Bungalow.prototype = new Blueprint();
 
 /*
- * At this point in the code, Bungalow's constructor property is
- * pointing to Blueprint's constructor property. In this case, it's
- * a best practice to reverse that, so do just that.
+ * Reset Bungalow's constructor property so it stops pointing to
+ * Blueprint's constructor property
  */
 Bungalow.prototype.constructor = Bungalow;
 
