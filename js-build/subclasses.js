@@ -18,6 +18,8 @@ var Blueprint = require( "./Blueprint" );
  *    to be reset.
  */
 
+
+
 // Bungalow: a class that inherits from the Blueprint "class"
 function Bungalow ( lotID ) {
 
@@ -49,8 +51,6 @@ home01.setHomeOptions({
 
 
 
-
-
 // Colonial: a class that inherits from the Blueprint "class"
 function Colonial ( lotID, windowTypes ) {
   Blueprint.call( this, lotID, windowTypes );
@@ -67,6 +67,8 @@ var home02 = new Colonial( 423 );
 
 home02.displayHomeOptions();
 
+
+
 // Tudor: a class that inherits from the Blueprint "class"
 function Tudor ( lotID, backyard ) {
   Blueprint.call( this, lotID, backyard );
@@ -78,6 +80,7 @@ function Tudor ( lotID, backyard ) {
 
 Tudor.prototype = new Blueprint();
 Tudor.prototype.constructor = Tudor;
+
 
 
 // Mansion: a class that inherits from the Colonial "class"
