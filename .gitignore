@@ -3,3 +3,4 @@ npm-debug.log
 *Thumbs.db
 *.localized
 node_modules/
+es5-source-code/
