@@ -120,7 +120,8 @@ Blueprint.prototype.displayHomeOptions = function() {
 
       /*
        * All classes that inherit from "Blueprint" will have a "lotID"
-       * value. Create an <h2> tag, load the lotID info inside it with some other copy, then place it inside <article>.
+       * value. Create an <h2> tag, load the lotID info inside it with
+       * some other copy, then place it inside <article>.
        *
        * TODO: load this with jQuery.prepend() to insure that it's
        * placed at the top of the article, avoiding any race
@@ -135,10 +136,17 @@ Blueprint.prototype.displayHomeOptions = function() {
       } else {
 
         /*
-         * Use the "setPropertyName" method in "Helpers" to convert to a two-word proper-case string
+         * Use the "setPropertyName" method in "Helpers" to convert
+         * the option name to a two-word proper-case string. Returns a
+         * variable called "propertyName," which is name of the
+         * property.
          */
         helpers.setPropertyName( homeOption );
 
+        /*
+         * Create an <li> tag, load the option name info inside it with
+         * some other copy.
+         */
         li = document.createElement( "li" );
         ul.appendChild(li);
         li.innerHTML = propertyName + ": " + this[homeOption];
@@ -161,8 +169,6 @@ Blueprint.prototype.displayHomeOptions = function() {
 }
 
 // Stop setting methods and properties on "Blueprint."
-
-
 
 
 
