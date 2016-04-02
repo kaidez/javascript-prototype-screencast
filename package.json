@@ -24,9 +24,6 @@
   ],
   "author": "kaidez",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kaidez/javascript-prototype-screencast/issues"
-  },
   "homepage": "https://github.com/kaidez/javascript-prototype-screencast#readme",
   "devDependencies": {
     "browserify": "^13.0.0",
