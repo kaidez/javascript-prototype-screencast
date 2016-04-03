@@ -18,12 +18,24 @@ SO!!!  What are prototypes?
 
 In JavaScript, a prototype is a property that exists inside functions, arrays, strings, and regular objects. We'll be focusing on prototypes in functions for this tutorial.
 
-That property is actually an object itself, and it contains other properties and methods. So for example: a function has name property, it also has a call method that we'll actually be using.
+It's important to note that in JavaScript, pretty much everything is an object...functions, arrays, object obviously. Even strings.
 
-Both of those things are inside the prototype object. Also, if you add your own properties and methods to a function, they'll also be inside the prototype. And just a quick reminder: a method is a function inside another function or an object.
+For this tutorial, functions are the main object we'll be focusing on.
+
+Back to prototypes, that's also an object, and it contains other properties and methods. So for example: all functions have a name property, they also have a call method that we'll actually be using.
+
+Both of those things are stored inside the prototype object. Also, if you add your own properties and methods to a function, they'll also be inside the prototype. And just a quick reminder: a method is a function inside another function or an object.
 
 Now prototypes always exist in your code and you don't really need to use them. Until you start simulating class inheritance in JavaScript and "simulating" is the key word here because JavaScript doesn't have classes...unlike other languages like Java.
 
-With Java, you can either create a class or use one of its existing ones, and then create a new instance of the class with a constructor function. And that constructor function is what's used in your code.
+With Java, you can either create a class or use one of its existing ones, and then create a new instance of the class with a constructor function. And that instance is what's used to make your code run.
 
-And classes can inherit from other classes, like this example that we see here.
+And with Java and the like, it's best to think of the instance as an object.
+
+Classes can inherit from other classes, like this example that we see here. So this "Car" class here has properties and methods, and this "Ford" class is inheriting from "Car"...along with all it's methods and properties.
+
+Now that's how "classical" languages like Java work but JavaScript is a "prototypal" language. You can still use constructor functions but when it comes to inheritance, it's different.
+
+With Java, classes inherit from other classes whereas with JavaScript, objects inherit from other objects. And that's done one one one object inherits the prototype of another.
+
+So in this tutorial, we'll walk through how to use prototypes to simulate class inheritance.
