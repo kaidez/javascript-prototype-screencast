@@ -175,19 +175,24 @@ Blueprint.prototype.displayHomeOptions = function() {
         } else {
 
           /*
-           * Use the "capitalizeOptionName" method in "Helpers" to
-           * convert the option name to a two-word proper-case string.
-           * Returns a variable called "optionName," which is name of
-           * the property.
+           * Short-hand reference to the propercaseOptionName() in the
+           * Helpers file
            */
-          helpers.propercaseOptionName( homeOption );
+          var helper = helpers.propercaseOptionName;
+          /*
+           * Use propercaseOptionName() to convert the option name to
+           * a two-word proper-case string. This will set a value to
+           * an accessible variable called "optionName" inside the
+           * method.
+           */
+          helper( homeOption );
 
           /*
-           * Create an <li> tag, load the option name info inside it
+           * Create an <li> tag, load the "optionName" info inside it
            * with some other copy.
            */
           li = document.createElement( "li" );
-          li.innerHTML = optionName + ": " + this[homeOption];
+          li.innerHTML = helper.optionName + ": " + this[homeOption];
           ul.appendChild(li);
 
         }

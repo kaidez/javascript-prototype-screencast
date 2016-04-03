@@ -27,16 +27,10 @@ module.exports = {
       capitalLetter = currentOptionName.match( getCapitalLetter ),
 
       // Put a space before capital letter in currentOptionName
-      capitalizeOptionName = currentOptionName.replace( capitalLetter,  " " + capitalLetter );
+      capitalizeOptionName = currentOptionName.replace( capitalLetter,  " " + capitalLetter ),
 
       // Capitalize the above capitalizeOptionName
       optionName = capitalizeOptionName.charAt(0).toUpperCase() + capitalizeOptionName.slice(1);
-
-      /*
-       * Make "optionName" available throughout the code. The code
-       * will work without this, but doing this is abest practice.
-       */
-      return optionName;
 
   } // end propercaseOptionName()
 
