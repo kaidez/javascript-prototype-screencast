@@ -15,3 +15,15 @@ Second, I'll be talking about prototypes pre-ES5. ES5 lets you use something cal
 I won't be discussing that. There are a couple of link that do a great job of explaining that and I'll give them to you in the end, but this screencast is just about plain-old, regular, basic prototypes.
 
 SO!!!  What are prototypes?
+
+In JavaScript, a prototype is a property that exists inside functions, arrays, strings, and regular objects. We'll be focusing on prototypes in functions for this tutorial.
+
+That property is actually an object itself, and it contains other properties and methods. So for example: a function has name property, it also has a call method that we'll actually be using.
+
+Both of those things are inside the prototype object. Also, if you add your own properties and methods to a function, they'll also be inside the prototype. And just a quick reminder: a method is a function inside another function or an object.
+
+Now prototypes always exist in your code and you don't really need to use them. Until you start simulating class inheritance in JavaScript and "simulating" is the key word here because JavaScript doesn't have classes...unlike other languages like Java.
+
+With Java, you can either create a class or use one of its existing ones, and then create a new instance of the class with a constructor function. And that constructor function is what's used in your code.
+
+And classes can inherit from other classes, like this example that we see here.
