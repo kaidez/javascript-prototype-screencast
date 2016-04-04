@@ -88,7 +88,7 @@ Blueprint.prototype.displayHomeOptions = function() {
    */
   if( !this.lotID || typeof this.lotID === "undefined" ) {
 
-    throw new Error("lotID is not defined" );
+    throw new Error( "lotID is not defined" );
 
   // If a lotID is passed, continue running the code...
   } else {
