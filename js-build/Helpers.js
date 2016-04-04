@@ -32,6 +32,9 @@ module.exports = {
       // Capitalize the above capitalizeOptionName
       optionName = capitalizeOptionName.charAt(0).toUpperCase() + capitalizeOptionName.slice(1);
 
+    // return the converted name so it's available inside the codebase
+    return optionName;
+
   } // end propercaseOptionName()
 
 };
