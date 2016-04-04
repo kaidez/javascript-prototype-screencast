@@ -171,47 +171,48 @@ Blueprint.prototype.displayHomeOptions = function() {
               "font-size": "18px"
             });
 
-        // For all other options, run the following code...
-        } else {
+            // For all other options, run the following code...
+            } else {
 
-          /*
-           * "var helper": Use the propercaseOptionName() method from
-           * the Helpers module to convert the option name to a
-           * two-word proper-case string. This variable value will
-           * soon be loaded into an <li> tag.
-           */
-          var helper = helpers.propercaseOptionName( homeOption );
+              /*
+               * "var helper": Use the propercaseOptionName() method
+               * from the Helpers module to convert the option name to
+               * a two-word proper-case string. This variable value
+               * will soon be loaded into an <li> tag.
+               */
+              var helper = helpers.propercaseOptionName( homeOption );
 
-          /*
-           * Create an <li> tag, load the in the option that was
-           * converetd above inside it with some other copy.
-           */
-          li = document.createElement( "li" );
-          li.innerHTML = helper + ": " + this[homeOption];
-          ul.appendChild(li);
+              /*
+               * Create an <li> tag, load the in the option that was
+               * converetd above inside it with some other copy.
+               */
+              li = document.createElement( "li" );
+              li.innerHTML = helper + ": " + this[homeOption];
+              ul.appendChild(li);
 
-        }
+            } // end if/else statement
+          }
+
+        // Put headerDiv element in <article>
+        article.appendChild( headerDiv );
+
+        // Put <ul> in <article>
+        article.appendChild( ul );
+
+        // Put <article> in doc fragment
+        fragment.appendChild( article );
+
+        // Put doc fragment in "#allHomes" on page
+        allHomes.appendChild( fragment );
+
       }
-
-      // Put headerDiv element in <article>
-      article.appendChild( headerDiv );
-
-      // Put <ul> in <article>
-      article.appendChild( ul );
-
-      // Put <article> in doc fragment
-      fragment.appendChild( article );
-
-      // Put doc fragment in "#allHomes" on page
-      allHomes.appendChild( fragment );
-
     }
-  }
 
   // Make this method chain-able by returning it
   return this;
 
   }
+
 }
 
 // Stop setting methods and properties on "Blueprint."
