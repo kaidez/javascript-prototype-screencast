@@ -3,10 +3,25 @@
 }
 
 /*
- * Override min-height that Bootstrap puts on the col-md-4 class so
- * all the columns have the same height, neating up the whole layout.
- * The override will not work if this file loads BEFORE "bootstrap.css.
+ * Override lots of styles that Bootstrap puts on the col-md-4 class to
+ * neaten up the whole layout. The override will not work if this file
+ * loads BEFORE "bootstrap.css."
  */
 .col-md-4 {
     min-height: 300px;
+    max-width: 300px;
+    margin: 0 auto;
  }
+
+/* Center some text */
+ .center-text {
+    text-align: center;
+ }
+
+/* Style the element containing the home price */
+.price {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 1px solid;
+}

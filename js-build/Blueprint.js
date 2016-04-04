@@ -133,13 +133,14 @@ Blueprint.prototype.displayHomeOptions = function() {
         /*
          * All classes that inherit from "Blueprint" will have a
          * "lotID" value. If that's where we are in the loop, create
-         * an <h2> tag, load the lotID info inside it with some other
-         * copy, then place it inside of the "headerDiv" element
-         * created below.
+         * an <h2> tag, add style classes to it, load the lotID info
+         * inside it with some other copy, then place it inside of the
+         * "headerDiv" element created below.
          */
         if ( homeOption === "lotID" ) {
 
           var homeHeader = document.createElement( "h2" );
+          homeHeader.setAttribute( "class", "center-text" );
           homeHeader.innerHTML = "House#: " + this[homeOption];
           $( homeHeader ).prependTo( headerDiv );
 
@@ -148,35 +149,25 @@ Blueprint.prototype.displayHomeOptions = function() {
          * All classes that inherit from "Blueprint" will have a
          * "price" value...either by default or set by the class
          * instance. If that's where we are in the loop, create
-         * a <div> tag, load the price info inside it with some other
-         * copy, then place it inside of teh "headerDiv" element
-         * created below.
+         * a <div> tag, add style classes to it, load the price info
+         * inside it with some other copy, then place it inside of the
+         * "headerDiv" element created below.
          */
           if( homeOption === "price" ) {
 
             var priceDiv = document.createElement( "div" );
+            priceDiv.setAttribute( "class", "center-text price" );
             priceDiv.innerHTML = "Price: $" + this[homeOption];
             headerDiv.appendChild( priceDiv );
-
-            /*
-             * Add some inline styles to the element with the price in
-             * it.
-             */
-            $( priceDiv ).css({
-              "margin-bottom": "10px",
-              "font-weight": "bold",
-              "font-size": "18px"
-            });
 
             // For all other options, run the following code...
             } else {
 
               /*
-               * "var helper": Use the propercaseOptionName() method
-               * from the getOptionName module to convert the option name to
-               * a two-word proper-case string. The returned value of
-               * this variable value will soon be loaded into an <li>
-               * tag.
+               * "var getOptionName": Use the propercaseOptionName()
+               * option name to a two-word proper-case string. The
+               * returned value of this variable value will soon be
+               * loaded into an <li> tag.
                */
               var getOptionName = Helpers.propercaseOptionName( homeOption );
 
