@@ -62,7 +62,13 @@ function Colonial ( lotID, windowTypes ) {
   this.totalFloors = 2;
 }
 
+// Have the Colonial "class" inherit from the Blueprint "class"
 Colonial.prototype = new Blueprint();
+
+/*
+ * Reset Colonial's constructor property so it stops pointing to
+ * Blueprint's constructor property
+ */
 Colonial.prototype.constructor = Colonial;
 
 var home02 = new Colonial( 423 );
@@ -88,7 +94,13 @@ function Mansion ( lotID, windowTypes ) {
   this.pool = "yes";
 }
 
+// Have the Mansion "class" inherit from the Colonial "class"
 Mansion.prototype = new Colonial();
+
+/*
+ * Reset Mansion's constructor property so it stops pointing to
+ * Colonial's constructor property
+ */
 Mansion.prototype.constructor = Mansion;
 
 
