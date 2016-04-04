@@ -177,14 +177,15 @@ Blueprint.prototype.displayHomeOptions = function() {
               /*
                * "var helper": Use the propercaseOptionName() method
                * from the Helpers module to convert the option name to
-               * a two-word proper-case string. This variable value
-               * will soon be loaded into an <li> tag.
+               * a two-word proper-case string. The returned value of
+               * this variable value will soon be loaded into an <li>
+               * tag.
                */
               var helper = helpers.propercaseOptionName( homeOption );
 
               /*
                * Create an <li> tag, load the in the option that was
-               * converetd above inside it with some other copy.
+               * convereted above inside it with some other copy.
                */
               li = document.createElement( "li" );
               li.innerHTML = helper + ": " + this[homeOption];
