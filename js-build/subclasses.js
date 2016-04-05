@@ -74,7 +74,7 @@ Colonial.prototype.constructor = Colonial;
 var home02 = new Colonial( 423 );
 
 home02.setHomeOptions({
-  pool: true,
+  pool: "optional",
   price: "250,000",
   kitchenCounters: "granite",
   squareFeet: 2500,
@@ -91,7 +91,6 @@ function Mansion ( lotID, windowTypes ) {
   this.jacuzzi = "yes";
   this.houseType = "Mansion";
   this.totalFloors = 5;
-  this.pool = "yes";
 }
 
 // Have the Mansion "class" inherit from the Colonial "class"
@@ -106,8 +105,8 @@ Mansion.prototype.constructor = Mansion;
 
 var home03 = new Mansion(657);
 
-home03.displayHomeOptions();
+home03.setHomeOptions().displayHomeOptions();
 
 var home04 = new Mansion(54363);
 
-home04.displayHomeOptions();
+home04.setHomeOptions().displayHomeOptions();
