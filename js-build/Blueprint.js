@@ -28,7 +28,7 @@ Blueprint.prototype.totalBedrooms = 1;
 Blueprint.prototype.totalBathrooms = 1.5;
 Blueprint.prototype.totalFloors = 1;
 Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.prototype.kitchen = Blueprint.prototype.diningRoom =
-      true;
+      "yes";
 
 
 
@@ -63,11 +63,11 @@ Blueprint.prototype.setHomeOptions = function( options ) {
 
   /*
    * Handle the extra options that houses can have. If these options
-   * aren't isn't set, return their value as "undefined."
+   * aren't set, return their value as "undefined."
    */
-  this.pool = options.pool === undefined ? false : options.pool;
-  this.floorType = options.floorType === undefined ? "tile" : options.floorType;
-  this.kitchenCounters = options.kitchenCounters === undefined ? "formica" : options.kitchenCounters;
+  this.pool = options.pool === undefined ? "no" : options.pool;
+  this.floorType = options.floorType === undefined ? "no" : options.floorType;
+  this.kitchenCounters = options.kitchenCounters === undefined ? "no" : options.kitchenCounters;
 
   // Make this method chain-able by returning it
   return this;
@@ -128,7 +128,7 @@ Blueprint.prototype.displayHomeOptions = function() {
        * types.  We only need to find the string and number types so
        * ignore the function and boolean types as the loop runs.
        */
-      if ( typeof this[homeOption] !== "function" && typeof this[homeOption] !== "boolean" ) {
+      if ( typeof this[homeOption] !== "function" ) {
 
         /*
          * All classes that inherit from "Blueprint" will have a
@@ -196,7 +196,7 @@ Blueprint.prototype.displayHomeOptions = function() {
 
       }
     }
-
+    console.log(this)
   // Make this method chain-able by returning it
   return this;
 
