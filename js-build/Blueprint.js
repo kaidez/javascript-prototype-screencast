@@ -41,11 +41,11 @@ Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.protot
 Blueprint.prototype.setHomeOptions = function( options ) {
 
   /*
-   * "options" is an object that contains options that each house does
-   * or does not have. Some options are, by default, set to one of the
-   * properties defined above. Some options have just been added to
-   * our code and also have default properties. But all these options
-   * can be overriden when we execute certain methods.
+   * "options" is an object that contains all the options that a given
+   * house has. Some options have default values defined by the
+   * properties above. Some options have just been added to our code
+   * and also have default properties. But all these options can be
+   * overriden when we execute certain methods.
    */
 
   // Store a reference to the options object
