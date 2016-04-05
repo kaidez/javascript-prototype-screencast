@@ -20,7 +20,13 @@ var Blueprint = require( "./Blueprint" );
 
 
 
-// Bungalow: a class that inherits from the Blueprint "class"
+
+/*
+ * ====================================================================
+ * BUNGALOW SUBCLASS: inherits from the Blueprint "class"
+ * ====================================================================
+ */
+
 function Bungalow ( lotID ) {
 
   // Use .call() to get & use the "lotID" value in the Blueprint class
@@ -44,8 +50,6 @@ Bungalow.prototype = Object.create( Blueprint.prototype );
  */
 Bungalow.prototype.constructor = Bungalow;
 
-
-
 // Create a new instance of Bungalow called "home01" & set its options
 var home01 = new Bungalow(987);
 home01.setHomeOptions();
@@ -57,8 +61,11 @@ home01.displayHomeOptions();
 
 
 
-
-// Colonial: a class that inherits from the Blueprint "class"
+/*
+ * ====================================================================
+ * COLONIAL SUBCLASS: inherits from the Blueprint "class"
+ * ====================================================================
+ */
 function Colonial ( lotID, windowTypes ) {
   Blueprint.call( this, lotID, windowTypes );
   this.windowTypes = windowTypes || "Double pane";
@@ -91,7 +98,11 @@ home02.setHomeOptions({
 
 
 
-// Mansion: a class that inherits from the Colonial "class"
+/*
+ * ====================================================================
+ * MANSION SUBCLASS: inherits from the Colonial "class"
+ * ====================================================================
+ */
 function Mansion ( lotID, windowTypes ) {
   Colonial.call( this, lotID, windowTypes );
   this.windowTypes = windowTypes || "Floor-to-ceiling";
@@ -109,7 +120,6 @@ Mansion.prototype = Object.create( Colonial.prototype );
  */
 Mansion.prototype.constructor = Mansion;
 
-
 var home03 = new Mansion(657);
 
 home03.setHomeOptions().displayHomeOptions();
@@ -117,3 +127,5 @@ home03.setHomeOptions().displayHomeOptions();
 var home04 = new Mansion(54363);
 
 home04.setHomeOptions().displayHomeOptions();
+
+
