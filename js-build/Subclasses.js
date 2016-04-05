@@ -87,6 +87,7 @@ Colonial.prototype.constructor = Colonial;
 
 var home02 = new Colonial( 423 );
 
+// It's chainable
 home02.setHomeOptions().displayHomeOptions();
 
 
@@ -121,5 +122,3 @@ home03.setHomeOptions().displayHomeOptions();
 var home04 = new Mansion(54363);
 
 home04.setHomeOptions().displayHomeOptions();
-
-
