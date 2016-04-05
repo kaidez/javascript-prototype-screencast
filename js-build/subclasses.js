@@ -31,8 +31,12 @@ function Bungalow ( lotID ) {
 
 }
 
-// Have the Bungalow "class" inherit from the Blueprint "class"
-Bungalow.prototype = new Blueprint();
+/*
+ * Have the Bungalow "class" inherit from the Blueprint "class" with
+ * the ES5 Object.create() method
+ */
+Bungalow.prototype = Object.create( Blueprint.prototype );
+// Bungalow.prototype = new Blueprint();
 
 /*
  * Reset Bungalow's constructor property so it stops pointing to
@@ -62,8 +66,11 @@ function Colonial ( lotID, windowTypes ) {
   this.totalFloors = 2;
 }
 
-// Have the Colonial "class" inherit from the Blueprint "class"
-Colonial.prototype = new Blueprint();
+/*
+ * Have the Colonial "class" inherit from the Blueprint "class" with
+ * the ES5 Object.create() method
+ */
+Colonial.prototype = Object.create( Blueprint.prototype );
 
 /*
  * Reset Colonial's constructor property so it stops pointing to
@@ -93,8 +100,8 @@ function Mansion ( lotID, windowTypes ) {
   this.totalFloors = 5;
 }
 
-// Have the Mansion "class" inherit from the Colonial "class"
-Mansion.prototype = new Colonial();
+// Have the Mansion "class" inherit from the Colonial "class";
+Mansion.prototype = Object.create( Colonial.prototype );
 
 /*
  * Reset Mansion's constructor property so it stops pointing to
