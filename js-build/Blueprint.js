@@ -62,8 +62,9 @@ Blueprint.prototype.setHomeOptions = function( options ) {
   this.totalFloors = options.totalFloors || this.totalFloors;
 
   /*
-   * Handle the extra options that houses can have. If these options
-   * aren't set, return their value as "undefined."
+   * Options that we can set houses can have. If these options are
+   * undefined, display "no" on the web page. Otherwise, list the
+   * option that's been config'd.
    */
   this.pool = options.pool === undefined ? "no" : options.pool;
   this.floorType = options.floorType === undefined ? "no" : options.floorType;
@@ -145,6 +146,7 @@ Blueprint.prototype.displayHomeOptions = function() {
           $( homeHeader ).prependTo( headerDiv );
 
         } else {
+
         /*
          * All classes that inherit from "Blueprint" will have a
          * "price" value...either by default or set by the class
