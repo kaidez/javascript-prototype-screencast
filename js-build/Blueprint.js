@@ -33,6 +33,51 @@ Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.protot
 
 
 /*
+ * Blueprint.prototype.setHomeOptions(): define options that all
+ * houses will have. Options will not appear on the page unless the
+ * "displayHomeOptions()" below actually runs.
+ */
+Blueprint.prototype.setHomeOptions = function( options ) {
+
+  /*
+   * "options" is an object that contains options that each house does
+   * or does not have. Some options are, by default, set to one of the
+   * properties defined above. Some options have just been added to
+   * our code and also have default properties. But all these options
+   * can be overriden when we execute certain methods.
+   */
+
+  // Store a reference to the options object
+  options = options || {};
+
+  /*
+   * Handle the default options. If these options aren't isn't set
+   * when creating Blueprint-related instances, set their default
+   * values defined above.
+   */
+  this.price = options.price || this.price;
+  this.squareFeet = options.squareFeet || this.squareFeet;
+  this.totalBedrooms = options.totalBedrooms || this.totalBedrooms;
+  this.totalBathrooms = options.totalBathrooms || this.totalBathrooms;
+  this.totalFloors = options.totalFloors || this.totalFloors;
+
+  /*
+   * Options that we can set houses can have. If these options are
+   * undefined, display "no" on the web page. Otherwise, list the
+   * option that's been config'd.
+   */
+  this.pool = options.pool === undefined ? "no" : options.pool;
+  this.floorType = options.floorType === undefined ? "no" : options.floorType;
+  this.kitchenCounters = options.kitchenCounters === undefined ? "no" : options.kitchenCounters;
+
+  // Make this method chain-able by returning it
+  return this;
+
+}
+
+
+
+/*
  * Blueprint.prototype.displayHomeOptions(): display the lotID and all
  * the options
  */
@@ -158,51 +203,6 @@ Blueprint.prototype.displayHomeOptions = function() {
   return this;
 
   }
-
-}
-
-
-
-/*
- * Blueprint.prototype.setHomeOptions(): define options that all
- * houses will have. Options will not appear on the page unless the
- * "displayHomeOptions()" below actually runs.
- */
-Blueprint.prototype.setHomeOptions = function( options ) {
-
-  /*
-   * "options" is an object that contains options that each house does
-   * or does not have. Some options are, by default, set to one of the
-   * properties defined above. Some options have just been added to
-   * our code and also have default properties. But all these options
-   * can be overriden when we execute certain methods.
-   */
-
-  // Store a reference to the options object
-  options = options || {};
-
-  /*
-   * Handle the default options. If these options aren't isn't set
-   * when creating Blueprint-related instances, set their default
-   * values defined above.
-   */
-  this.price = options.price || this.price;
-  this.squareFeet = options.squareFeet || this.squareFeet;
-  this.totalBedrooms = options.totalBedrooms || this.totalBedrooms;
-  this.totalBathrooms = options.totalBathrooms || this.totalBathrooms;
-  this.totalFloors = options.totalFloors || this.totalFloors;
-
-  /*
-   * Options that we can set houses can have. If these options are
-   * undefined, display "no" on the web page. Otherwise, list the
-   * option that's been config'd.
-   */
-  this.pool = options.pool === undefined ? "no" : options.pool;
-  this.floorType = options.floorType === undefined ? "no" : options.floorType;
-  this.kitchenCounters = options.kitchenCounters === undefined ? "no" : options.kitchenCounters;
-
-  // Make this method chain-able by returning it
-  return this;
 
 }
 
