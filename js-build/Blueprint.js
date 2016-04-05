@@ -103,7 +103,7 @@ Blueprint.prototype.displayHomeOptions = function() {
         // Create a document fragment
         fragment = document.createDocumentFragment(),
 
-        // Dynamically create an <article> and <ul> tag
+        // Dynamically create an <article>, <div>  and <ul> tag
         article = document.createElement( "article" ),
         headerDiv = document.createElement( "div" ),
         ul = document.createElement( "ul" );
