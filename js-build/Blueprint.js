@@ -162,27 +162,27 @@ Blueprint.prototype.displayHomeOptions = function() {
             priceDiv.innerHTML = "Price: $" + this[homeOption];
             headerDiv.appendChild( priceDiv );
 
-            // For all other options, run the following code...
-            } else {
+          // For all other options, run the following code...
+          } else {
 
-              /*
-               * "var getOptionName": Use the propercaseOptionName()
-               * option name to a two-word proper-case string. The
-               * returned value of this variable value will soon be
-               * loaded into an <li> tag.
-               */
-              var getOptionName = Helpers.propercaseOptionName( homeOption );
+            /*
+             * "var getOptionName": Use the propercaseOptionName()
+             * option name to a two-word proper-case string. The
+             * returned value of this variable value will soon be
+             * loaded into an <li> tag.
+             */
+            var getOptionName = Helpers.propercaseOptionName( homeOption );
 
-              /*
-               * Create an <li> tag, load the in the option that was
-               * convereted above inside it with some other copy.
-               */
-              li = document.createElement( "li" );
-              li.innerHTML = getOptionName + ": " + this[homeOption];
-              ul.appendChild(li);
+            /*
+             * Create an <li> tag, load the in the option that was
+             * convereted above inside it with some other copy.
+             */
+            li = document.createElement( "li" );
+            li.innerHTML = getOptionName + ": " + this[homeOption];
+            ul.appendChild(li);
 
-            } // end if/else statement
-          }
+          } // end if/else statement
+        }
 
         // Put headerDiv element in <article>
         article.appendChild( headerDiv );
