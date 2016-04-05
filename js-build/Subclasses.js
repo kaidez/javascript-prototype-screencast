@@ -87,13 +87,7 @@ Colonial.prototype.constructor = Colonial;
 
 var home02 = new Colonial( 423 );
 
-home02.setHomeOptions({
-  pool: "optional",
-  price: "250,000",
-  kitchenCounters: "granite",
-  squareFeet: 2500,
-  totalBathrooms: 3
-}).displayHomeOptions();
+home02.setHomeOptions().displayHomeOptions();
 
 
 
