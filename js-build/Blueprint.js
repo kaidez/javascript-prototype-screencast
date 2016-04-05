@@ -4,8 +4,9 @@ var Helpers = require( "./Helpers" );
 /*
  * Blueprint: the core class that house types will inherit from.
  * ====================================================================
- * Treat this as an "abstract" class, meaning that it will only to be
- * inherited from and will never ever EVER to be instantited.
+ * Treat this as an "abstract class" or "superclass", meaning that it
+ * should only to be inherited from and will never ever EVER be
+ * instantited.
  */
 function Blueprint( lotID ) {
   this.lotID = lotID;
@@ -35,7 +36,7 @@ Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.protot
 /*
  * Blueprint.prototype.setHomeOptions(): define options that all
  * houses will have. Options will not appear on the page unless the
- * "displayHomeOptions()" below actually runs.
+ * "displayHomeOptions()" below has run.
  */
 Blueprint.prototype.setHomeOptions = function( options ) {
 
