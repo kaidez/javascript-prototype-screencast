@@ -80,12 +80,12 @@ Blueprint.prototype.setHomeOptions = function( options ) {
 
 /*
  * Blueprint.prototype.displayHomeOptions(): display the lotID and all
- * the options
+ * the options for a given house
  */
 Blueprint.prototype.displayHomeOptions = function() {
 
   /*
-   * If a lotID is not passed as a parameter to an instance, pass an
+   * If a lotID is not passed as a parameter to an instance, pass a
    * console error saying so. This will stop the code from running.
    */
   if( !this.lotID || typeof this.lotID === "undefined" ) {
@@ -94,7 +94,7 @@ Blueprint.prototype.displayHomeOptions = function() {
 
   /*
    * (If a lotID is passed, continue running the code (although the
-   * code will run without this "else" statement)
+   * code will ~probably~ run without this "else" statement)
    */
   } else {
 
@@ -140,7 +140,7 @@ Blueprint.prototype.displayHomeOptions = function() {
          * "lotID" value. If that's where we are in the loop, create
          * an <h2> tag, add style classes to it, load the lotID info
          * inside it with some other copy, then place it inside of the
-         * "headerDiv" element created below.
+         * "headerDiv" element created below. It's placed at the top with jQuery.prepend().
          */
         if ( homeOption === "lotID" ) {
 
