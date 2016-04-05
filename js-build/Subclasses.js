@@ -51,7 +51,9 @@ Bungalow.prototype = Object.create( Blueprint.prototype );
 Bungalow.prototype.constructor = Bungalow;
 
 // Create a new instance of Bungalow called "home01" & set its options
-var home01 = new Bungalow(987);
+var home01 = new Bungalow( 987 );
+
+// Run the "setHomeOptions()" method against the home01 instance
 home01.setHomeOptions();
 
 // Run the "displayHomeOptions()" method against the home01 instance
@@ -85,10 +87,10 @@ Colonial.prototype = Object.create( Blueprint.prototype );
  */
 Colonial.prototype.constructor = Colonial;
 
-var home02 = new Colonial( 423 );
+//var home02 = new Colonial( 423 );
 
 // It's chainable
-home02.setHomeOptions().displayHomeOptions();
+//home02.setHomeOptions().displayHomeOptions();
 
 
 
@@ -115,10 +117,6 @@ Mansion.prototype = Object.create( Colonial.prototype );
  */
 Mansion.prototype.constructor = Mansion;
 
-var home03 = new Mansion(657);
+//var home03 = new Mansion(657);
 
-home03.setHomeOptions().displayHomeOptions();
-
-var home04 = new Mansion(54363);
-
-home04.setHomeOptions().displayHomeOptions();
+//home03.setHomeOptions().displayHomeOptions();
