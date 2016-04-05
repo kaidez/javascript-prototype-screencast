@@ -126,8 +126,8 @@ Blueprint.prototype.displayHomeOptions = function() {
 
       /*
        * The object contains strings, numbers, functions and boolean
-       * types.  We only need to find the string and number types so
-       * ignore the function and boolean types as the loop runs.
+       * types.  We only need to find the string, number and boolean
+       * types so ignore the function types as the loop runs.
        */
       if ( typeof this[homeOption] !== "function" ) {
 
