@@ -91,7 +91,10 @@ Blueprint.prototype.displayHomeOptions = function() {
 
     throw new Error( "lotID is not defined" );
 
-  // If a lotID is passed, continue running the code...
+  /*
+   * (If a lotID is passed, continue running the code (although the
+   * code will run without this "else" statement)
+   */
   } else {
 
     // Create some variables with a single var pattern...
