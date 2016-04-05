@@ -18,25 +18,25 @@
 
 function propercaseOptionName( currentOptionName ) {
 
-  var
+ var
 
-    // Store a reference to a regex search for a capital letter
-    getCapitalLetter = /[A-Z]/,
+      // Store a reference to a regex search for a capital letter
+      getCapitalLetter = /[A-Z]/,
 
-    /*
-     * Find the capital letter in currentOptionName...this currently
-     * only works with one capital letter.
-     */
-    capitalLetter = currentOptionName.match( getCapitalLetter ),
+      /*
+       * Find the capital letter in currentOptionName...this currently
+       * only works with one capital letter.
+       */
+      capitalLetter = currentOptionName.match( getCapitalLetter ),
 
-    // Put a space before capital letter in currentOptionName
-    capitalizeOptionName = currentOptionName.replace( capitalLetter,  " " + capitalLetter ),
+      // Put a space before capital letter in currentOptionName
+      capitalizeOptionName = currentOptionName.replace( capitalLetter,  " " + capitalLetter ),
 
-    // Capitalize the above capitalizeOptionName
-    optionName = capitalizeOptionName.charAt(0).toUpperCase() + capitalizeOptionName.slice(1);
+      // Capitalize the above capitalizeOptionName
+      optionName = capitalizeOptionName.charAt(0).toUpperCase() + capitalizeOptionName.slice(1);
 
-  // return the converted name so it's available inside the codebase
-  return optionName;
+    // return the converted name so it's available inside the codebase
+    return optionName;
 
 } // end propercaseOptionName()
 
@@ -45,8 +45,9 @@ function propercaseOptionName( currentOptionName ) {
 /*
  * Blueprint: the core class that house types will inherit from.
  * ====================================================================
- * Treat this as an "abstract" class, meaning that it will only to be
- * inherited from and will never ever EVER to be instantited.
+ * Treat this as an "abstract class" or "superclass", meaning that it
+ * should only to be inherited from and will never ever EVER be
+ * instantited.
  */
 function Blueprint( lotID ) {
   this.lotID = lotID;
@@ -62,39 +63,39 @@ function Blueprint( lotID ) {
 
 
 
-// Blueprint properties: default properties that all houses will have
+// Blueprint properties: default options that all houses will have
 Blueprint.prototype.price = "125,000+";
 Blueprint.prototype.squareFeet = 1000;
 Blueprint.prototype.totalBedrooms = 1;
 Blueprint.prototype.totalBathrooms = 1.5;
 Blueprint.prototype.totalFloors = 1;
 Blueprint.prototype.basement = Blueprint.prototype.livingRoom = Blueprint.prototype.kitchen = Blueprint.prototype.diningRoom =
-      true;
+      "yes";
 
 
 
 /*
  * Blueprint.prototype.setHomeOptions(): define options that all
  * houses will have. Options will not appear on the page unless the
- * "displayHomeOptions()" below actually runs.
+ * "displayHomeOptions()" below has run.
  */
 Blueprint.prototype.setHomeOptions = function( options ) {
 
   /*
-   * "options" is an object that contains options that each house does
-   * or does not have. Some options are, by default, set to one of the
-   * properties defined above. Some options have just been added to
-   * our code and also have default properties. But all these options
-   * can be overriden when we execute certain methods.
+   * "options" is an object that contains all the options that a given
+   * house has. Some options have default values defined by the
+   * properties above. Some options have just been added to our code
+   * and also have default properties. But all these options can be
+   * overriden when we execute certain methods.
    */
 
   // Store a reference to the options object
   options = options || {};
 
   /*
-   * Handle the default options. If these options aren't isn't set
-   * when creating Blueprint-related instances, set their default
-   * values defined above.
+   * If these default options aren't set when creating Blueprint
+   * instances, set and display their default values based on what was
+   * defined above.
    */
   this.price = options.price || this.price;
   this.squareFeet = options.squareFeet || this.squareFeet;
@@ -103,12 +104,13 @@ Blueprint.prototype.setHomeOptions = function( options ) {
   this.totalFloors = options.totalFloors || this.totalFloors;
 
   /*
-   * Handle the extra options that houses can have. If these options
-   * aren't isn't set, return their value as "undefined."
+   * Other options for houses. If these options are
+   * undefined, display "no" on the web page for all of them.
+   * Otherwise, display whatever option was configured.
    */
-  this.pool = options.pool === undefined ? false : options.pool;
-  this.floorType = options.floorType === undefined ? "tile" : options.floorType;
-  this.kitchenCounters = options.kitchenCounters === undefined ? "formica" : options.kitchenCounters;
+  this.pool = options.pool === undefined ? "no" : options.pool;
+  this.floorType = options.floorType === undefined ? "no" : options.floorType;
+  this.kitchenCounters = options.kitchenCounters === undefined ? "no" : options.kitchenCounters;
 
   // Make this method chain-able by returning it
   return this;
@@ -119,19 +121,22 @@ Blueprint.prototype.setHomeOptions = function( options ) {
 
 /*
  * Blueprint.prototype.displayHomeOptions(): display the lotID and all
- * the options
+ * the options for a given house
  */
 Blueprint.prototype.displayHomeOptions = function() {
 
   /*
-   * If a lotID is not passed as a parameter to an instance, pass an
+   * If a lotID is not passed as a parameter to an instance, pass a
    * console error saying so. This will stop the code from running.
    */
   if( !this.lotID || typeof this.lotID === "undefined" ) {
 
     throw new Error( "lotID is not defined" );
 
-  // If a lotID is passed, continue running the code...
+  /*
+   * (If a lotID is passed, continue running the code (although the
+   * code will ~probably~ run without this "else" statement)
+   */
   } else {
 
     // Create some variables with a single var pattern...
@@ -143,7 +148,7 @@ Blueprint.prototype.displayHomeOptions = function() {
         // Create a document fragment
         fragment = document.createDocumentFragment(),
 
-        // Dynamically create an <article> and <ul> tag
+        // Dynamically create an <article>, <div>  and <ul> tag
         article = document.createElement( "article" ),
         headerDiv = document.createElement( "div" ),
         ul = document.createElement( "ul" );
@@ -166,17 +171,17 @@ Blueprint.prototype.displayHomeOptions = function() {
 
       /*
        * The object contains strings, numbers, functions and boolean
-       * types.  We only need to find the string and number types so
-       * ignore the function and boolean types as the loop runs.
+       * types.  We only need to find the string, number and boolean
+       * types so ignore the function types as the loop runs.
        */
-      if ( typeof this[homeOption] !== "function" && typeof this[homeOption] !== "boolean" ) {
+      if ( typeof this[homeOption] !== "function" ) {
 
         /*
          * All classes that inherit from "Blueprint" will have a
          * "lotID" value. If that's where we are in the loop, create
          * an <h2> tag, add style classes to it, load the lotID info
          * inside it with some other copy, then place it inside of the
-         * "headerDiv" element created below.
+         * "headerDiv" element created below. It's placed at the top with jQuery.prepend().
          */
         if ( homeOption === "lotID" ) {
 
@@ -186,6 +191,7 @@ Blueprint.prototype.displayHomeOptions = function() {
           $( homeHeader ).prependTo( headerDiv );
 
         } else {
+
         /*
          * All classes that inherit from "Blueprint" will have a
          * "price" value...either by default or set by the class
@@ -201,27 +207,27 @@ Blueprint.prototype.displayHomeOptions = function() {
             priceDiv.innerHTML = "Price: $" + this[homeOption];
             headerDiv.appendChild( priceDiv );
 
-            // For all other options, run the following code...
-            } else {
+          // For all other options, run the following code...
+          } else {
 
-              /*
-               * "var getOptionName": Use the propercaseOptionName()
-               * option name to a two-word proper-case string. The
-               * returned value of this variable value will soon be
-               * loaded into an <li> tag.
-               */
-              var getOptionName = propercaseOptionName( homeOption );
+            /*
+             * "var getOptionName": Use the propercaseOptionName()
+             * option name to a two-word proper-case string. The
+             * returned value of this variable value will soon be
+             * loaded into an <li> tag.
+             */
+            var getOptionName = propercaseOptionName( homeOption );
 
-              /*
-               * Create an <li> tag, load the in the option that was
-               * convereted above inside it with some other copy.
-               */
-              li = document.createElement( "li" );
-              li.innerHTML = getOptionName + ": " + this[homeOption];
-              ul.appendChild(li);
+            /*
+             * Create an <li> tag, load the in the option that was
+             * convereted above inside it with some other copy.
+             */
+            li = document.createElement( "li" );
+            li.innerHTML = getOptionName + ": " + this[homeOption];
+            ul.appendChild(li);
 
-            } // end if/else statement
-          }
+          } // end if/else statement
+        }
 
         // Put headerDiv element in <article>
         article.appendChild( headerDiv );
@@ -237,7 +243,7 @@ Blueprint.prototype.displayHomeOptions = function() {
 
       }
     }
-
+    console.log(this)
   // Make this method chain-able by returning it
   return this;
 
@@ -246,7 +252,6 @@ Blueprint.prototype.displayHomeOptions = function() {
 }
 
 // Stop setting methods and properties on "Blueprint."
-
 
 /*
  * SUBCLASSES
@@ -267,7 +272,13 @@ Blueprint.prototype.displayHomeOptions = function() {
 
 
 
-// Bungalow: a class that inherits from the Blueprint "class"
+
+/*
+ * ====================================================================
+ * BUNGALOW SUBCLASS: inherits from the Blueprint "class"
+ * ====================================================================
+ */
+
 function Bungalow ( lotID ) {
 
   // Use .call() to get & use the "lotID" value in the Blueprint class
@@ -278,8 +289,12 @@ function Bungalow ( lotID ) {
 
 }
 
-// Have the Bungalow "class" inherit from the Blueprint "class"
-Bungalow.prototype = new Blueprint();
+/*
+ * Have the Bungalow "class" inherit from the Blueprint "class" with
+ * the ES5 Object.create() method
+ */
+Bungalow.prototype = Object.create( Blueprint.prototype );
+// Bungalow.prototype = new Blueprint();
 
 /*
  * Reset Bungalow's constructor property so it stops pointing to
@@ -287,10 +302,10 @@ Bungalow.prototype = new Blueprint();
  */
 Bungalow.prototype.constructor = Bungalow;
 
-
-
 // Create a new instance of Bungalow called "home01" & set its options
-var home01 = new Bungalow(987);
+var home01 = new Bungalow( 987 );
+
+// Run the "setHomeOptions()" method against the home01 instance
 home01.setHomeOptions();
 
 // Run the "displayHomeOptions()" method against the home01 instance
@@ -300,8 +315,11 @@ home01.displayHomeOptions();
 
 
 
-
-// Colonial: a class that inherits from the Blueprint "class"
+/*
+ * ====================================================================
+ * COLONIAL SUBCLASS: inherits from the Blueprint "class"
+ * ====================================================================
+ */
 function Colonial ( lotID, windowTypes ) {
   Blueprint.call( this, lotID, windowTypes );
   this.windowTypes = windowTypes || "Double pane";
@@ -309,8 +327,11 @@ function Colonial ( lotID, windowTypes ) {
   this.totalFloors = 2;
 }
 
-// Have the Colonial "class" inherit from the Blueprint "class"
-Colonial.prototype = new Blueprint();
+/*
+ * Have the Colonial "class" inherit from the Blueprint "class" with
+ * the ES5 Object.create() method
+ */
+Colonial.prototype = Object.create( Blueprint.prototype );
 
 /*
  * Reset Colonial's constructor property so it stops pointing to
@@ -318,31 +339,29 @@ Colonial.prototype = new Blueprint();
  */
 Colonial.prototype.constructor = Colonial;
 
-var home02 = new Colonial( 423 );
+//var home02 = new Colonial( 423 );
 
-home02.setHomeOptions({
-  pool: true,
-  price: "250,000",
-  kitchenCounters: "granite",
-  squareFeet: 2500,
-  totalBathrooms: 3
-}).displayHomeOptions();
+// It's chainable
+//home02.setHomeOptions().displayHomeOptions();
 
 
 
 
-// Mansion: a class that inherits from the Colonial "class"
+/*
+ * ====================================================================
+ * MANSION SUBCLASS: inherits from the Colonial "class"
+ * ====================================================================
+ */
 function Mansion ( lotID, windowTypes ) {
   Colonial.call( this, lotID, windowTypes );
   this.windowTypes = windowTypes || "Floor-to-ceiling";
   this.jacuzzi = "yes";
   this.houseType = "Mansion";
   this.totalFloors = 5;
-  this.pool = "yes";
 }
 
-// Have the Mansion "class" inherit from the Colonial "class"
-Mansion.prototype = new Colonial();
+// Have the Mansion "class" inherit from the Colonial "class";
+Mansion.prototype = Object.create( Colonial.prototype );
 
 /*
  * Reset Mansion's constructor property so it stops pointing to
@@ -350,11 +369,6 @@ Mansion.prototype = new Colonial();
  */
 Mansion.prototype.constructor = Mansion;
 
+//var home03 = new Mansion(657);
 
-var home03 = new Mansion(657);
-
-home03.displayHomeOptions();
-
-var home04 = new Mansion(54363);
-
-home04.displayHomeOptions();
+//home03.setHomeOptions().displayHomeOptions();
