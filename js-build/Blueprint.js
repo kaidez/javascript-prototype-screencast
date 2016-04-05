@@ -63,9 +63,9 @@ Blueprint.prototype.setHomeOptions = function( options ) {
   this.totalFloors = options.totalFloors || this.totalFloors;
 
   /*
-   * Options that we can set houses can have. If these options are
-   * undefined, display "no" on the web page. Otherwise, list the
-   * option that's been config'd.
+   * Other options for houses. If these options are
+   * undefined, display "no" on the web page for all of them.
+   * Otherwise, display whatever option was configured.
    */
   this.pool = options.pool === undefined ? "no" : options.pool;
   this.floorType = options.floorType === undefined ? "no" : options.floorType;
