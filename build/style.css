@@ -6768,7 +6768,7 @@ button.close {
  * loads BEFORE "bootstrap.css."
  */
 .col-md-4 {
-    min-height: 300px;
+    min-height: 400px;
     max-width: 300px;
     margin: 0 auto;
  }
