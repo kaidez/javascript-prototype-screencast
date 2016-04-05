@@ -9,7 +9,7 @@ module.exports = {
    * propercaseOptionName(): a method that take individual house
    * property names and converts them to both two words and converts
    * the first one to uppercase. It takes one parameter
-   * (currentOptionName), which will be the "homeOption" value in the
+   * ( currentOptionName ), which will be the "homeOption" value in the
    * "for...in" loop that builds a single house info component and
    * places it on the page.
    */
