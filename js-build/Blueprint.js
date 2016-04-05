@@ -22,7 +22,7 @@ function Blueprint( lotID ) {
 
 
 
-// Blueprint properties: default properties that all houses will have
+// Blueprint properties: default options that all houses will have
 Blueprint.prototype.price = "125,000+";
 Blueprint.prototype.squareFeet = 1000;
 Blueprint.prototype.totalBedrooms = 1;
@@ -52,9 +52,9 @@ Blueprint.prototype.setHomeOptions = function( options ) {
   options = options || {};
 
   /*
-   * Handle the default options. If these options aren't isn't set
-   * when creating Blueprint-related instances, set their default
-   * values defined above.
+   * Handle the default options. If these options aren't set when
+   * creating Blueprint instances, set and display their default
+   * values that were defined above.
    */
   this.price = options.price || this.price;
   this.squareFeet = options.squareFeet || this.squareFeet;
