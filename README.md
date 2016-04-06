@@ -53,4 +53,6 @@ Running `npm start` will:
 
 
 <!--["Introduction to JavaScript Prototypes"](http://kaidez.com/javascript-prototypes-tutorial)
+
+Don't for the slides link
   -->
