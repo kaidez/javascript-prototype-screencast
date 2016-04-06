@@ -25,5 +25,12 @@ Running `npm start` will:
 * watch for any changes to files in `js-build`, then automatically output a file called `style.css` to the `build/js` folder.
 -kdz
 
+## Other commands
+
+### `server`
+`npm run server`: let the files in `build/` run as a website on `http://localhost:3000`.
+
+
+
 <!--["Introduction to JavaScript Prototypes"](http://kaidez.com/javascript-prototypes-tutorial)
   -->
