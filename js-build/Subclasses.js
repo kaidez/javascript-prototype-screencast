@@ -144,4 +144,4 @@ Mansion.prototype = Object.create( Colonial.prototype );
 Mansion.prototype.constructor = Mansion;
 
 var home03 = new Mansion(657);
-home03.setHomeOptions().displayHomeOptions();
+home03.setHomeOptions({floorType: "formica"}).displayHomeOptions();
