@@ -37,10 +37,10 @@ Running `npm start` will:
 `npm run build-css`: use the Unix `cat` command to take all the `css` files in `css-build` & concatenate them out to a file called `style.css` that gets placed in `build/`.
 
 ### `watch-js`
-`npm run watch-js`: when files in `js-build/` change, run `npm run build-js`.
+`npm run watch-js`: when files in `js-build/` change, run `build-js`.
 
 ### `watch-css`
-`npm run watch-css`: when files in `css-build/` change, run `npm run build-js`.
+`npm run watch-css`: when files in `css-build/` change, run `build-css`.
 
 ### `start`
 `npm start`: simultaneously run `server`, `watch-js` and `watch-css`.
