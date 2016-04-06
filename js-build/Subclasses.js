@@ -87,10 +87,10 @@ Colonial.prototype = Object.create( Blueprint.prototype );
  */
 Colonial.prototype.constructor = Colonial;
 
-//var home02 = new Colonial( 423 );
+var home02 = new Colonial( 423 );
 
 // It's chainable
-//home02.setHomeOptions().displayHomeOptions();
+// home02.setHomeOptions().displayHomeOptions();
 
 
 
@@ -118,5 +118,4 @@ Mansion.prototype = Object.create( Colonial.prototype );
 Mansion.prototype.constructor = Mansion;
 
 //var home03 = new Mansion(657);
-
 //home03.setHomeOptions().displayHomeOptions();
