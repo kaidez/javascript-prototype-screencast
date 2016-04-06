@@ -10,7 +10,6 @@
     "watch-js": "nodemon -e js -w js-build -x 'npm run build-js'",
     "watch-css": "nodemon -e css -w css-build -x 'npm run build-css'",
     "start": "npm run server & npm run watch-js & npm run watch-css",
-    "book-minify": "imagemin image-min/book-images/* build/img/book-images/",
     "copy-bootstrap": "ncp node_modules/bootstrap/dist/css/bootstrap.css css-build/bootstrap.css",
     "copy-jquery": "ncp node_modules/jquery/dist/jquery.min.js build/jquery.min.js"
   },
@@ -35,6 +34,6 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "jquery": "^2.1.4"
+    "jquery": "^2.2.3"
   }
 }
