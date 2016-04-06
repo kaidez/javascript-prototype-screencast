@@ -81,7 +81,7 @@ function Colonial ( lotID, windowType ) {
   this.windowType = windowType || "Double pane";
   this.houseType = "Colonial";
 
-  // Overide "totalFloors" property set in the "Blueprint" class
+  // Overide "totalFloors" property set in the "Blueprint" class.
   this.totalFloors = 2;
 
 }
@@ -111,11 +111,24 @@ home02.setHomeOptions().displayHomeOptions();
  * MANSION SUBCLASS: inherits from the Colonial "class"
  * ====================================================================
  */
-function Mansion ( lotID, windowTypes ) {
-  Colonial.call( this, lotID, windowTypes );
-  this.windowTypes = windowTypes || "Floor-to-ceiling";
+function Mansion ( lotID, windowType ) {
+
+  /*
+   * Use .call() to get & use the "windowType" value in the Colonial
+   * class. This code will also force "Mansion" to "walk up the
+   * prototype chain" to find "Blueprint" so it can use the
+   *  totalFloors" property
+   */
+  Colonial.call( this, lotID, windowType );
+
+  //
+  this.windowType = windowType || "Floor-to-ceiling";
+
+  // New properties set for Mansion
   this.jacuzzi = "yes";
   this.houseType = "Mansion";
+
+  // Overide "totalFloors" property set in the "Blueprint" class.
   this.totalFloors = 5;
 }
 
