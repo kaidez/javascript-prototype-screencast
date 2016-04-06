@@ -73,10 +73,17 @@ function Colonial ( lotID, windowType ) {
   // Use .call() to get & use the "lotID" value in the Blueprint class
   Blueprint.call( this, lotID, windowType );
 
-  // Add a new property for Colonial houses only called "windowType"
+  /*
+   * Add a two new properties for Colonial houses:
+   *    - "windowType"
+   *    - "houseType"
+   */
   this.windowType = windowType || "Double pane";
   this.houseType = "Colonial";
+
+  // Overide "totalFloors" property set in the "Blueprint" class
   this.totalFloors = 2;
+
 }
 
 /*
