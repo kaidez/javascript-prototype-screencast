@@ -30,7 +30,8 @@ Running `npm start` will:
 ### `server`
 `npm run server`: let the files in `build/` run as a website on `http://localhost:3000`.
 
-
+### `build-js`
+`npm run build-js`: use browserify & uglify to build out a a file caled `main.js` to the `build/js` when files in `js-build/` change.
 
 <!--["Introduction to JavaScript Prototypes"](http://kaidez.com/javascript-prototypes-tutorial)
   -->
