@@ -15,7 +15,7 @@ The screencast demonstrates how I build out files using a Node/Browserify setup,
 
 1. clone this repo by running `git@github.com:kaidez/javascript-prototype-screencast.git` in the command line.
 2. navigate to the repo using the command line.
-3. install all the Node-based dependencies by running npm `install` in the command line.
+3. install all the Node-based dependencies by running `npm install` in the command line.
 4. after the install is completed, run  `npm start` in the command line.
 
 Running `npm start` will:
