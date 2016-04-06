@@ -1,4 +1,4 @@
-# An Introduction to JavaScript Prototypes
+# Javascript Protoypes for Newbies
 
 This is the repo for the accompanying source files for an upcoming screencast tutorial of mine on JavaScript prototypes.
 
