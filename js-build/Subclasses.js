@@ -68,9 +68,13 @@ home01.displayHomeOptions();
  * COLONIAL SUBCLASS: inherits from the Blueprint "class"
  * ====================================================================
  */
-function Colonial ( lotID, windowTypes ) {
-  Blueprint.call( this, lotID, windowTypes );
-  this.windowTypes = windowTypes || "Double pane";
+function Colonial ( lotID, windowType ) {
+
+  // Use .call() to get & use the "lotID" value in the Blueprint class
+  Blueprint.call( this, lotID, windowType );
+
+  // Add a new property for Colonial houses only called "windowType"
+  this.windowType = windowType || "Double pane";
   this.houseType = "Colonial";
   this.totalFloors = 2;
 }
@@ -90,7 +94,7 @@ Colonial.prototype.constructor = Colonial;
 var home02 = new Colonial( 423 );
 
 // It's chainable
-// home02.setHomeOptions().displayHomeOptions();
+home02.setHomeOptions().displayHomeOptions();
 
 
 
@@ -117,5 +121,5 @@ Mansion.prototype = Object.create( Colonial.prototype );
  */
 Mansion.prototype.constructor = Mansion;
 
-//var home03 = new Mansion(657);
-//home03.setHomeOptions().displayHomeOptions();
+var home03 = new Mansion(657);
+home03.setHomeOptions().displayHomeOptions();
