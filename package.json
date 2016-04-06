@@ -11,7 +11,7 @@
     "watch-css": "nodemon -e css -w css-build -x 'npm run build-css'",
     "start": "npm run server & npm run watch-js & npm run watch-css",
     "copy-bootstrap": "ncp node_modules/bootstrap/dist/css/bootstrap.css css-build/bootstrap.css",
-    "copy-jquery": "ncp node_modules/jquery/dist/jquery.min.js build/jquery.min.js"
+    "copy-jquery": "ncp node_modules/jquery/dist/jquery.min.js build/js/jquery.min.js"
   },
   "repository": {
     "type": "git",
