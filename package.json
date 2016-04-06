@@ -9,7 +9,7 @@
     "build-css": "cat css-build/*.css > build/style.css",
     "watch-js": "nodemon -e js -w js-build -x 'npm run build-js'",
     "watch-css": "nodemon -e css -w css-build -x 'npm run build-css'",
-    "start": "npm run server & npm run watch-js & npm run watch-css",
+    "start": "npm run watch-js && npm run watch-css && npm run server",
     "copy-bootstrap": "ncp node_modules/bootstrap/dist/css/bootstrap.css css-build/bootstrap.css",
     "copy-jquery": "ncp node_modules/jquery/dist/jquery.min.js build/js/jquery.min.js"
   },
