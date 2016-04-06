@@ -2,7 +2,7 @@
 
 This is the repo for the accompanying source files for an upcoming screencast tutorial of mine on JavaScript prototypes.
 
-The screencast demomstrates how I build out files using a Node/Browerify setup, but you can see how the code works without it.
+The screencast demonstrates how I build out files using a Node/Browserify setup, but you can see how the code works without it.
 
 ## Look at the code without Node/Browserify
 
@@ -31,7 +31,26 @@ Running `npm start` will:
 `npm run server`: let the files in `build/` run as a website on `http://localhost:3000`.
 
 ### `build-js`
-`npm run build-js`: use browserify & uglify to build out a a file caled `main.js` to the `build/js` when files in `js-build/` change.
+`npm run build-js`: use [browserify](http://browserify.org/) & [uglify](https://www.npmjs.com/package/uglifyjs) to take all the `js` files in `js-build` & concatenate/minify them out to a file called `main.js` that gets placed in `build/js`.
+
+### `build-css`
+`npm run build-css`: use the Unix `cat` command to take all the `css` files in `css-build` & concatenate/minify them out to a file called `style.css` that gets placed in `build/`.
+
+### `watch-js`
+`npm run watch-js`: when files in `js-build/` change, run `npm run build-js`.
+
+### `watch-css`
+`npm run watch-css`: when files in `css-build/` change, run `npm run build-js`.
+
+### `start`
+`npm start`: simultaneously run `server`, `watch-js` and `watch-css`.
+
+### `copy-bootstrap`
+`npm run copy-bootstrap`: copy `bootstrap.css` from its location in `node_modules` to `css-build/`.
+
+### `copy-jquery`
+`npm run copy-jquery`: copy `jquery.min.js` from its location in `node_modules` to `build/js/`.
+
 
 <!--["Introduction to JavaScript Prototypes"](http://kaidez.com/javascript-prototypes-tutorial)
   -->
