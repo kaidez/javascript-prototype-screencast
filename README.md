@@ -23,7 +23,6 @@ Running `npm start` will:
 * let the the code be seen in a web browser by going to `localhost:3000` and displaying whatever files are in the `build` folder.
 * watch for any changes to files in `css-build`, then automatically output a file called `style.css` to the `build` folder.
 * watch for any changes to files in `js-build`, then automatically output a file called `style.css` to the `build/js` folder.
--kdz
 
 ## Other commands
 
@@ -51,7 +50,7 @@ Running `npm start` will:
 ### `copy-jquery`
 `npm run copy-jquery`: copy `jquery.min.js` from its location in `node_modules` to `build/js/`(run this when jQuery is updated as a dependency).
 
-
+-kdz
 <!--["Introduction to JavaScript Prototypes"](http://kaidez.com/javascript-prototypes-tutorial)
 
 Don't forget the slides link
