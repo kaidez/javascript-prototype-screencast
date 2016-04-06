@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>protypes for newbies...& a few other things</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Kai 'kaidez' Gittens>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- START SLIDE 1 -->
+
+      <div class="slides">
+        <section>
+          <h1>javascript protoypes for newbies</h1>
+          <h3>...& a few other things</h3>
+          <p>
+            <small><a href="http://kaidez.com">kai gittens</a> / <a href="http://twitter.com/kaidez">@kaidez</a></small>
+          </p>
+        </section>
+
+        <!-- END SLIDE 1 -->
+
+
+
+
+
+        <!-- START SLIDE 2 -->
+
+        <section>
+          <section id="fragments">
+            <h2>What ARE Prototypes?</h2>
+
+            <p class="fragment">-a property that's part of a function.</p>
+
+            <p class="fragment">-an object that contains native/custom properties & methods.</p>
+
+            <p class="fragment">-use prototypes to simulate <em>class inheritance</em>.</p>
+
+            </section>
+        </section>
+
+        <!-- END SLIDE 2 -->
+
+
+
+
+
+
+        <!-- START SLIDE 3 -->
+
+        <section>
+          <section data-markdown>
+
+            <script type="text/template">
+              ## Classes in Java
+
+              ```
+              // The Class
+              public class Car {
+
+                // properties
+                public int wheels = 4;
+
+                // methods
+                public void countWheels() {
+                  System.out.println = wheels;
+                }
+
+              }
+
+              // An instance of the Car class
+              Car jalopy = new Car();
+              ```
+
+              ```
+              // The Ford class inherits from the Car class
+              public class Ford extends Car {
+
+                // Ford inherits everything from Car
+
+              }
+
+              // An instance of the Fors class
+              Ford mustang = new Ford();
+              ```
+            </script>
+
+          </section>
+
+        </section>
+
+        <!-- END SLIDE 3 -->
+
+
+
+
+
+
+        <!-- START SLIDE 4 -->
+
+        <section>
+          <h2>JavaScript doesn't have classes</h2>
+
+          <p><em>Classical languages:</em> classes can inherit from other classes.</p>
+
+          <p><em>Prototypal languages:</em> objects can inherit from other objects.</p>
+
+        </section>
+
+        <!-- END SLIDE 4 -->
+
+
+
+
+
+        <!-- START SLIDE 5 -->
+
+        <section>
+          <h2>From <em>Effective JavaScript</em></h2>
+
+          <p>
+            <em>"Classes in JavaScript are essentially the combination of a constructor function...and a prototype object used to share methods between instances of the class..."</em>
+          </p>
+
+        </section>
+
+        <!-- END SLIDE 5 -->
+
+
+
+
+
+
+        <!-- START SLIDE 6 -->
+
+        <section>
+
+          <p>Let's CODE!!!!!!!</p>
+
+        </section>
+
+        <!-- END SLIDE 6 -->
+
+
+
+
+
+
+        <!-- START SLIDE 7 -->
+
+        <section>
+          <h2>Further reading</h2>
+
+            <ul>
+              <li style="margin-bottom: 30px;">
+                <a href="http://www.amazon.com/gp/product/1849693129/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1849693129&linkCode=as2&tag=kaidez-20&linkId=2COY3MK2BCPMDLKE"><em>Object-Oriented JavaScript</em> by <span style="color: #dabd90">Stoyan Stefanov</span></a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=kaidez-20&l=as2&o=1&a=1849693129" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+
+              </li>
+              <li style="margin-bottom: 30px;">
+                <a href="http://www.amazon.com/gp/product/0321812182/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0321812182&linkCode=as2&tag=kaidez-20&linkId=KR6RTUW7WDJP7C5P"><em>Effective JavaScript</em> by <span style="color: #dabd90">Dave Herman</span></a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=kaidez-20&l=as2&o=1&a=0321812182" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+
+              </li>
+              <li style="margin-bottom: 30px;"><a href="http://www.bennadel.com/blog/2184-object-create-improves-constructor-based-inheritance-in-javascript-it-doesn-t-replace-it.htm"><em>Object.create() Improves Constructor-Based Inheritance In Javascript - It Doesn't Replace It</em> by <span style="color: #dabd90">Ben Nadel</span></a></li>
+          </ul>
+
+        </section>
+
+        <!-- END SLIDE 7 -->
+
+
+
+
+
+        <!-- START SLIDE 8 -->
+
+        <section>
+          <p>THANKS!!!!</p>
+        </section>
+
+        <!-- END SLIDE 8 -->
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
