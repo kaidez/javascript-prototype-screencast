@@ -8,7 +8,7 @@ The screencast demonstrates how I build out files using a Node/Browserify setup,
 
 1. open up `index.html` in the `build` folder.
 2. go to the bottom of that file and comment out `<script src="js/main.js"></script>`.
-3. Uncomment `<script src="js/main-full.js"></script>`...this file contains the complete code in the screencast.
+3. Uncomment `<script src="js/main-full.js"></script>`...this file contains the complete code that is demonstrated in the screencast.
 4. view `index.html` in a browser.
 
 ## Run the code with Node/Browserify
