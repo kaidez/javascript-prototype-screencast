@@ -98,10 +98,10 @@ Colonial.prototype = Object.create( Blueprint.prototype );
  */
 Colonial.prototype.constructor = Colonial;
 
-var home02 = new Colonial( 423 );
+// var home02 = new Colonial( 423 );
 
 // It's chainable
-home02.setHomeOptions().displayHomeOptions();
+// home02.setHomeOptions().displayHomeOptions();
 
 
 
@@ -117,7 +117,7 @@ function Mansion ( lotID, windowType ) {
    * Use .call() to get & use the "windowType" value in the Colonial
    * class. This code will also force "Mansion" to "walk up the
    * prototype chain" to find "Blueprint" so it can use the
-   *  totalFloors" property.
+   * totalFloors" property.
    */
   Colonial.call( this, lotID );
 
@@ -143,5 +143,14 @@ Mansion.prototype = Object.create( Colonial.prototype );
  */
 Mansion.prototype.constructor = Mansion;
 
-var home03 = new Mansion(657);
-home03.setHomeOptions( {floorType: "formica"} ).displayHomeOptions();
+// var home03 = new Mansion(657);
+// home03.setHomeOptions().displayHomeOptions();
+
+
+// var home03 = new Mansion(657);
+// home03.setHomeOptions({
+//   floorType: "formica",
+//   totalFloors: 4,
+//   squareFeet:2000,
+//   kitchenCounters: "granite"
+// }).displayHomeOptions();
