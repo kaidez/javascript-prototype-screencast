@@ -150,6 +150,7 @@ home04.setHomeOptions({
   floorType: "formica",
   price: "1.1 million",
   totalFloors: 4,
+  pool: "yes",
   squareFeet:3000,
   kitchenCounters: "granite"
 }).displayHomeOptions();
