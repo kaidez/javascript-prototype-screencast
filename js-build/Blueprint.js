@@ -69,10 +69,10 @@ Blueprint.prototype.setHomeOptions = function( options ) {
    */
   this.pool = options.pool === undefined ? "no" : options.pool;
   this.floorType = options.floorType === undefined ? "no" : options.floorType;
-  this.kitchenCounters = options.kitchenCounters === undefined ? "no" : options.kitchenCounters;
+  this.kitchenCounters = options.kitchenCounters === undefined ? "standard" : options.kitchenCounters;
 
   // Make this method chain-able by returning it
-  return this;
+  // return this;
 
 }
 
@@ -202,9 +202,9 @@ Blueprint.prototype.displayHomeOptions = function() {
 
       }
     }
-    console.log(this)
+  console.log(this)
   // Make this method chain-able by returning it
-  return this;
+  //return this;
 
   }
 
