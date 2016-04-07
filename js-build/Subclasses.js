@@ -98,10 +98,10 @@ Colonial.prototype = Object.create( Blueprint.prototype );
  */
 Colonial.prototype.constructor = Colonial;
 
-// var home02 = new Colonial( 423 );
+var home02 = new Colonial( 423 );
 
 // It's chainable
-// home02.setHomeOptions().displayHomeOptions();
+home02.setHomeOptions().displayHomeOptions();
 
 
 
@@ -143,14 +143,22 @@ Mansion.prototype = Object.create( Colonial.prototype );
  */
 Mansion.prototype.constructor = Mansion;
 
-// var home03 = new Mansion(657);
-// home03.setHomeOptions().displayHomeOptions();
 
 
-// var home03 = new Mansion(657);
-// home03.setHomeOptions({
-//   floorType: "formica",
-//   totalFloors: 4,
-//   squareFeet:2000,
-//   kitchenCounters: "granite"
-// }).displayHomeOptions();
+var home04 = new Mansion( 657 );
+home04.setHomeOptions({
+  floorType: "formica",
+  price: "1.1 million",
+  totalFloors: 4,
+  squareFeet:3000,
+  kitchenCounters: "granite"
+}).displayHomeOptions();
+
+
+
+var home05 = new Colonial( 136 );
+home05.setHomeOptions({
+  floorType: "stainless steel",
+  price: "325.000",
+  squareFeet:1100,
+}).displayHomeOptions();
