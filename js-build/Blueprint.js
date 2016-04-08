@@ -150,6 +150,8 @@ Blueprint.prototype.displayHomeOptions = function() {
           var homeHeader = document.createElement( "h2" );
           homeHeader.setAttribute( "class", "center-text" );
           homeHeader.innerHTML = "House#: " + this[homeOption];
+
+          // Use $.prependTo() to put this at the top of the element
           $( homeHeader ).prependTo( headerDiv );
 
         } else {
