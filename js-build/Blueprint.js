@@ -7,6 +7,9 @@ var Helpers = require( "./Helpers" );
  * Treat this as an "abstract class" or "superclass", meaning that it
  * should only to be inherited from and will never ever EVER be
  * instantited.
+ *
+ * FOR OPTIMIZATION PURPOSES, PLACE PROPERTIES & METHODS DIRECTLY ON
+ * THE PROTOTYPE!!!!!!!!!!!!!!!
  */
 function Blueprint( lotID ) {
   this.lotID = lotID;
@@ -72,7 +75,7 @@ Blueprint.prototype.setHomeOptions = function( options ) {
   this.kitchenCounters = options.kitchenCounters === undefined ? "standard" : options.kitchenCounters;
 
   // Make this method chain-able by returning it
-  return this;
+  // return this;
 
 }
 
@@ -206,8 +209,7 @@ Blueprint.prototype.displayHomeOptions = function() {
     console.log( this );
 
     // Make this method chain-able by returning it
-
-    return this;
+    // return this;
 
   }
 
