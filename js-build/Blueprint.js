@@ -203,7 +203,7 @@ Blueprint.prototype.displayHomeOptions = function() {
       }
     }
 
-    console.log(this);
+    console.log( this );
 
     // Make this method chain-able by returning it
 
