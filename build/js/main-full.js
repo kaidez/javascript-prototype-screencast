@@ -18,7 +18,7 @@
 
 function propercaseOptionName( currentOptionName ) {
 
- var
+  var
 
       // Store a reference to a regex search for a capital letter
       getCapitalLetter = /[A-Z]/,
@@ -110,7 +110,7 @@ Blueprint.prototype.setHomeOptions = function( options ) {
    */
   this.pool = options.pool === undefined ? "no" : options.pool;
   this.floorType = options.floorType === undefined ? "no" : options.floorType;
-  this.kitchenCounters = options.kitchenCounters === undefined ? "no" : options.kitchenCounters;
+  this.kitchenCounters = options.kitchenCounters === undefined ? "standard" : options.kitchenCounters;
 
   // Make this method chain-able by returning it
   return this;
@@ -216,7 +216,7 @@ Blueprint.prototype.displayHomeOptions = function() {
              * returned value of this variable value will soon be
              * loaded into an <li> tag.
              */
-            var getOptionName = propercaseOptionName( homeOption );
+            var getOptionName = Helpers.propercaseOptionName( homeOption );
 
             /*
              * Create an <li> tag, load the in the option that was
@@ -244,8 +244,8 @@ Blueprint.prototype.displayHomeOptions = function() {
       }
     }
 
-  // Make this method chain-able by returning it
-  return this;
+    // Make this method chain-able by returning it
+    return this;
 
   }
 
@@ -320,11 +320,22 @@ home01.displayHomeOptions();
  * COLONIAL SUBCLASS: inherits from the Blueprint "class"
  * ====================================================================
  */
-function Colonial ( lotID, windowTypes ) {
-  Blueprint.call( this, lotID, windowTypes );
-  this.windowTypes = windowTypes || "Double pane";
+function Colonial ( lotID, windowType ) {
+
+  // Use .call() to get & use the "lotID" value in the Blueprint class
+  Blueprint.call( this, lotID, windowType );
+
+  /*
+   * Add a two new properties for Colonial houses:
+   *    - "windowType"
+   *    - "houseType"
+   */
+  this.windowType = windowType || "Double pane";
   this.houseType = "Colonial";
+
+  // Overide "totalFloors" property set in the "Blueprint" class.
   this.totalFloors = 2;
+
 }
 
 /*
@@ -339,10 +350,10 @@ Colonial.prototype = Object.create( Blueprint.prototype );
  */
 Colonial.prototype.constructor = Colonial;
 
-//var home02 = new Colonial( 423 );
+var home02 = new Colonial( 423 );
 
 // It's chainable
-//home02.setHomeOptions().displayHomeOptions();
+home02.setHomeOptions().displayHomeOptions();
 
 
 
@@ -352,15 +363,30 @@ Colonial.prototype.constructor = Colonial;
  * MANSION SUBCLASS: inherits from the Colonial "class"
  * ====================================================================
  */
-function Mansion ( lotID, windowTypes ) {
-  Colonial.call( this, lotID, windowTypes );
-  this.windowTypes = windowTypes || "Floor-to-ceiling";
+function Mansion ( lotID, windowType ) {
+
+  /*
+   * Use .call() to get & use the "windowType" value in the Colonial
+   * class. This code will also force "Mansion" to "walk up the
+   * prototype chain" to find "Blueprint" so it can use the
+   * totalFloors" property.
+   */
+  Colonial.call( this, lotID );
+
+
+  // Override the windowType property set in Colonial
+  this.windowType = "Floor-to-ceiling";
+
+  // New properties set for Mansion
   this.jacuzzi = "yes";
   this.houseType = "Mansion";
+
+  // Overide "totalFloors" property set in the "Blueprint" class
   this.totalFloors = 5;
+
 }
 
-// Have the Mansion "class" inherit from the Colonial "class";
+// Have the Mansion "class" inherit from the Colonial "class"
 Mansion.prototype = Object.create( Colonial.prototype );
 
 /*
@@ -369,6 +395,37 @@ Mansion.prototype = Object.create( Colonial.prototype );
  */
 Mansion.prototype.constructor = Mansion;
 
-//var home03 = new Mansion(657);
 
-//home03.setHomeOptions().displayHomeOptions();
+
+var home03 = new Mansion( 657 );
+
+home03.setHomeOptions({
+  floorType: "formica",
+  price: "1.1 million",
+  pool: "yes",
+  squareFeet:3000,
+  kitchenCounters: "granite"
+}).displayHomeOptions();
+
+
+
+var home04 = new Colonial( 136 );
+
+home04.setHomeOptions({
+  floorType: "stainless steel",
+  price: "325.000",
+  squareFeet:1100,
+}).displayHomeOptions();
+
+
+
+var home05 = new Mansion( 90347 );
+
+home05.setHomeOptions({
+  totalBedrooms: 5,
+  totalBathrooms: 8,
+  pool: "optional",
+  price: "525,000",
+  squareFeet: 2200,
+  windowType: "French Doors"
+}).displayHomeOptions();
