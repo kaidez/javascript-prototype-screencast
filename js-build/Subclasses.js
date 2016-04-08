@@ -98,10 +98,10 @@ Colonial.prototype = Object.create( Blueprint.prototype );
  */
 Colonial.prototype.constructor = Colonial;
 
-var home02 = new Colonial( 423 );
+// var home02 = new Colonial( 423 );
 
 // It's chainable
-home02.setHomeOptions().displayHomeOptions();
+// home02.setHomeOptions().displayHomeOptions();
 
 
 
@@ -145,34 +145,35 @@ Mansion.prototype.constructor = Mansion;
 
 
 
-var home04 = new Mansion( 657 );
+// var home03 = new Mansion( 657 );
 
-home04.setHomeOptions({
-  floorType: "formica",
-  price: "1.1 million",
-  totalFloors: 4,
-  pool: "yes",
-  squareFeet:3000,
-  kitchenCounters: "granite"
-}).displayHomeOptions();
-
+// home03.setHomeOptions({
+//   floorType: "formica",
+//   price: "1.1 million",
+//   pool: "yes",
+//   squareFeet:3000,
+//   kitchenCounters: "granite"
+// }).displayHomeOptions();
 
 
-var home05 = new Colonial( 136 );
 
-home05.setHomeOptions({
-  floorType: "stainless steel",
-  price: "325.000",
-  squareFeet:1100,
-}).displayHomeOptions();
+// var home04 = new Colonial( 136 );
 
-var home06 = new Mansion( 90347 );
+// home04.setHomeOptions({
+//   floorType: "stainless steel",
+//   price: "325.000",
+//   squareFeet:1100,
+// }).displayHomeOptions();
 
-home06.setHomeOptions({
-  totalBedrooms: 5,
-  totalBathrooms: 8,
-  pool: "optional",
-  price: "525,000",
-  squareFeet: 2200,
-  windowType: "French Doors"
-}).displayHomeOptions();
+
+
+// var home05 = new Mansion( 90347 );
+
+// home05.setHomeOptions({
+//   totalBedrooms: 5,
+//   totalBathrooms: 8,
+//   pool: "optional",
+//   price: "525,000",
+//   squareFeet: 2200,
+//   windowType: "French Doors"
+// }).displayHomeOptions();

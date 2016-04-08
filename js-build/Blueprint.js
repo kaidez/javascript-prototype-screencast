@@ -72,7 +72,7 @@ Blueprint.prototype.setHomeOptions = function( options ) {
   this.kitchenCounters = options.kitchenCounters === undefined ? "standard" : options.kitchenCounters;
 
   // Make this method chain-able by returning it
-return this;
+  return this;
 
 }
 
