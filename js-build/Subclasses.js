@@ -146,6 +146,7 @@ Mansion.prototype.constructor = Mansion;
 
 
 var home04 = new Mansion( 657 );
+
 home04.setHomeOptions({
   floorType: "formica",
   price: "1.1 million",
@@ -158,8 +159,20 @@ home04.setHomeOptions({
 
 
 var home05 = new Colonial( 136 );
+
 home05.setHomeOptions({
   floorType: "stainless steel",
   price: "325.000",
   squareFeet:1100,
+}).displayHomeOptions();
+
+var home06 = new Mansion( 90347 );
+
+home06.setHomeOptions({
+  totalBedrooms: 5,
+  totalBathrooms: 8,
+  pool: "optional",
+  price: "525,000",
+  squareFeet: 2200,
+  windowType: "French Doors"
 }).displayHomeOptions();
