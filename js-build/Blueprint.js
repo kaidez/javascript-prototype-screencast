@@ -150,12 +150,14 @@ Blueprint.prototype.displayHomeOptions = function() {
          */
         if ( homeOption === "lotID" ) {
 
-          var homeHeader = document.createElement( "h2" );
-          homeHeader.setAttribute( "class", "center-text" );
-          homeHeader.innerHTML = "House#: " + this[homeOption];
+          var lotIDContent = "House#: " + this[homeOption],
+              lotIDHeader = $( "<h2 class='center-text'>" + lotIDContent + "</h2>" );
+
+
+          $( lotIDHeader ).prependTo( headerDiv );
 
           // Use $.prependTo() to put this at the top of the element
-          $( homeHeader ).prependTo( headerDiv );
+          //$( homeHeader ).prependTo( headerDiv );
 
         } else {
 
@@ -169,10 +171,10 @@ Blueprint.prototype.displayHomeOptions = function() {
          */
           if( homeOption === "price" ) {
 
-            var priceDiv = document.createElement( "div" );
-            priceDiv.setAttribute( "class", "center-text price" );
-            priceDiv.innerHTML = "Price: $" + this[homeOption];
-            headerDiv.appendChild( priceDiv );
+            var priceContent = "Price: $" + this[homeOption],
+            priceContentDiv = $( "<div class='center-text price'>" + priceContent + "</div>" );
+
+            $( priceContentDiv ).prependTo( headerDiv );
 
           // For all other options, run the following code...
           } else {
