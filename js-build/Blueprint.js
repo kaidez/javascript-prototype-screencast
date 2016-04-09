@@ -9,7 +9,7 @@ var Helpers = require( "./Helpers" );
  * instantited.
  *
  * FOR OPTIMIZATION PURPOSES, PLACE PROPERTIES & METHODS DIRECTLY ON
- * THE PROTOTYPE!!!!!!!!!!!!!!!
+ * THE PROTOTYPE AND NOT IN THE FUNCTION!!!!!!!!!!!!!!!
  */
 function Blueprint( lotID ) {
   this.lotID = lotID;
@@ -155,9 +155,6 @@ Blueprint.prototype.displayHomeOptions = function() {
 
 
           $( lotIDHeader ).prependTo( headerDiv );
-
-          // Use $.prependTo() to put this at the top of the element
-          //$( homeHeader ).prependTo( headerDiv );
 
         } else {
 
