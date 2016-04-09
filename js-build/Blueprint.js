@@ -105,7 +105,10 @@ Blueprint.prototype.displayHomeOptions = function() {
     var
 
         // Store a reference to the "#allHomes" already on the page
-        allHomes = document.getElementById("allHomes"),
+        allHomes = document.getElementById( "allHomes" ),
+
+        // Store a reference to the "#headerDiv" already on the page
+        headerDiv = document.getElementById( "headerDiv" ),
 
         // Create a document fragment
         fragment = document.createDocumentFragment(),
@@ -186,9 +189,8 @@ Blueprint.prototype.displayHomeOptions = function() {
              * Create an <li> tag, load the in the option that was
              * convereted above inside it with some other copy.
              */
-            li = document.createElement( "li" );
-            li.innerHTML = getOptionName + ": " + this[homeOption];
-            ul.appendChild(li);
+            li = $( "<li>" + getOptionName + ": " + this[homeOption] + "</li>" );
+            $( li ).appendTo( ul );
 
           } // end if/else statement
         }
