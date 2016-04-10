@@ -4,9 +4,8 @@ var Helpers = require( "./Helpers" );
 /*
  * Blueprint: the core class that house types will inherit from.
  * ====================================================================
- * Treat this as an "abstract class" or "superclass", meaning that it
- * should only to be inherited from and will never ever EVER be
- * instantited.
+ * Treat this as an "abstract class", meaning that it should only to
+ * be inherited from and will never ever EVER be instantited.
  *
  * FOR OPTIMIZATION PURPOSES, PLACE PROPERTIES & METHODS DIRECTLY ON
  * THE PROTOTYPE AND NOT IN THE FUNCTION!!!!!!!!!!!!!!!
@@ -16,10 +15,9 @@ function Blueprint( lotID ) {
 };
 
 /*
- * Start setting methods and properties on "Blueprint." We could add
- * them directly to the "Blueprint" function/object, but things will
- * be optimized if we don't. properties: properties that all houses
- * will have
+ * Setmethods and properties on the "Blueprint" prototype. We could add
+ * them directly into the "Blueprint" function/object, but placing
+ * them directly on the prototye is more performant.
  * ====================================================================
  */
 
@@ -143,7 +141,8 @@ Blueprint.prototype.displayHomeOptions = function() {
          * "lotID" value. If that's where we are in the loop, create
          * an <h2> tag, add style classes to it, load the lotID info
          * inside it with some other copy, then place it inside of the
-         * "headerDiv" element created below. It's placed at the top with jQuery.prepend().
+         * "headerDiv" element created below. It's placed at the top
+         * with jQuery.prepend().
          */
         if ( homeOption === "lotID" ) {
 
