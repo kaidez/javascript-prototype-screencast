@@ -153,7 +153,7 @@ home03.setHomeOptions({
   price: "1.1 million",
   pool: "yes",
   squareFeet:3000,
-  kitchenCounters: "granite"
+  kitchenCounters: "Granite"
 }).displayHomeOptions();
 
 
@@ -161,7 +161,7 @@ home03.setHomeOptions({
 var home04 = new Colonial( 136 );
 
 home04.setHomeOptions({
-  floorType: "stainless steel",
+  floorType: "Stainless Steel",
   price: "325.000",
   squareFeet:1100
 }).displayHomeOptions();
@@ -176,4 +176,16 @@ home05.setHomeOptions({
   pool: "optional",
   price: "525,000",
   squareFeet: 2200
+}).displayHomeOptions();
+
+
+var home06 = new Bungalow( 13 );
+
+home06.setHomeOptions({
+  totalBathrooms: 1.5,
+  totalBedrooms: 2,
+  kitchenCounters: "Wooden",
+  pool: "yes",
+  price: "226,000",
+  squareFeet: 900
 }).displayHomeOptions();
