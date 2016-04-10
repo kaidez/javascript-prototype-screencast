@@ -71,14 +71,14 @@ home01.displayHomeOptions();
 function Colonial ( lotID, windowType ) {
 
   // Use .call() to get & use the "lotID" value in the Blueprint class
-  Blueprint.call( this, lotID, windowType );
+  Blueprint.call( this, lotID );
 
   /*
-   * Add a two new properties for Colonial houses:
+   * Add two new properties for Colonial houses:
    *    - "windowType"
    *    - "houseType"
    */
-  this.windowType = windowType || "Double pane";
+  this.windowType = "Floor To Ceiling";
   this.houseType = "Colonial";
 
   // Overide "totalFloors" property set in the "Blueprint" class.
@@ -98,10 +98,10 @@ Colonial.prototype = Object.create( Blueprint.prototype );
  */
 Colonial.prototype.constructor = Colonial;
 
-// var home02 = new Colonial( 423 );
+var home02 = new Colonial( 423 );
 
 // It's chainable
-// home02.setHomeOptions().displayHomeOptions();
+home02.setHomeOptions().displayHomeOptions();
 
 
 
@@ -119,18 +119,20 @@ function Mansion ( lotID, windowType ) {
    * prototype chain" to find "Blueprint" so it can use the
    * totalFloors" property.
    */
-  Colonial.call( this, lotID );
+  Colonial.call( this, lotID, windowType );
 
-
-  // Override the windowType property set in Colonial
-  this.windowType = "Floor-to-ceiling";
-
-  // New properties set for Mansion
+  // Add a new "jacuzzi" property to Mansions
   this.jacuzzi = "yes";
+
+  // Set a "houseType" property to Mansions
   this.houseType = "Mansion";
+
+  // Override the window type that was set by the Clonial class
+  this.windowType = "French Doors";
 
   // Overide "totalFloors" property set in the "Blueprint" class
   this.totalFloors = 5;
+
 
 }
 
@@ -144,36 +146,34 @@ Mansion.prototype = Object.create( Colonial.prototype );
 Mansion.prototype.constructor = Mansion;
 
 
+var home03 = new Mansion( 657 );
 
-// var home03 = new Mansion( 657 );
-
-// home03.setHomeOptions({
-//   floorType: "formica",
-//   price: "1.1 million",
-//   pool: "yes",
-//   squareFeet:3000,
-//   kitchenCounters: "granite"
-// }).displayHomeOptions();
-
-
-
-// var home04 = new Colonial( 136 );
-
-// home04.setHomeOptions({
-//   floorType: "stainless steel",
-//   price: "325.000",
-//   squareFeet:1100,
-// }).displayHomeOptions();
+home03.setHomeOptions({
+  floorType: "formica",
+  price: "1.1 million",
+  pool: "yes",
+  squareFeet:3000,
+  kitchenCounters: "granite"
+}).displayHomeOptions();
 
 
 
-// var home05 = new Mansion( 90347 );
+var home04 = new Colonial( 136 );
 
-// home05.setHomeOptions({
-//   totalBedrooms: 5,
-//   totalBathrooms: 8,
-//   pool: "optional",
-//   price: "525,000",
-//   squareFeet: 2200,
-//   windowType: "French Doors"
-// }).displayHomeOptions();
+home04.setHomeOptions({
+  floorType: "stainless steel",
+  price: "325.000",
+  squareFeet:1100
+}).displayHomeOptions();
+
+
+
+var home05 = new Mansion( 90347 );
+
+home05.setHomeOptions({
+  totalBedrooms: 5,
+  totalBathrooms: 8,
+  pool: "optional",
+  price: "525,000",
+  squareFeet: 2200
+}).displayHomeOptions();

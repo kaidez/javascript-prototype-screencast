@@ -75,7 +75,7 @@ Blueprint.prototype.setHomeOptions = function( options ) {
   this.kitchenCounters = options.kitchenCounters === undefined ? "Formica" : options.kitchenCounters;
 
   // Make this method chain-able by returning it
-  // return this;
+  return this;
 
 }
 
@@ -106,9 +106,6 @@ Blueprint.prototype.displayHomeOptions = function() {
 
         // Store a reference to the "#allHomes" already on the page
         allHomes = document.getElementById( "allHomes" ),
-
-        // Store a reference to the "#headerDiv" already on the page
-        headerDiv = document.getElementById( "headerDiv" ),
 
         // Create a document fragment
         fragment = document.createDocumentFragment(),
@@ -211,7 +208,7 @@ Blueprint.prototype.displayHomeOptions = function() {
     console.log( this );
 
     // Make this method chain-able by returning it
-    // return this;
+    return this;
 
   }
 
