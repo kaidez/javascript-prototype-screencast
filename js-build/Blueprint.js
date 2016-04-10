@@ -115,7 +115,7 @@ Blueprint.prototype.displayHomeOptions = function() {
 
         // Dynamically create an <article>, <div>  and <ul> tag
         article = document.createElement( "article" ),
-        newHeaderDiv = document.createElement( "div" ),
+        innerHeaderDiv = document.createElement( "div" ),
         ul = document.createElement( "ul" );
 
     /*
@@ -153,7 +153,7 @@ Blueprint.prototype.displayHomeOptions = function() {
           var lotIDContent = "House#: " + this[homeOption],
               lotIDHeader = $( "<h2 class='center-text'>" + lotIDContent + "</h2>" );
 
-          $( lotIDHeader ).prependTo( newHeaderDiv );
+          $( lotIDHeader ).prependTo( innerHeaderDiv );
 
         } else {
 
@@ -170,7 +170,7 @@ Blueprint.prototype.displayHomeOptions = function() {
             var priceContent = "Price: $" + this[homeOption],
             priceContentDiv = $( "<div class='center-text price'>" + priceContent + "</div>" );
 
-            $( priceContentDiv ).prependTo( newHeaderDiv );
+            $( priceContentDiv ).appendTo( innerHeaderDiv );
 
           // For all other options, run the following code...
           } else {
@@ -194,7 +194,7 @@ Blueprint.prototype.displayHomeOptions = function() {
         }
 
         // Put headerDiv element in <article>
-        article.appendChild( newHeaderDiv );
+        article.appendChild( innerHeaderDiv );
 
         // Put <ul> in <article>
         article.appendChild( ul );
