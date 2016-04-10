@@ -46,10 +46,10 @@ Running `npm start` will:
 `npm start`: simultaneously run `server`, `watch-js` and `watch-css`.
 
 ### `copy-bootstrap`
-`npm run copy-bootstrap`: copy `bootstrap.css` from its location in `node_modules` to `css-build/`(run this when Bootstrap is updated as a dependency).
+`npm run copy-bootstrap`: copy `bootstrap.css` from its location in `node_modules` to `css-build/`(run this when `npm` updates Bootstrap as a dependency).
 
 ### `copy-jquery`
-`npm run copy-jquery`: copy `jquery.min.js` from its location in `node_modules` to `build/js/`(run this when jQuery is updated as a dependency).
+`npm run copy-jquery`: copy `jquery.min.js` from its location in `node_modules` to `build/js/`(run this when `npm` updates jQuery as a dependency).
 
 -kdz
 <!--["Introduction to JavaScript Prototypes"](http://kaidez.com/javascript-prototypes-tutorial)
