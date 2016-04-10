@@ -45,19 +45,20 @@ function propercaseOptionName( currentOptionName ) {
 /*
  * Blueprint: the core class that house types will inherit from.
  * ====================================================================
- * Treat this as an "abstract class" or "superclass", meaning that it
- * should only to be inherited from and will never ever EVER be
- * instantited.
+ * Treat this as an "abstract class", meaning that it should only to
+ * be inherited from and will never ever EVER be instantited.
+ *
+ * FOR OPTIMIZATION PURPOSES, PLACE PROPERTIES & METHODS DIRECTLY ON
+ * THE PROTOTYPE AND NOT IN THE FUNCTION!!!!!!!!!!!!!!!
  */
 function Blueprint( lotID ) {
   this.lotID = lotID;
 };
 
 /*
- * Start setting methods and properties on "Blueprint." We could add
- * them directly to the "Blueprint" function/object, but things will
- * be optimized if we don't. properties: properties that all houses
- * will have
+ * Setmethods and properties on the "Blueprint" prototype. We could add
+ * them directly into the "Blueprint" function/object, but placing
+ * them directly on the prototye is more performant.
  * ====================================================================
  */
 
@@ -104,13 +105,13 @@ Blueprint.prototype.setHomeOptions = function( options ) {
   this.totalFloors = options.totalFloors || this.totalFloors;
 
   /*
-   * Other options for houses. If these options are
-   * undefined, display "no" on the web page for all of them.
-   * Otherwise, display whatever option was configured.
+   * Options we haven't set. If these options are undefined, display
+   * the default message we added. Otherwise, display whatever option
+   * was configured.
    */
   this.pool = options.pool === undefined ? "no" : options.pool;
-  this.floorType = options.floorType === undefined ? "no" : options.floorType;
-  this.kitchenCounters = options.kitchenCounters === undefined ? "standard" : options.kitchenCounters;
+  this.floorType = options.floorType === undefined ? "Plastic Tile" : options.floorType;
+  this.kitchenCounters = options.kitchenCounters === undefined ? "Formica" : options.kitchenCounters;
 
   // Make this method chain-able by returning it
   return this;
@@ -143,18 +144,18 @@ Blueprint.prototype.displayHomeOptions = function() {
     var
 
         // Store a reference to the "#allHomes" already on the page
-        allHomes = document.getElementById("allHomes"),
+        allHomes = document.getElementById( "allHomes" ),
 
         // Create a document fragment
         fragment = document.createDocumentFragment(),
 
         // Dynamically create an <article>, <div>  and <ul> tag
         article = document.createElement( "article" ),
-        headerDiv = document.createElement( "div" ),
+        innerHeaderDiv = document.createElement( "div" ),
         ul = document.createElement( "ul" );
 
     /*
-     * Add a Bootstrap column "col-md-" class to each <article> for
+     * Add a Bootstrap column "col-md-4" class to each <article> for
      * to build a responsive 3-column layout. And because of how the
      * CSS is written, the min-height value that Bootstrap gives the
      * "col-md-4" class will be overridden.
@@ -181,14 +182,15 @@ Blueprint.prototype.displayHomeOptions = function() {
          * "lotID" value. If that's where we are in the loop, create
          * an <h2> tag, add style classes to it, load the lotID info
          * inside it with some other copy, then place it inside of the
-         * "headerDiv" element created below. It's placed at the top with jQuery.prepend().
+         * "headerDiv" element created below. It's placed at the top
+         * with jQuery.prepend().
          */
         if ( homeOption === "lotID" ) {
 
-          var homeHeader = document.createElement( "h2" );
-          homeHeader.setAttribute( "class", "center-text" );
-          homeHeader.innerHTML = "House#: " + this[homeOption];
-          $( homeHeader ).prependTo( headerDiv );
+          var lotIDContent = "House#: " + this[homeOption],
+              lotIDHeader = $( "<h2 class='center-text'>" + lotIDContent + "</h2>" );
+
+          $( lotIDHeader ).prependTo( innerHeaderDiv );
 
         } else {
 
@@ -202,10 +204,10 @@ Blueprint.prototype.displayHomeOptions = function() {
          */
           if( homeOption === "price" ) {
 
-            var priceDiv = document.createElement( "div" );
-            priceDiv.setAttribute( "class", "center-text price" );
-            priceDiv.innerHTML = "Price: $" + this[homeOption];
-            headerDiv.appendChild( priceDiv );
+            var priceContent = "Price: $" + this[homeOption],
+            priceContentDiv = $( "<div class='center-text price'>" + priceContent + "</div>" );
+
+            $( priceContentDiv ).appendTo( innerHeaderDiv );
 
           // For all other options, run the following code...
           } else {
@@ -216,21 +218,20 @@ Blueprint.prototype.displayHomeOptions = function() {
              * returned value of this variable value will soon be
              * loaded into an <li> tag.
              */
-            var getOptionName = Helpers.propercaseOptionName( homeOption );
+            var getOptionName = propercaseOptionName( homeOption );
 
             /*
              * Create an <li> tag, load the in the option that was
              * convereted above inside it with some other copy.
              */
-            li = document.createElement( "li" );
-            li.innerHTML = getOptionName + ": " + this[homeOption];
-            ul.appendChild(li);
+            li = $( "<li>" + getOptionName + ": " + this[homeOption] + "</li>" );
+            $( li ).appendTo( ul );
 
           } // end if/else statement
         }
 
         // Put headerDiv element in <article>
-        article.appendChild( headerDiv );
+        article.appendChild( innerHeaderDiv );
 
         // Put <ul> in <article>
         article.appendChild( ul );
@@ -244,6 +245,8 @@ Blueprint.prototype.displayHomeOptions = function() {
       }
     }
 
+    console.log( this );
+
     // Make this method chain-able by returning it
     return this;
 
@@ -252,6 +255,9 @@ Blueprint.prototype.displayHomeOptions = function() {
 }
 
 // Stop setting methods and properties on "Blueprint."
+
+
+
 
 /*
  * SUBCLASSES
@@ -323,14 +329,14 @@ home01.displayHomeOptions();
 function Colonial ( lotID, windowType ) {
 
   // Use .call() to get & use the "lotID" value in the Blueprint class
-  Blueprint.call( this, lotID, windowType );
+  Blueprint.call( this, lotID );
 
   /*
-   * Add a two new properties for Colonial houses:
+   * Add two new properties for Colonial houses:
    *    - "windowType"
    *    - "houseType"
    */
-  this.windowType = windowType || "Double pane";
+  this.windowType = "Floor To Ceiling";
   this.houseType = "Colonial";
 
   // Overide "totalFloors" property set in the "Blueprint" class.
@@ -371,18 +377,20 @@ function Mansion ( lotID, windowType ) {
    * prototype chain" to find "Blueprint" so it can use the
    * totalFloors" property.
    */
-  Colonial.call( this, lotID );
+  Colonial.call( this, lotID, windowType );
 
-
-  // Override the windowType property set in Colonial
-  this.windowType = "Floor-to-ceiling";
-
-  // New properties set for Mansion
+  // Add a new "jacuzzi" property to Mansions
   this.jacuzzi = "yes";
+
+  // Set a "houseType" property to Mansions
   this.houseType = "Mansion";
+
+  // Override the window type that was set by the Clonial class
+  this.windowType = "French Doors";
 
   // Overide "totalFloors" property set in the "Blueprint" class
   this.totalFloors = 5;
+
 
 }
 
@@ -396,7 +404,6 @@ Mansion.prototype = Object.create( Colonial.prototype );
 Mansion.prototype.constructor = Mansion;
 
 
-
 var home03 = new Mansion( 657 );
 
 home03.setHomeOptions({
@@ -404,7 +411,7 @@ home03.setHomeOptions({
   price: "1.1 million",
   pool: "yes",
   squareFeet:3000,
-  kitchenCounters: "granite"
+  kitchenCounters: "Granite"
 }).displayHomeOptions();
 
 
@@ -412,9 +419,9 @@ home03.setHomeOptions({
 var home04 = new Colonial( 136 );
 
 home04.setHomeOptions({
-  floorType: "stainless steel",
+  floorType: "Stainless Steel",
   price: "325.000",
-  squareFeet:1100,
+  squareFeet:1100
 }).displayHomeOptions();
 
 
@@ -426,6 +433,17 @@ home05.setHomeOptions({
   totalBathrooms: 8,
   pool: "optional",
   price: "525,000",
-  squareFeet: 2200,
-  windowType: "French Doors"
+  squareFeet: 2200
+}).displayHomeOptions();
+
+
+var home06 = new Bungalow( 13 );
+
+home06.setHomeOptions({
+  totalBathrooms: 1.5,
+  totalBedrooms: 2,
+  kitchenCounters: "Wooden",
+  pool: "yes",
+  price: "226,000",
+  squareFeet: 900
 }).displayHomeOptions();
