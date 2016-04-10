@@ -66,13 +66,13 @@ Blueprint.prototype.setHomeOptions = function( options ) {
   this.totalFloors = options.totalFloors || this.totalFloors;
 
   /*
-   * Other options for houses. If these options are
-   * undefined, display "no" on the web page for all of them.
-   * Otherwise, display whatever option was configured.
+   * Options we haven't set. If these options are undefined, display
+   * the default message we added. Otherwise, display whatever option
+   * was configured.
    */
   this.pool = options.pool === undefined ? "no" : options.pool;
-  this.floorType = options.floorType === undefined ? "no" : options.floorType;
-  this.kitchenCounters = options.kitchenCounters === undefined ? "standard" : options.kitchenCounters;
+  this.floorType = options.floorType === undefined ? "Plastic Tile" : options.floorType;
+  this.kitchenCounters = options.kitchenCounters === undefined ? "Formica" : options.kitchenCounters;
 
   // Make this method chain-able by returning it
   // return this;
@@ -152,7 +152,6 @@ Blueprint.prototype.displayHomeOptions = function() {
 
           var lotIDContent = "House#: " + this[homeOption],
               lotIDHeader = $( "<h2 class='center-text'>" + lotIDContent + "</h2>" );
-
 
           $( lotIDHeader ).prependTo( headerDiv );
 
