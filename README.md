@@ -4,14 +4,14 @@ This is the repo for the accompanying source files for an upcoming screencast tu
 
 The screencast demonstrates how I build out files using a Node/Browserify setup, but you can see how the code works without it.
 
-## Look at the code without Node/Browserify
+## Look at the code without Node/Browserify:
 
 1. open up `index.html` in the `build` folder.
 2. go to the bottom of that file and comment out `<script src="js/main.js"></script>`.
 3. Uncomment `<script src="js/main-full.js"></script>`...this file contains the complete code that is demonstrated in the screencast.
 4. view `index.html` in a browser.
 
-## Run the code with Node/Browserify
+## Run the code with Node/Browserify:
 
 1. [Install Node](https://nodejs.org/en/download/) if you don't have it installed already.
 2. clone this repo by running `git@github.com:kaidez/javascript-prototype-screencast.git` in the command line.
