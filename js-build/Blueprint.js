@@ -116,7 +116,7 @@ Blueprint.prototype.displayHomeOptions = function() {
         ul = document.createElement( "ul" );
 
     /*
-     * Add a Bootstrap column "col-md-" class to each <article> for
+     * Add a Bootstrap column "col-md-4" class to each <article> for
      * to build a responsive 3-column layout. And because of how the
      * CSS is written, the min-height value that Bootstrap gives the
      * "col-md-4" class will be overridden.
