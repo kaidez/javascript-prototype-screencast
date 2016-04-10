@@ -34,7 +34,7 @@ Running `npm start` will:
 `npm run build-js`: use [browserify](http://browserify.org/) & [uglify](https://www.npmjs.com/package/uglifyjs) to take all the `.js` files in `js-build` and concatenate/minify them out to a file called `main.js` that gets placed in `build/js`.
 
 ### `build-css`
-`npm run build-css`: use the Unix `cat` command to take all the `.css` files in `css-build` and concatenate them out to a file called `style.css` that gets placed in `build/`.
+`npm run build-css`: use the Unix [`cat`](http://www.gnu.org/software/coreutils/manual/html_node/cat-invocation.html) command to take all the `.css` files in `css-build` and concatenate them out to a file called `style.css` that gets placed in `build/`.
 
 ### `watch-js`
 `npm run watch-js`: when files in `js-build/` change, run `build-js`.
