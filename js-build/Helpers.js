@@ -18,7 +18,7 @@ module.exports = {
     var
 
       // Store a reference to a regex search for a capital letter
-      getCapitalLetter = /[A-Z]/,
+      getCapitalLetter = /[A-Z]/g,
 
       /*
        * Find the capital letter in currentOptionName...this currently
