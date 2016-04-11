@@ -73,7 +73,7 @@ Blueprint.prototype.setHomeOptions = function( options ) {
   this.kitchenCounters = options.kitchenCounters === undefined ? "Formica" : options.kitchenCounters;
 
   // Make this method chain-able by returning it
-  return this;
+  // return this;
 
 }
 
@@ -207,7 +207,7 @@ Blueprint.prototype.displayHomeOptions = function() {
     console.log( this );
 
     // Make this method chain-able by returning it
-    return this;
+    // return this;
 
   }
 
