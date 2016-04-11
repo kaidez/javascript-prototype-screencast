@@ -179,6 +179,7 @@ home05.setHomeOptions({
 }).displayHomeOptions();
 
 
+
 var home06 = new Bungalow( 13 );
 
 home06.setHomeOptions({
