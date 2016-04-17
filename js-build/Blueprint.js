@@ -15,7 +15,7 @@ function Blueprint( lotID ) {
 };
 
 /*
- * Setmethods and properties on the "Blueprint" prototype. We could add
+ * Set methods and properties on the Blueprint prototype. We could add
  * them directly into the "Blueprint" function/object, but placing
  * them directly on the prototye is more performant.
  * ====================================================================
