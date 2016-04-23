@@ -5,14 +5,12 @@ function Blueprint( lotID ) {
 Blueprint.prototype.name = "Regular House";
 
 Blueprint.prototype.showName = function( name ) {
-    console.log( name )
+    console.log( "This is house is called " + name )
 }
 
-var foo = new Blueprint( 123 );
+var newHouse = new Blueprint( 123 );
 
-foo.showName( "Regular House");
-
-console.log( foo );
+newHouse.showName( "Regular House");
 
 function Bungalow( lotID ) {
     Blueprint.call( this, lotID );
@@ -29,7 +27,7 @@ console.log( Bungalow.prototype );
 
 
 var bar = new Bungalow( 456 );
-console.log( "bar", bar );
+console.log( "bar is ", bar );
 bar.showName( "Bungalow" );
 
 
