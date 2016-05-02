@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "code sample for my screencast about JavaScript prototypes",
   "main": "n/a",
- "scripts": {
+  "scripts": {
     "server": "./node_modules/httpster/bin/httpster -p 3000 -d ./build/",
     "build-js": "browserify js-build/*.js | uglifyjs -mc > build/js/main.js",
     "build-css": "cat css-build/*.css > build/style.css",
@@ -28,11 +28,11 @@
   "homepage": "https://github.com/kaidez/javascript-prototype-screencast#readme",
   "devDependencies": {
     "browserify": "^13.0.0",
-    "httpster": "^1.0.1",
+    "httpster": "^1.0.3",
     "ncp": "^2.0.0",
-    "nodemon": "1.9.1",
+    "nodemon": "1.9.2",
     "uglifyjs": "^2.4.10",
-    "watchify": "^3.6.1"
+    "watchify": "^3.7.0"
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
