@@ -17,7 +17,7 @@ function Blueprint( lotID ) {
 /*
  * Set methods and properties on the Blueprint prototype. We could add
  * them directly into the "Blueprint" function/object, but placing
- * them directly on the prototye is more performant.
+ * them directly on the prototype is more performant.
  * ====================================================================
  */
 
@@ -203,8 +203,6 @@ Blueprint.prototype.displayHomeOptions = function() {
 
       }
     }
-
-    console.log( this );
 
     // Make this method chain-able by returning it
     // return this;
