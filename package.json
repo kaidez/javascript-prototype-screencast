@@ -27,7 +27,7 @@
   "license": "ISC",
   "homepage": "https://github.com/kaidez/javascript-prototype-screencast#readme",
   "devDependencies": {
-    "browserify": "^13.0.0",
+    "browserify": "^13.0.1",
     "httpster": "^1.0.3",
     "ncp": "^2.0.0",
     "nodemon": "1.9.2",
