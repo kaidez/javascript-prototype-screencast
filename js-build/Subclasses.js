@@ -14,7 +14,7 @@ var Blueprint = require( "./Blueprint" );
  *   -an inheriting class can have its own properties
  *
  *   -whenever an inheriting class inherits directly from one class, it
- *    also takes the inheriting class' construtor property. It needs
+ *    also takes the inheriting class' constructor property. It needs
  *    to be reset.
  */
 
@@ -127,7 +127,7 @@ function Mansion ( lotID, windowType ) {
   // Set a "houseType" property to Mansions
   this.houseType = "Mansion";
 
-  // Override the window type that was set by the Clonial class
+  // Override the window type that was set by the Colonial class
   this.windowType = "French Doors";
 
   // Overide "totalFloors" property set in the "Blueprint" class

@@ -5,7 +5,7 @@ var Helpers = require( "./Helpers" );
  * Blueprint: the core class that house types will inherit from.
  * ====================================================================
  * Treat this as an "abstract class", meaning that it should only to
- * be inherited from and will never ever EVER be instantited.
+ * be inherited from and will never ever EVER be instantiated.
  *
  * FOR OPTIMIZATION PURPOSES, PLACE PROPERTIES & METHODS DIRECTLY ON
  * THE PROTOTYPE AND NOT IN THE FUNCTION!!!!!!!!!!!!!!!
@@ -46,7 +46,7 @@ Blueprint.prototype.setHomeOptions = function( options ) {
    * house has. Some options have default values defined by the
    * properties above. Some options have just been added to our code
    * and also have default properties. But all these options can be
-   * overriden when we execute certain methods.
+   * overridden when we execute certain methods.
    */
 
   // Store a reference to the options object
@@ -181,7 +181,7 @@ Blueprint.prototype.displayHomeOptions = function() {
 
             /*
              * Create an <li> tag, load the in the option that was
-             * convereted above inside it with some other copy.
+             * converted above inside it with some other copy.
              */
             li = $( "<li>" + getOptionName + ": " + this[homeOption] + "</li>" );
             $( li ).appendTo( ul );
